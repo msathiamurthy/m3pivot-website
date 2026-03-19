@@ -1,0 +1,115 @@
+M3PIVOT
+Website Content — Final Copy
+Prepared for Cursor build on March 20, 2025
+PAGE 1 — Homepage (index.html)
+
+Tagline
+Pivot with a Purpose
+Sub-headline
+100 years of combined startup experience, guiding founders through their most critical moments — Money, Market and Management.
+Primary CTA — For Startups
+Start Your Journey
+Primary CTA — For Investors
+Explore Startups
+Homepage Intro Paragraph (optional)
+M3Pivot connects early-stage startup founders with experienced partners who have lived through the highs and lows of building companies. We guide you through your pivotal moments — and connect investors with startups that are truly ready.
+PAGE 2 — For Startups (startups.html)
+
+Page Headline
+We Don't Just Advise. We Travel With You.
+The 3 Pivotal Moments — M3
+💰 Money
+Cash is King. We help you manage runway, raise smart and spend with purpose.
+📈 Market
+Markets shift fast. We help you find your footing, sharpen your GTM and stay ahead of the curve.
+👥 Management
+People make or break startups. We help you build a team that executes, adapts and delivers.
+What Makes M3Pivot Different
+Unlike consultants who parachute in with advice and leave, we travel with you — from your earliest decisions to your first investor meeting. Skin in the game, not just words on a deck.
+What You Get
+Access to 100 years of combined experience across product, GTM, team building and fundraising — not as advisors on the sidelines, but as guides in the trenches with you.
+CTA Button
+Talk to M3Pivot Partners
+PAGE 3 — For Investors (investors.html)
+
+Page Headline
+Invest With Confidence. Every Startup We Introduce Is Battle-Tested.
+What Type of Startups We Bring
+We focus on pre-seed and seed stage technology startups in India. Our sweet spot is founders building in software, embedded systems and hardware-adjacent spaces — sectors where our partners have decades of hands-on experience and can genuinely add value beyond capital.
+How We Vet Startups
+We don't introduce startups to investors cold. We work alongside founding teams for months — stress-testing their financials, sharpening their GTM and strengthening their team. By the time we make an introduction, we've put our own reputation on the line.
+What Investors Get
+You get curated, battle-tested startups — not raw pitches. Every founding team we introduce has been guided, challenged and strengthened by partners with 100 years of combined experience. Less risk, more confidence.
+CTA Button
+Talk to M3Pivot Partners
+PAGE 4 — Partners (partners.html)
+
+Page Headline
+100 Years of Combined Experience. Four Partners. One Mission.
+Page Sub-headline
+We've built, scaled, failed and succeeded across software, hardware, operations and finance. We know what early-stage founders face — because we've been there.
+Partner 1 — Murali Ravindran
+Title at M3Pivot
+Partner — Finance & Global Business
+Bio
+25 years of product management, global sales and business development in the embedded systems domain. Expertise in financials, inter-company pricing, arms-length pricing, and compliance for global startup companies.
+LinkedIn
+https://www.linkedin.com/in/rmuralimanohar/
+Partner 2 — Sankar Kaliaperumal
+Title at M3Pivot
+Partner — Product & Operations
+Bio
+25 years of startup experience across US and India. Gone through successful and painful exits. Expertise in product management, operational excellence, and building strong culture among teams.
+LinkedIn
+https://www.linkedin.com/in/sankarkaliaperumal/
+Partner 3 — Muthu Sathiamurthy
+Title at M3Pivot
+Partner — Technology & Engineering
+Bio
+25 years of experience in software development across large enterprises and Global Capability Centers in India. Expertise in software product management, architecture and building high-performing product development teams.
+LinkedIn
+https://www.linkedin.com/in/muthu-sathiamurthy/
+Partner 4 — Sanjeev Uruvandavida
+Title at M3Pivot
+Partner — Investor Relations & Supply Chain
+Bio
+25 years of experience in manufacturing, supply chain and operations. Expertise in investor relations and mentoring startup founders for over a decade.
+LinkedIn
+https://www.linkedin.com/in/sanjeevu/
+PAGE 5 — Contact (contact.html)
+
+Page Headline
+Let's Talk
+Page Sub-headline
+Whether you're a founder navigating a pivotal moment or an investor looking for your next opportunity — we'd love to hear from you.
+Form Fields
+	•	Full Name
+	•	Email Address
+	•	Are you a: [ ] Startup Founder  [ ] Investor
+	•	Message
+Submit Button Text
+Send Message
+Thank-You Message (shown after submission)
+Thank you for reaching out! One of our partners will get back to you within 2 business days.
+Technical Details — Formspree
+Form Action URL
+https://formspree.io/f/mojknrgk
+Submissions go to
+muthu@m3pivot.com
+SHARED ELEMENTS — All Pages
+
+Navbar Links
+	•	Home
+	•	For Startups
+	•	For Investors
+	•	Partners
+	•	Contact
+Footer Text
+© 2025 M3Pivot. All rights reserved.
+Guiding early-stage startups through Money, Market and Management.
+Design Direction — For Cursor Prompt
+	•	Color scheme: Dark navy (#1B3A6B) and gold (#B8860B)
+	•	Style: Clean, professional, modern
+	•	Mobile responsive
+	•	Shared navbar and footer across all 5 pages
+	•	Logo: Text-based M3Pivot logo (to be created in Canva)
