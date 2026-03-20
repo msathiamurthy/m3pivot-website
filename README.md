@@ -13,10 +13,19 @@ Short-term URLs to compare layouts and copy:
 | Variant   | URL |
 |-----------|-----|
 | **Option 1** | `https://msathiamurthy.github.io/m3pivot-website/option1/` |
-| **Option 2** | `https://msathiamurthy.github.io/m3pivot-website/option2/` *(target for the next simplified design)* |
+| **Option 2** | `https://msathiamurthy.github.io/m3pivot-website/option2/` *(simplified narrative layout + team section)* |
 | **Option 3** | `https://msathiamurthy.github.io/m3pivot-website/option3/` |
 
 Each folder is a **full copy** of the site (`index.html`, `styles.css`, `startups.html`, `investors.html`, `contact.html`, `assets/`). Edit files inside the folder you’re iterating on so paths stay correct.
+
+### Option 2 — partner headshots
+
+Add square-ish JPGs under `option2/assets/` (optional; placeholders show until files exist):
+
+- `team-murali.jpg`
+- `team-sankar.jpg`
+- `team-muthu.jpg`
+- `team-sanjeev.jpg`
 
 ## Local preview
 
