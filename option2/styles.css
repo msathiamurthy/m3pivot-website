@@ -593,15 +593,37 @@ textarea {
 
 .page-hero h1 {
   margin: 0 0 0.65rem;
-  font-size: clamp(1.6rem, 5vw, 2.1rem);
+  font-size: clamp(1.6rem, 4.5vw, 2.85rem);
   color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 .page-hero p {
   margin: 0;
   color: var(--muted);
-  max-width: 40ch;
+  max-width: 42ch;
+  font-size: 0.98rem;
 }
+
+@media (min-width: 768px) {
+  .page-hero {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .page-hero p {
+    max-width: 58ch;
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-hero p {
+    max-width: 68ch;
+  }
+}
+
+/* .subpage-main on HTML = marker for subpage-only rules (e.g. contact card width) */
 
 .content-block {
   padding: 0 0 2rem;
@@ -624,12 +646,33 @@ textarea {
   padding-left: 1.1rem;
 }
 
+.simple-card-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+@media (min-width: 720px) {
+  .simple-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.15rem;
+    align-items: stretch;
+  }
+}
+
 .simple-card {
   background: var(--bg-elevated);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 1.15rem;
   margin-bottom: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.simple-card-grid .simple-card {
+  margin-bottom: 0;
 }
 
 .simple-card h3 {
@@ -641,6 +684,24 @@ textarea {
 .simple-card p {
   margin: 0;
   font-size: 0.9rem;
+  flex: 1;
+}
+
+@media (min-width: 720px) {
+  .simple-card p {
+    font-size: 0.93rem;
+  }
+}
+
+/* Contact form: keep a comfortable line length inside wide subpage */
+.subpage-main .contact-card {
+  max-width: 100%;
+}
+
+@media (min-width: 720px) {
+  .subpage-main .contact-card {
+    max-width: min(100%, 560px);
+  }
 }
 
 /* Footer */
