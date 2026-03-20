@@ -11,7 +11,7 @@
     <link
       rel="preload"
       as="image"
-      href="assets/logo.png"
+      href="assets/full-logo.png"
       media="(max-width: 767px)"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -20,9 +20,21 @@
     <header class="site-header">
       <div class="container container--wide header-inner">
         <a class="brand" href="index.html">
-          <img src="assets/logo.png" alt="M3Pivot" />
+          <img src="assets/full-logo.png" alt="M3Pivot" />
         </a>
-        <nav class="nav-links" aria-label="Primary">
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span class="menu-toggle-box" aria-hidden="true">
+            <span class="menu-toggle-inner"></span>
+          </span>
+        </button>
+        <div class="nav-backdrop" aria-hidden="true"></div>
+        <nav id="primary-nav" class="nav-links" aria-label="Primary">
           <a class="active" href="#home">Home</a>
           <a href="#team">Team</a>
           <a href="startups.html">Startups</a>
@@ -35,14 +47,6 @@
     <main>
       <div class="container">
         <section class="hero" id="home">
-          <div class="hero-brand-mobile" aria-hidden="true">
-            <img
-              src="assets/logo.png"
-              alt=""
-              decoding="sync"
-              fetchpriority="high"
-            />
-          </div>
           <span class="eyebrow">Pivot with a purpose</span>
           <h1>We don’t just advise. We travel with you.</h1>
           <p class="hero-lead">
@@ -331,6 +335,7 @@
       </div>
     </footer>
 
+    <script src="nav.js" defer></script>
     <script>
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll(".nav-links a[href^='#']");

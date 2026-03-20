@@ -15,6 +15,9 @@
   --warm-glow: rgba(180, 83, 58, 0.09);
   --card-shadow: 0 1px 2px rgba(20, 18, 16, 0.04),
     0 18px 48px rgba(20, 18, 16, 0.07);
+
+  /* Layout tiers: phone ≤767 | tablet (iPad) 768–1023 | desktop ≥1024 */
+  --site-header-height: 64px;
 }
 
 * {
@@ -120,7 +123,7 @@ img {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   background: rgba(255, 255, 255, 0.86);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
@@ -128,7 +131,8 @@ img {
 }
 
 .header-inner {
-  min-height: 64px;
+  position: relative;
+  min-height: var(--site-header-height);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -137,18 +141,103 @@ img {
   padding: 0.5rem 0;
 }
 
+.brand {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
 .brand img {
-  height: 36px;
+  height: auto;
   width: auto;
-  max-width: 140px;
+  max-height: 34px;
+  max-width: min(200px, 58vw);
   object-fit: contain;
-  border-radius: 8px;
+  object-position: left center;
+  border-radius: 6px;
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .brand:hover img {
   box-shadow: 0 0 0 1px rgba(180, 83, 58, 0.28);
   transform: translateY(-1px);
+}
+
+/* Hamburger: hidden on tablet + desktop */
+.menu-toggle {
+  display: none;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid rgba(180, 83, 58, 0.45);
+  outline-offset: 2px;
+}
+
+.menu-toggle-box {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+.menu-toggle-inner {
+  position: relative;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: background 0.2s ease;
+}
+
+.menu-toggle-inner::before,
+.menu-toggle-inner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: transform 0.2s ease, top 0.2s ease;
+}
+
+.menu-toggle-inner::before {
+  top: -7px;
+}
+
+.menu-toggle-inner::after {
+  top: 7px;
+}
+
+.site-header.nav-open .menu-toggle-inner {
+  background: transparent;
+}
+
+.site-header.nav-open .menu-toggle-inner::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.site-header.nav-open .menu-toggle-inner::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.nav-backdrop {
+  display: none;
 }
 
 .nav-links {
@@ -182,6 +271,129 @@ img {
   background: var(--accent-soft);
 }
 
+/* ——— Phone (≤767px): full-logo + hamburger drawer ——— */
+@media (max-width: 767px) {
+  .brand {
+    flex: 1;
+  }
+
+  .brand img {
+    max-height: 36px;
+    max-width: min(220px, 72vw);
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    top: var(--site-header-height);
+    z-index: 110;
+    background: rgba(20, 18, 16, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s ease, visibility 0.22s ease;
+  }
+
+  .site-header.nav-open .nav-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-links {
+    position: fixed;
+    z-index: 120;
+    left: 0;
+    right: 0;
+    top: var(--site-header-height);
+    max-height: min(calc(100dvh - var(--site-header-height)), 520px);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex: none;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0.75rem 1rem 1.25rem;
+    overflow-x: visible;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--line);
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 20px 50px rgba(20, 18, 16, 0.12);
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  }
+
+  .site-header.nav-open .nav-links {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: left;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .nav-backdrop,
+  .nav-links {
+    transition: none;
+  }
+}
+
+/* ——— Tablet / iPad (768–1023px): inline nav + full-logo ——— */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .brand {
+    flex: 0 1 auto;
+  }
+
+  .brand img {
+    max-height: 40px;
+    max-width: min(240px, 38vw);
+  }
+
+  .nav-links a {
+    font-size: 0.84rem;
+    padding: 0.42rem 0.68rem;
+  }
+}
+
+/* ——— Desktop (≥1024px): roomier bar + logo ——— */
+@media (min-width: 1024px) {
+  .brand {
+    flex: 0 1 auto;
+  }
+
+  .brand img {
+    max-height: 44px;
+    max-width: min(280px, 32vw);
+  }
+
+  .nav-links a {
+    font-size: 0.88rem;
+    padding: 0.45rem 0.85rem;
+  }
+}
+
 /* Main */
 main {
   padding: 0.75rem 0 3rem;
@@ -196,47 +408,6 @@ section[id] {
   position: relative;
   padding: 2.5rem 0 2.25rem;
   margin-bottom: 0.5rem;
-}
-
-/* Homepage mobile: prominent logo above headline (hidden ≥768px) */
-.hero-brand-mobile {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  /* No card: logo sits on the same page background as the hero */
-  .hero-brand-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 0 1.15rem;
-    padding: 0.25rem 0 0.35rem;
-    background: none;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .hero-brand-mobile img {
-    display: block;
-    width: min(92vw, 360px);
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: center;
-    /* Barely-there depth so it doesn’t look pasted; remove if you want perfectly flat */
-    filter: drop-shadow(0 2px 10px rgba(20, 18, 16, 0.04));
-  }
-
-  .hero:has(.hero-brand-mobile) {
-    padding-top: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero-brand-mobile {
-    display: none !important;
-  }
 }
 
 .hero::after {
@@ -834,14 +1005,9 @@ textarea {
   color: var(--accent);
 }
 
-@media (min-width: 720px) {
+@media (min-width: 768px) {
   .header-inner {
     padding: 0.65rem 0;
-  }
-
-  .nav-links a {
-    font-size: 0.88rem;
-    padding: 0.45rem 0.85rem;
   }
 
   .footer-inner {
