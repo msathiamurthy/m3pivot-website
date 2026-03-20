@@ -20,12 +20,11 @@ Each folder is a **full copy** of the site (`index.html`, `styles.css`, `startup
 
 ### Option 2 — partner headshots
 
-Add square-ish JPGs under `option2/assets/` (optional; placeholders show until files exist):
+The site expects **560×560** JPEGs in `option2/assets/`:
 
-- `team-murali.jpg`
-- `team-sankar.jpg`
-- `team-muthu.jpg`
-- `team-sanjeev.jpg`
+- `team-murali.jpg` · `team-sankar.jpg` · `team-muthu.jpg` · `team-sanjeev.jpg`
+
+You can drop first-name sources in repo root `assets/` (e.g. `murali.jpeg`, `sankar.jpeg`, `muthu.jpg`, `sanjeev.jpeg`) and re-run square crop + export to `option2/assets/team-*.jpg` with `sips` (see commit history) or replace the `team-*.jpg` files directly. If a file is missing, initials placeholders still show.
 
 ## Local preview
 

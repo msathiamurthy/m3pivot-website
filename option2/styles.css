@@ -464,6 +464,21 @@ section[id] {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 22%;
+  filter: saturate(0.96) contrast(1.03);
+  transition: filter 0.3s ease;
+}
+
+.team-card:hover .team-photo img {
+  filter: saturate(1) contrast(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-photo img,
+  .team-card:hover .team-photo img {
+    filter: none;
+    transition: none;
+  }
 }
 
 .team-photo.no-photo .team-photo-placeholder {
