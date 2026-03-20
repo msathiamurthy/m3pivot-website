@@ -198,6 +198,47 @@ section[id] {
   margin-bottom: 0.5rem;
 }
 
+/* Homepage mobile: prominent logo above headline (hidden ≥768px) */
+.hero-brand-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  /* No card: logo sits on the same page background as the hero */
+  .hero-brand-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 1.15rem;
+    padding: 0.25rem 0 0.35rem;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .hero-brand-mobile img {
+    display: block;
+    width: min(92vw, 360px);
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    /* Barely-there depth so it doesn’t look pasted; remove if you want perfectly flat */
+    filter: drop-shadow(0 2px 10px rgba(20, 18, 16, 0.04));
+  }
+
+  .hero:has(.hero-brand-mobile) {
+    padding-top: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-brand-mobile {
+    display: none !important;
+  }
+}
+
 .hero::after {
   content: "";
   position: absolute;

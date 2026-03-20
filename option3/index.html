@@ -8,6 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>M3Pivot | We travel with founders (light)</title>
+    <link
+      rel="preload"
+      as="image"
+      href="assets/logo.png"
+      media="(max-width: 767px)"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -29,6 +35,14 @@
     <main>
       <div class="container">
         <section class="hero" id="home">
+          <div class="hero-brand-mobile" aria-hidden="true">
+            <img
+              src="assets/logo.png"
+              alt=""
+              decoding="sync"
+              fetchpriority="high"
+            />
+          </div>
           <span class="eyebrow">Pivot with a purpose</span>
           <h1>We don’t just advise. We travel with you.</h1>
           <p class="hero-lead">
