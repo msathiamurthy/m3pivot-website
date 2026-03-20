@@ -71,6 +71,37 @@ img {
   width: min(1040px, 92%);
 }
 
+/* Widen reading column on tablet + desktop (was mobile-first narrow) */
+@media (min-width: 768px) {
+  .container {
+    width: min(840px, 88%);
+  }
+
+  .container--wide {
+    width: min(1100px, 90%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: min(960px, 86%);
+  }
+
+  .container--wide {
+    width: min(1180px, 88%);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    width: min(1040px, 84%);
+  }
+
+  .container--wide {
+    width: min(1240px, 86%);
+  }
+}
+
 /* Header */
 .site-header {
   position: sticky;
@@ -175,7 +206,7 @@ section[id] {
 
 .hero h1 {
   margin: 0 0 1rem;
-  font-size: clamp(1.85rem, 6.5vw, 2.65rem);
+  font-size: clamp(1.85rem, 5vw, 3.15rem);
   font-weight: 800;
   line-height: 1.12;
   letter-spacing: -0.02em;
@@ -187,6 +218,19 @@ section[id] {
   font-size: 1.05rem;
   color: var(--ink-soft);
   max-width: 36ch;
+}
+
+@media (min-width: 768px) {
+  .hero-lead {
+    max-width: 52ch;
+    font-size: 1.12rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-lead {
+    max-width: 62ch;
+  }
 }
 
 .hero-actions {
@@ -252,6 +296,13 @@ section[id] {
   color: var(--ink);
 }
 
+@media (min-width: 1024px) {
+  .section-narrative .quote-text {
+    font-size: clamp(1.12rem, 1.5vw, 1.35rem);
+    max-width: 62ch;
+  }
+}
+
 .section-narrative .quote-note {
   margin: 1rem 0 0;
   font-size: 0.9rem;
@@ -281,6 +332,13 @@ section[id] {
   color: var(--muted);
   font-size: 0.98rem;
   max-width: 42ch;
+}
+
+@media (min-width: 1024px) {
+  .section-intro {
+    max-width: 58ch;
+    font-size: 1.02rem;
+  }
 }
 
 /* M3 */
@@ -644,6 +702,16 @@ textarea {
 
   main {
     padding: 1rem 0 3.5rem;
+  }
+
+  .hero {
+    padding: 3rem 0 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 3.5rem 0 3.25rem;
   }
 }
 
