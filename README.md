@@ -59,6 +59,7 @@ Optional: add **`favicon.ico`** and **LinkedIn** URLs in JSON-LD `sameAs` on `in
 | `sitemap.xml` · `robots.txt` | SEO discovery |
 | `GODADDY-DNS-STEPS.md` | DNS checklist for GoDaddy |
 | `option3/` | **Temporary** full copy for staging URL (remove after DNS is live) |
+| `pamphlet/` | **A5 duplex poster** (`m3pivot-a5-poster.html`); see `pamphlet/README.md` |
 
 ## Partner headshots
 

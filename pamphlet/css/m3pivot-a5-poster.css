@@ -1,0 +1,146 @@
+@import "./m3pivot-a5-poster-base.css";
+
+/* M3Pivot A5 portrait duplex — 148 × 210 mm */
+:root {
+  --scale: 1.16;
+  --sheet-w: 148mm;
+  --sheet-h: 210mm;
+}
+
+/* Navy “pivot” callout (brand default in brand.css is gold) */
+.m3pivot-a5-poster .pivot-word {
+  color: var(--navy);
+}
+
+@media print {
+  @page {
+    size: A5 portrait;
+    margin: 0;
+  }
+}
+
+/* Front: use page height; spread content */
+.m3pivot-a5-poster .sheet--front {
+  gap: calc(6mm * var(--scale));
+  padding: calc(9mm * var(--scale)) calc(8mm * var(--scale)) calc(10mm * var(--scale));
+  justify-content: flex-start;
+}
+
+.m3pivot-a5-poster .sheet--front .tagline {
+  margin-bottom: 0;
+  letter-spacing: 0.16em;
+  font-size: calc(7.85pt * var(--scale));
+}
+
+.m3pivot-a5-poster .sheet--front .logo {
+  margin-bottom: 0;
+  width: calc(42mm * var(--scale));
+  max-width: 78%;
+}
+
+.m3pivot-a5-poster .sheet--front h1 {
+  margin-bottom: 0;
+  font-size: calc(15pt * var(--scale));
+  line-height: 1.12;
+  max-width: 38ch;
+}
+
+.m3pivot-a5-poster .sheet--front .lead {
+  margin-bottom: 0;
+  font-size: calc(10.75pt * var(--scale));
+  line-height: 1.38;
+  max-width: 42ch;
+}
+
+.m3pivot-a5-poster .sheet--front .pl5-cols {
+  flex: 1 1 auto;
+  min-height: 0;
+  align-content: center;
+  margin-top: 0;
+  padding-top: calc(5mm * var(--scale));
+  padding-bottom: calc(4mm * var(--scale));
+  gap: calc(5.5mm * var(--scale)) calc(6.5mm * var(--scale));
+}
+
+.m3pivot-a5-poster .pl5-sub {
+  font-size: calc(9.2pt * var(--scale));
+  line-height: 1.42;
+  padding-left: calc(3.5mm * var(--scale));
+}
+
+.m3pivot-a5-poster .pl5-m3 li {
+  margin-bottom: calc(2.75mm * var(--scale));
+  font-size: calc(9.05pt * var(--scale));
+  line-height: 1.32;
+}
+
+.m3pivot-a5-poster .pl5-m3 li:last-child {
+  margin-bottom: 0;
+}
+
+.m3pivot-a5-poster .pl5-m3 .num {
+  font-size: calc(11.75pt * var(--scale));
+}
+
+.m3pivot-a5-poster .pl5-m3 strong {
+  font-size: calc(10.15pt * var(--scale));
+  margin-bottom: calc(0.45mm * var(--scale));
+}
+
+.m3pivot-a5-poster .sheet--front .pl5-foot {
+  margin-top: 0;
+  padding-top: calc(4.5mm * var(--scale));
+}
+
+.m3pivot-a5-poster .pl5-foot p {
+  font-size: calc(9.15pt * var(--scale));
+  line-height: 1.34;
+  max-width: 46ch;
+  margin-inline: auto;
+}
+
+.m3pivot-a5-poster .lean-back__svce {
+  font-size: calc(8.35pt * var(--scale));
+}
+
+.m3pivot-a5-poster .lean-partners .name {
+  font-size: calc(9.1pt * var(--scale));
+}
+
+.m3pivot-a5-poster .lean-back__title {
+  font-size: calc(12.75pt * var(--scale));
+}
+
+.m3pivot-a5-poster .lean-back__url {
+  font-size: calc(11pt * var(--scale));
+}
+
+.m3pivot-a5-poster .lean-back__hint {
+  font-size: calc(8.5pt * var(--scale));
+}
+
+.m3pivot-a5-poster .lean-back__line {
+  font-size: calc(8pt * var(--scale));
+}
+
+.m3pivot-a5-poster .sheet--back-lean {
+  padding: calc(9mm * var(--scale)) calc(8mm * var(--scale)) calc(10mm * var(--scale));
+}
+
+.m3pivot-a5-poster .lean-back {
+  gap: calc(5mm * var(--scale));
+}
+
+.m3pivot-a5-poster .lean-partners {
+  gap: calc(2.75mm * var(--scale)) calc(4mm * var(--scale));
+  max-width: min(100%, calc(124mm * var(--scale)));
+}
+
+.m3pivot-a5-poster .lean-partners .cell {
+  min-height: calc(15.5mm * var(--scale));
+  padding: calc(3mm * var(--scale)) calc(3.25mm * var(--scale));
+}
+
+.m3pivot-a5-poster .lean-back__qr-wrap {
+  padding: calc(3.5mm * var(--scale)) calc(4mm * var(--scale));
+}

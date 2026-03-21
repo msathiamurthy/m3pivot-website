@@ -1,0 +1,80 @@
+/* M3Pivot print — shared brand (matches website) */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+
+:root {
+  --navy: #034285;
+  --gold: #e1a935;
+  --bg: #f3f1ec;
+  --ink: #141210;
+  --ink-soft: #3d3a36;
+  --muted: #6b6560;
+  --white: #ffffff;
+  --line: rgba(3, 66, 133, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.eyebrow {
+  font-size: 7.5pt;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 2mm;
+}
+
+h2 {
+  font-size: 13pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 3mm;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 4mm 0 2mm;
+}
+
+p {
+  margin: 0 0 2.5mm;
+  font-size: 9pt;
+}
+
+ul {
+  margin: 0 0 3mm;
+  padding-left: 4mm;
+  font-size: 9pt;
+}
+
+li {
+  margin-bottom: 1.8mm;
+}
+
+li strong {
+  color: var(--navy);
+}
+
+.qr-block img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Callout: “…mentorship to pivot at the right time” (one-pager, posters, postcards) */
+.pivot-word {
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}

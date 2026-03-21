@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>M3Pivot — Print (A5 poster)</title>
+    <style>
+      :root {
+        --navy: #034285;
+        --gold: #e1a935;
+        --bg: #f3f1ec;
+        --ink: #3d3a36;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+      }
+      main {
+        max-width: 28rem;
+        text-align: center;
+      }
+      h1 {
+        font-size: 1.35rem;
+        color: var(--navy);
+        margin: 0 0 0.5rem;
+      }
+      p {
+        margin: 0 0 1.25rem;
+        line-height: 1.5;
+        font-size: 0.95rem;
+      }
+      a.cta {
+        display: inline-block;
+        padding: 0.65rem 1.25rem;
+        background: var(--navy);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+      a.cta:hover {
+        filter: brightness(1.08);
+      }
+      code {
+        font-size: 0.85em;
+        background: rgba(3, 66, 133, 0.08);
+        padding: 0.15em 0.4em;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>M3Pivot · A5 poster</h1>
+      <p>Duplex print collateral (front + back). Open the poster for screen preview or <strong>Print → Save as PDF</strong>.</p>
+      <p><a class="cta" href="m3pivot-a5-poster.html">Open A5 poster</a></p>
+      <p class="dim" style="font-size: 0.85rem; opacity: 0.85">
+        Local preview: <code>python3 -m http.server 8080</code> → <code>/pamphlet/</code>
+      </p>
+    </main>
+  </body>
+</html>
