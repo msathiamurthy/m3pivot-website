@@ -1,12 +1,13 @@
 # M3Pivot website
 
-Static site for [M3Pivot](https://www.m3pivot.com) (draft). Built as plain HTML/CSS/JS, deployable on **GitHub Pages** from the repo root.
+Static site for **[www.m3pivot.com](https://www.m3pivot.com)**. Built as plain HTML/CSS/JS, deployed with **GitHub Pages** from the repo root.
 
-## Live site (GitHub Pages)
+## Live site
 
-**https://msathiamurthy.github.io/m3pivot-website/**
+- **Primary URL:** **https://www.m3pivot.com**  
+- After DNS is configured, GitHub may still show the old `*.github.io` URL in settings; visitors should use **www.m3pivot.com**.
 
-*(After you connect a custom domain in repo Settings → Pages, that URL may redirect to `www.m3pivot.com`.)*
+**GoDaddy DNS instructions** (for someone with domain access): see **[GODADDY-DNS-STEPS.md](./GODADDY-DNS-STEPS.md)**.
 
 ## Brand — logo typography & colors
 
@@ -28,27 +29,25 @@ The site stylesheet (`styles.css`) uses **Montserrat** and maps UI accents to th
 
 ## SEO
 
-- Each page has **unique `meta description`**, **`canonical`**, **Open Graph**, and **Twitter** tags.
-- **`sitemap.xml`** and **`robots.txt`** (with sitemap URL) live at the repo root.
-- **Home** includes **JSON-LD** (`Organization`) for rich results.
+- Each page has **unique `meta description`**, **`canonical`**, **Open Graph**, and **Twitter** tags using **https://www.m3pivot.com**.
+- **`sitemap.xml`** and **`robots.txt`** use the same base URL.
+- **Home** includes **JSON-LD** (`Organization`).
+- **`CNAME`** in the repo root tells GitHub Pages to serve **www.m3pivot.com**.
 
-**When `www.m3pivot.com` is the primary URL**, find-and-replace  
-`https://msathiamurthy.github.io/m3pivot-website` → `https://www.m3pivot.com` in:
-
-`index.html`, `contact.html`, `startups.html`, `investors.html`, `sitemap.xml`, `robots.txt`, and the JSON-LD block on the home page.
-
-Optional: add **`favicon.ico`** (or PNG + `<link rel="icon">`) and put **LinkedIn** URLs in `sameAs` inside the JSON-LD on `index.html`.
+Optional: add **`favicon.ico`** and **LinkedIn** URLs in JSON-LD `sameAs` on `index.html`.
 
 ## Project layout
 
 | Path | Purpose |
 |------|---------|
+| `CNAME` | Custom hostname for GitHub Pages (`www.m3pivot.com`) |
 | `index.html` | Home |
 | `startups.html` · `investors.html` · `contact.html` | Subpages |
 | `styles.css` | All styles |
 | `nav.js` | Mobile navigation drawer |
 | `assets/` | Logo(s), team photos (`team-*.jpg`), etc. |
 | `sitemap.xml` · `robots.txt` | SEO discovery |
+| `GODADDY-DNS-STEPS.md` | DNS checklist for GoDaddy |
 
 ## Partner headshots
 

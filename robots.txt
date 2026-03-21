@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://msathiamurthy.github.io/m3pivot-website/sitemap.xml
+Sitemap: https://www.m3pivot.com/sitemap.xml
