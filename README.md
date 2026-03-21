@@ -4,20 +4,20 @@ Static site for **[www.m3pivot.com](https://www.m3pivot.com)**. Built as plain H
 
 ## Live site
 
-- **Primary URL:** **https://www.m3pivot.com**  
-- After DNS is configured, GitHub may still show the old `*.github.io` URL in settings; visitors should use **www.m3pivot.com**.
+- **Primary URL (after DNS + GitHub custom domain):** **https://www.m3pivot.com**
+- **Preview on GitHub (current):** **https://msathiamurthy.github.io/m3pivot-website/** — including **`/option3/`** for staging feedback.
 
-**GoDaddy DNS instructions** (for someone with domain access): see **[GODADDY-DNS-STEPS.md](./GODADDY-DNS-STEPS.md)**.
+The repo **does not include a `CNAME` file right now** so GitHub Pages **does not redirect** `github.io` → `www`. That keeps **`/option3/`** shareable while GoDaddy DNS is pending.
+
+**When `www` should go live on GitHub:** copy **`CNAME.example`** to **`CNAME`** (one line: `www.m3pivot.com`), push, then in **GitHub → Settings → Pages** set **Custom domain** to `www.m3pivot.com` and save. After the DNS check passes, enable **Enforce HTTPS**. (GitHub will then redirect `github.io` URLs to `www` again—that’s normal.)
+
+**GoDaddy DNS instructions:** **[GODADDY-DNS-STEPS.md](./GODADDY-DNS-STEPS.md)**.
 
 ### Temporary staging: `option3/`
 
-A **full duplicate** of the site lives under **`option3/`** (same HTML, `styles.css`, `nav.js`, `assets/`). Canonical / Open Graph / JSON-LD in those files use:
+Full duplicate under **`option3/`** with canonical/OG aimed at **`https://msathiamurthy.github.io/m3pivot-website/option3/`**. Remove the folder once you no longer need that URL.
 
-**https://msathiamurthy.github.io/m3pivot-website/option3/**
-
-Use that path for **feedback and testing** while DNS is still on GoDaddy. **After `www.m3pivot.com` is live on GitHub Pages**, delete the `option3/` folder and push so only the root site remains.
-
-**Note:** With a **custom domain** enabled in GitHub Pages, requests to `github.io/.../option3/` may **301 to `www.m3pivot.com/option3/`**. Until `www` resolves to GitHub, that URL may not show this site—if so, preview with **`python3 -m http.server`** from the repo and open **`http://localhost:8080/option3/`**, or temporarily remove the custom domain only for testing.
+**Also clear the custom domain in GitHub if it’s still set:** **Settings → Pages → Custom domain → Remove**. If the UI still lists `www.m3pivot.com` after you push without `CNAME`, remove it there—otherwise GitHub can keep redirecting until that field is empty.
 
 ## Brand — logo typography & colors
 
@@ -42,7 +42,7 @@ The site stylesheet (`styles.css`) uses **Montserrat** and maps UI accents to th
 - Each page has **unique `meta description`**, **`canonical`**, **Open Graph**, and **Twitter** tags using **https://www.m3pivot.com**.
 - **`sitemap.xml`** and **`robots.txt`** use the same base URL.
 - **Home** includes **JSON-LD** (`Organization`).
-- **`CNAME`** in the repo root tells GitHub Pages to serve **www.m3pivot.com**.
+- **`CNAME`** (when present) tells GitHub Pages to use **www.m3pivot.com**; it is **omitted** during staging so `github.io` URLs don’t redirect. Use **`CNAME.example`** to restore.
 
 Optional: add **`favicon.ico`** and **LinkedIn** URLs in JSON-LD `sameAs` on `index.html`.
 
@@ -50,7 +50,7 @@ Optional: add **`favicon.ico`** and **LinkedIn** URLs in JSON-LD `sameAs` on `in
 
 | Path | Purpose |
 |------|---------|
-| `CNAME` | Custom hostname for GitHub Pages (`www.m3pivot.com`) |
+| `CNAME.example` | Template: copy to `CNAME` when enabling **www** on GitHub Pages |
 | `index.html` | Home |
 | `startups.html` · `investors.html` · `contact.html` | Subpages |
 | `styles.css` | All styles |

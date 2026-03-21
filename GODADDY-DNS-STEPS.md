@@ -17,7 +17,7 @@ Do this **first** (or in parallel with DNS):
 5. Wait until GitHub shows a **DNS check** (may show errors until GoDaddy is updated — that’s normal).
 6. After DNS propagates and the site loads on **www**, enable **Enforce HTTPS** (checkbox on the same Pages screen).
 
-> The repo includes a **`CNAME`** file containing `www.m3pivot.com`, which GitHub Pages expects for this domain.
+> **If the repo has no `CNAME` file** (staging mode so `github.io` URLs don’t redirect): before or when DNS is ready, add **`CNAME`** at the repo root with exactly **`www.m3pivot.com`** (you can copy from **`CNAME.example`** in the repo), commit, and push—then complete steps 3–6 above.
 
 ---
 
