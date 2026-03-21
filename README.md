@@ -2,6 +2,26 @@
 
 Static site for [M3Pivot](https://www.m3pivot.com) (draft).
 
+## Brand — logo typography & colors
+
+The **M3Pivot** wordmark in logo assets (e.g. `full-logo.png`, `small-logo.png` under each variant’s `assets/`) is set in:
+
+| | |
+|--|--|
+| **Font** | [Montserrat](https://fonts.google.com/specimen/Montserrat) |
+| **Style** | **Bold** |
+
+**Logo colors**
+
+| | |
+|--|--|
+| **Navy blue** | `#034285` |
+| **Gold** | `#E1A935` |
+
+Use the same face, weight, and colors when creating new raster or vector lockups that should match the official logo.
+
+**Option 3** (`option3/styles.css`) uses Montserrat site-wide and maps UI accents to this navy + gold palette (primary actions and nav highlights: navy; secondary labels / hero eyebrow: gold).
+
 ## Live site (GitHub Pages)
 
 - **Root (current default):** `https://msathiamurthy.github.io/m3pivot-website/`

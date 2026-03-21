@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
 
-/* Option 3 — light editorial theme (Slingshot-style: airy, warm paper, crisp type) */
+/* Option 3 — light theme aligned to logo: Montserrat + navy / gold */
 :root {
+  --navy: #034285;
+  --gold: #e1a935;
   --bg: #f3f1ec;
   --bg-elevated: #ffffff;
   --surface: #e6e3dc;
@@ -9,10 +11,11 @@
   --ink-soft: #3d3a36;
   --muted: #6b6560;
   --line: rgba(20, 18, 16, 0.1);
-  --accent: #b4533a;
-  --accent-soft: rgba(180, 83, 58, 0.12);
-  --accent-2: #2a6f5e;
-  --warm-glow: rgba(180, 83, 58, 0.09);
+  --accent: var(--navy);
+  --accent-soft: rgba(3, 66, 133, 0.12);
+  --accent-2: var(--gold);
+  --gold-soft: rgba(225, 169, 53, 0.18);
+  --warm-glow: rgba(3, 66, 133, 0.07);
   --card-shadow: 0 1px 2px rgba(20, 18, 16, 0.04),
     0 18px 48px rgba(20, 18, 16, 0.07);
 
@@ -48,25 +51,26 @@ body {
 }
 
 body {
-  font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+  font-family: "Montserrat", system-ui, -apple-system, sans-serif;
+  font-weight: 400;
   line-height: 1.65;
   color: var(--ink-soft);
   background: var(--bg);
   background-image:
     radial-gradient(ellipse 90% 55% at 50% -25%, var(--warm-glow), transparent),
-    radial-gradient(ellipse 55% 35% at 100% 15%, rgba(42, 111, 94, 0.07), transparent);
+    radial-gradient(ellipse 55% 35% at 100% 15%, rgba(225, 169, 53, 0.07), transparent);
 }
 
 .hero h1,
 .section-title,
 .page-hero h1 {
-  font-family: "Fraunces", Georgia, "Times New Roman", serif;
-  font-optical-sizing: auto;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 700;
 }
 
 .contact-card .form-title {
-  font-family: "Fraunces", Georgia, "Times New Roman", serif;
-  font-optical-sizing: auto;
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-weight: 700;
 }
 
 a {
@@ -160,7 +164,7 @@ img {
 }
 
 .brand:hover img {
-  box-shadow: 0 0 0 1px rgba(180, 83, 58, 0.28);
+  box-shadow: 0 0 0 1px rgba(3, 66, 133, 0.28);
   transform: translateY(-1px);
 }
 
@@ -182,7 +186,7 @@ img {
 }
 
 .menu-toggle:focus-visible {
-  outline: 2px solid rgba(180, 83, 58, 0.45);
+  outline: 2px solid rgba(3, 66, 133, 0.45);
   outline-offset: 2px;
 }
 
@@ -267,7 +271,7 @@ img {
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--ink);
-  border-color: rgba(180, 83, 58, 0.35);
+  border-color: rgba(3, 66, 133, 0.35);
   background: var(--accent-soft);
 }
 
@@ -434,7 +438,7 @@ section[id] {
 .hero h1 {
   margin: 0 0 1rem;
   font-size: clamp(1.85rem, 5vw, 3.15rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -485,11 +489,11 @@ section[id] {
 .btn-primary {
   background: var(--accent);
   color: #fff;
-  box-shadow: 0 6px 20px rgba(180, 83, 58, 0.28);
+  box-shadow: 0 6px 20px rgba(3, 66, 133, 0.28);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 10px 28px rgba(180, 83, 58, 0.34);
+  box-shadow: 0 10px 28px rgba(3, 66, 133, 0.34);
 }
 
 .btn-ghost {
@@ -499,7 +503,7 @@ section[id] {
 }
 
 .btn-ghost:hover {
-  border-color: rgba(180, 83, 58, 0.35);
+  border-color: rgba(3, 66, 133, 0.35);
   color: var(--ink);
   background: rgba(255, 255, 255, 0.7);
 }
@@ -518,10 +522,9 @@ section[id] {
 }
 
 .section-narrative .quote-text {
-  font-family: "Fraunces", Georgia, "Times New Roman", serif;
-  font-optical-sizing: auto;
+  font-family: "Montserrat", system-ui, sans-serif;
   font-size: clamp(1.08rem, 3.5vw, 1.35rem);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.5;
   color: var(--ink);
 }
@@ -552,7 +555,7 @@ section[id] {
 .section-title {
   margin: 0 0 0.75rem;
   font-size: clamp(1.35rem, 4vw, 1.75rem);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--ink);
   letter-spacing: -0.02em;
 }
@@ -598,7 +601,7 @@ section[id] {
 }
 
 .m3-card:hover {
-  border-color: rgba(180, 83, 58, 0.22);
+  border-color: rgba(3, 66, 133, 0.22);
   transform: translateY(-2px);
   box-shadow: var(--card-shadow);
 }
@@ -606,6 +609,7 @@ section[id] {
 .m3-card h3 {
   margin: 0 0 0.5rem;
   font-size: 1.05rem;
+  font-weight: 700;
   color: var(--ink);
 }
 
@@ -738,7 +742,7 @@ section[id] {
   align-items: center;
   justify-content: center;
   font-size: clamp(1.75rem, 5vw, 2.25rem);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--muted);
   letter-spacing: 0.02em;
 }
@@ -746,6 +750,7 @@ section[id] {
 .team-card h3 {
   margin: 0;
   font-size: 1.05rem;
+  font-weight: 700;
   color: var(--ink);
 }
 
@@ -830,8 +835,8 @@ textarea::placeholder {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid rgba(180, 83, 58, 0.22);
-  border-color: rgba(180, 83, 58, 0.45);
+  outline: 2px solid rgba(3, 66, 133, 0.22);
+  border-color: rgba(3, 66, 133, 0.45);
   background: #fff;
 }
 
@@ -938,6 +943,7 @@ textarea {
 .simple-card h3 {
   margin: 0 0 0.4rem;
   font-size: 1rem;
+  font-weight: 700;
   color: var(--ink);
 }
 
