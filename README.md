@@ -47,10 +47,10 @@ Optional: add **`favicon.ico`** and **LinkedIn** URLs in JSON-LD `sameAs` on `in
 | `startups.html` · `investors.html` · `contact.html` | Subpages |
 | `styles.css` | All styles |
 | `nav.js` | Mobile navigation drawer |
+| `footer.js` | Shared footer (logo + links); edit once for all pages |
 | `assets/` | Logo(s), team photos (`team-*.jpg`), etc. |
 | `sitemap.xml` · `robots.txt` | SEO discovery |
 | `GODADDY-DNS-STEPS.md` | Short GoDaddy DNS steps (for whoever manages the domain) |
-| `option3/` | Alternate layout / staging copy; see `option3/README.md` |
 | `pamphlet/` | A5 duplex poster; see `pamphlet/README.md` |
 
 ## Partner headshots

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-footer-context="contact">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -76,7 +76,15 @@
 
         <section class="content-block">
           <article class="contact-card" id="message-form">
-            <h2 class="form-title">Send a message</h2>
+            <div class="contact-card__head">
+              <img
+                class="contact-card__logo"
+                src="assets/small-logo.png"
+                alt=""
+                decoding="async"
+              />
+              <h2 class="form-title">Send a message</h2>
+            </div>
             <form action="https://formspree.io/f/mojknrgk" method="POST" data-formspree="true">
               <div>
                 <label for="full-name">Full name</label>
@@ -131,23 +139,8 @@
       </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="container container--wide footer-inner">
-        <div>
-          <p>© 2025 M3Pivot. All rights reserved.</p>
-          <p class="footer-tagline">
-            Guiding early-stage startups through Money, Market and Management.
-          </p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="index.html#home">Home</a>
-          <a href="index.html#team">Team</a>
-          <a href="startups.html">Startups</a>
-          <a href="investors.html">Investors</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </footer>
+    <footer class="site-footer" data-global-footer></footer>
+    <script src="footer.js" defer></script>
     <script src="nav.js" defer></script>
     <script>
       const msgFirst =
@@ -158,13 +151,15 @@
       document.querySelectorAll("form[data-formspree]").forEach((form) => {
         const status = form.querySelector(".form-status");
         const messageBox = form.parentElement.querySelector(".submission-message");
+        const formHead = form.parentElement.querySelector(".contact-card__head");
         const formTitle = form.parentElement.querySelector(".form-title");
         const messageBody = messageBox?.querySelector(".submission-message-body");
 
         const showSubmittedState = (isRepeat) => {
           if (messageBody) messageBody.textContent = isRepeat ? msgRepeat : msgFirst;
           form.hidden = true;
-          if (formTitle) formTitle.hidden = true;
+          if (formHead) formHead.hidden = true;
+          else if (formTitle) formTitle.hidden = true;
           if (messageBox) messageBox.hidden = false;
         };
 

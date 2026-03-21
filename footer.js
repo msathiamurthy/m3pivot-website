@@ -1,5 +1,5 @@
 /**
- * Global site footer — edit markup here to update all option3 pages.
+ * Global site footer — edit markup here to update all pages.
  * Set data-footer-context on <html>: "home" | "sub" | "contact"
  */
 (function () {
@@ -37,7 +37,7 @@
   mount.innerHTML =
     '<div class="container container--wide footer-inner">' +
     '<div class="footer-about">' +
-    '<img class="footer-logo-mark" src="../assets/small-logo.png" alt="" decoding="async" />' +
+    '<img class="footer-logo-mark" src="assets/small-logo.png" alt="" decoding="async" />' +
     '<div class="footer-about__text">' +
     "<p>© 2025 M3Pivot. All rights reserved.</p>" +
     '<p class="footer-tagline">' +
