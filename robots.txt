@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://msathiamurthy.github.io/m3pivot-website/sitemap.xml

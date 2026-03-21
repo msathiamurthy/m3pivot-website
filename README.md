@@ -26,6 +26,19 @@ The **M3Pivot** wordmark in logo assets under `assets/` (e.g. `full-logo.png`, `
 
 The site stylesheet (`styles.css`) uses **Montserrat** and maps UI accents to this navy + gold palette.
 
+## SEO
+
+- Each page has **unique `meta description`**, **`canonical`**, **Open Graph**, and **Twitter** tags.
+- **`sitemap.xml`** and **`robots.txt`** (with sitemap URL) live at the repo root.
+- **Home** includes **JSON-LD** (`Organization`) for rich results.
+
+**When `www.m3pivot.com` is the primary URL**, find-and-replace  
+`https://msathiamurthy.github.io/m3pivot-website` → `https://www.m3pivot.com` in:
+
+`index.html`, `contact.html`, `startups.html`, `investors.html`, `sitemap.xml`, `robots.txt`, and the JSON-LD block on the home page.
+
+Optional: add **`favicon.ico`** (or PNG + `<link rel="icon">`) and put **LinkedIn** URLs in `sameAs` inside the JSON-LD on `index.html`.
+
 ## Project layout
 
 | Path | Purpose |
@@ -35,6 +48,7 @@ The site stylesheet (`styles.css`) uses **Montserrat** and maps UI accents to th
 | `styles.css` | All styles |
 | `nav.js` | Mobile navigation drawer |
 | `assets/` | Logo(s), team photos (`team-*.jpg`), etc. |
+| `sitemap.xml` · `robots.txt` | SEO discovery |
 
 ## Partner headshots
 
