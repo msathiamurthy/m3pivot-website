@@ -5,7 +5,7 @@ Static site for **[www.m3pivot.com](https://www.m3pivot.com)**. Built as plain H
 ## Live site
 
 - **Primary URL (after DNS + GitHub custom domain):** **https://www.m3pivot.com**
-- **Preview on GitHub (current):** **https://msathiamurthy.github.io/m3pivot-website/** — including **`/option3/`** for staging feedback.
+- **Preview on GitHub (current):** **https://msathiamurthy.github.io/m3pivot-website/** — iterate on **`/option3/`** (see **`option3/README.md`**).
 
 The repo **does not include a `CNAME` file right now** so GitHub Pages **does not redirect** `github.io` → `www`. That keeps **`/option3/`** shareable while GoDaddy DNS is pending.
 
@@ -13,9 +13,9 @@ The repo **does not include a `CNAME` file right now** so GitHub Pages **does no
 
 **GoDaddy DNS instructions:** **[GODADDY-DNS-STEPS.md](./GODADDY-DNS-STEPS.md)**.
 
-### Temporary staging: `option3/`
+### `option3/` — active development variant
 
-Full duplicate under **`option3/`** with canonical/OG aimed at **`https://msathiamurthy.github.io/m3pivot-website/option3/`**. Remove the folder once you no longer need that URL.
+Site copy under **`option3/`** with canonical/OG for **`…/option3/`**. Uses shared **`assets/`** at repo root (`../assets/` in HTML). Details: **`option3/README.md`**.
 
 **Also clear the custom domain in GitHub if it’s still set:** **Settings → Pages → Custom domain → Remove**. If the UI still lists `www.m3pivot.com` after you push without `CNAME`, remove it there—otherwise GitHub can keep redirecting until that field is empty.
 

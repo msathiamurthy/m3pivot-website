@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-footer-context="home">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +21,7 @@
     <meta property="og:url" content="https://msathiamurthy.github.io/m3pivot-website/option3/" />
     <meta
       property="og:image"
-      content="https://msathiamurthy.github.io/m3pivot-website/option3/assets/full-logo.png"
+      content="https://msathiamurthy.github.io/m3pivot-website/assets/full-logo.png"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="M3Pivot | We travel with founders" />
@@ -31,7 +31,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://msathiamurthy.github.io/m3pivot-website/option3/assets/full-logo.png"
+      content="https://msathiamurthy.github.io/m3pivot-website/assets/full-logo.png"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,9 +39,16 @@
     <link
       rel="preload"
       as="image"
-      href="assets/full-logo.png"
+      href="../assets/full-logo.png"
       media="(max-width: 767px)"
     />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/small-logo.png"
+      sizes="any"
+    />
+    <link rel="apple-touch-icon" href="../assets/small-logo.png" />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
@@ -49,7 +56,7 @@
         "@type": "Organization",
         "name": "M3Pivot",
         "url": "https://msathiamurthy.github.io/m3pivot-website/option3/",
-        "logo": "https://msathiamurthy.github.io/m3pivot-website/option3/assets/full-logo.png",
+        "logo": "https://msathiamurthy.github.io/m3pivot-website/assets/full-logo.png",
         "description": "Early-stage partners for founders in India — Money, Market \u0026 Management with hands-on support from experienced operators.",
         "areaServed": "IN"
       }
@@ -59,7 +66,7 @@
     <header class="site-header">
       <div class="container container--wide header-inner">
         <a class="brand" href="index.html">
-          <img src="assets/full-logo.png" alt="M3Pivot" />
+          <img src="../assets/full-logo.png" alt="M3Pivot" />
         </a>
         <button
           type="button"
@@ -102,25 +109,39 @@
 
         <section class="section-narrative" aria-labelledby="journey-heading">
           <h2 id="journey-heading" class="visually-hidden">How we work</h2>
-          <blockquote>
-            <p class="quote-text">
-              Unlike consultants who parachute in with a deck and disappear, we
-              stay beside you — from your earliest calls to the conversations
-              that shape your company’s future.
-            </p>
-            <p class="quote-note">
-              Skin in the game. Not slides on a screen.
-            </p>
-          </blockquote>
+          <div class="section-narrative__inner">
+            <div class="narrative-visual narrative-visual--mark" aria-hidden="true"></div>
+            <blockquote class="section-narrative__quote">
+              <p class="quote-text">
+                We stay beside you — not parachute in with a deck and vanish —
+                from first calls to the conversations that shape your company.
+              </p>
+              <p class="quote-note">
+                Skin in the game. Not slides on a screen.
+              </p>
+            </blockquote>
+          </div>
         </section>
 
         <section id="m3" aria-labelledby="m3-title">
-          <p class="section-kicker">The three pivots</p>
-          <h2 id="m3-title" class="section-title">Money, Market &amp; Management</h2>
-          <p class="section-intro">
-            Everything we do rolls up to these three. Clear focus. Practical
-            support. Built for founders who are done guessing alone.
-          </p>
+          <div class="m3-section-head">
+            <div class="m3-section-logo-wrap" aria-hidden="true">
+              <img
+                class="m3-section-logo"
+                src="../assets/small-logo.png"
+                alt=""
+                decoding="async"
+              />
+            </div>
+            <div class="m3-section-head__text">
+              <p class="section-kicker">The three pivots</p>
+              <h2 id="m3-title" class="section-title">Money, Market &amp; Management</h2>
+              <p class="section-intro">
+                Everything we do rolls up to these three. Clear focus. Practical
+                support. Built for founders who are done guessing alone.
+              </p>
+            </div>
+          </div>
           <div class="m3-grid">
             <article class="m3-card">
               <div class="m3-icon" aria-hidden="true">💰</div>
@@ -188,7 +209,7 @@
             <article class="team-card">
               <figure class="team-photo no-photo">
                 <img
-                  src="assets/team-murali.jpg"
+                  src="../assets/team-murali.jpg"
                   alt="Murali Ravindran"
                   loading="lazy"
                   onload="this.parentElement.classList.remove('no-photo')"
@@ -216,7 +237,7 @@
             <article class="team-card">
               <figure class="team-photo no-photo">
                 <img
-                  src="assets/team-sankar.jpg"
+                  src="../assets/team-sankar.jpg"
                   alt="Sankar Kaliaperumal"
                   loading="lazy"
                   onload="this.parentElement.classList.remove('no-photo')"
@@ -243,7 +264,7 @@
             <article class="team-card">
               <figure class="team-photo no-photo">
                 <img
-                  src="assets/team-muthu.jpg"
+                  src="../assets/team-muthu.jpg"
                   alt="Muthu Sathiamurthy"
                   loading="lazy"
                   onload="this.parentElement.classList.remove('no-photo')"
@@ -271,7 +292,7 @@
             <article class="team-card">
               <figure class="team-photo no-photo">
                 <img
-                  src="assets/team-sanjeev.jpg"
+                  src="../assets/team-sanjeev.jpg"
                   alt="Sanjeev Uruvandavida"
                   loading="lazy"
                   onload="this.parentElement.classList.remove('no-photo')"
@@ -305,7 +326,15 @@
             partner will get back to you within two business days.
           </p>
           <article class="contact-card">
-            <h3 class="form-title">Send a message</h3>
+            <div class="contact-card__head">
+              <img
+                class="contact-card__logo"
+                src="../assets/small-logo.png"
+                alt=""
+                decoding="async"
+              />
+              <h3 class="form-title">Send a message</h3>
+            </div>
             <form action="https://formspree.io/f/mojknrgk" method="POST" data-formspree="true">
               <div>
                 <label for="full-name">Full name</label>
@@ -356,24 +385,9 @@
       </div>
     </main>
 
-    <footer class="site-footer">
-      <div class="container container--wide footer-inner">
-        <div>
-          <p>© 2025 M3Pivot. All rights reserved.</p>
-          <p class="footer-tagline">
-            Guiding early-stage startups through Money, Market and Management.
-          </p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="#home">Home</a>
-          <a href="#team">Team</a>
-          <a href="startups.html">Startups</a>
-          <a href="investors.html">Investors</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </footer>
+    <footer class="site-footer" data-global-footer></footer>
 
+    <script src="footer.js" defer></script>
     <script src="nav.js" defer></script>
     <script>
       const sections = document.querySelectorAll("section[id]");
@@ -405,13 +419,15 @@
       document.querySelectorAll("form[data-formspree]").forEach((form) => {
         const status = form.querySelector(".form-status");
         const messageBox = form.parentElement.querySelector(".submission-message");
+        const formHead = form.parentElement.querySelector(".contact-card__head");
         const formTitle = form.parentElement.querySelector(".form-title");
         const messageBody = messageBox?.querySelector(".submission-message-body");
 
         const showSubmittedState = (isRepeat) => {
           if (messageBody) messageBody.textContent = isRepeat ? msgRepeat : msgFirst;
           form.hidden = true;
-          if (formTitle) formTitle.hidden = true;
+          if (formHead) formHead.hidden = true;
+          else if (formTitle) formTitle.hidden = true;
           if (messageBox) messageBox.hidden = false;
         };
 
