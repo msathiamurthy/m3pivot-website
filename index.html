@@ -3,21 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f1ec" />
+    <meta name="description" content="M3Pivot — early-stage partners for founders in India. Money, Market &amp; Management." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <title>M3Pivot | Founder-First Growth Platform</title>
+    <title>M3Pivot | We travel with founders</title>
+    <link
+      rel="preload"
+      as="image"
+      href="assets/full-logo.png"
+      media="(max-width: 767px)"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="container header-inner">
+      <div class="container container--wide header-inner">
         <a class="brand" href="index.html">
-          <img src="assets/logo.png" alt="M3Pivot logo" />
+          <img src="assets/full-logo.png" alt="M3Pivot" />
         </a>
-        <nav class="nav-links" aria-label="Primary">
+        <button
+          type="button"
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span class="menu-toggle-box" aria-hidden="true">
+            <span class="menu-toggle-inner"></span>
+          </span>
+        </button>
+        <div class="nav-backdrop" aria-hidden="true"></div>
+        <nav id="primary-nav" class="nav-links" aria-label="Primary">
           <a class="active" href="#home">Home</a>
-          <a href="#startups">Startups</a>
-          <a href="#investors">Investors</a>
+          <a href="#team">Team</a>
+          <a href="startups.html">Startups</a>
+          <a href="investors.html">Investors</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -26,200 +47,234 @@
     <main>
       <div class="container">
         <section class="hero" id="home">
-          <span class="eyebrow">Pivot with a Purpose</span>
-          <h1>We don't just advise. We travel with founders.</h1>
-          <p>
-            100 years of combined startup experience, guiding founders through
-            their most critical moments around Money, Market and Management.
+          <span class="eyebrow">Pivot with a purpose</span>
+          <h1>We don’t just advise. We travel with you.</h1>
+          <p class="hero-lead">
+            For early-stage founders in India, we show up in the moments that
+            matter — around <strong style="color: var(--ink)">Money, Market,
+            and Management</strong> — with more than a century of combined
+            experience at the table.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#startups">Start Your Journey</a>
-            <a class="btn btn-secondary" href="#investors">Explore Startups</a>
+            <a class="btn btn-primary" href="#contact">Talk to us</a>
+            <a class="btn btn-ghost" href="#m3">How we help</a>
           </div>
         </section>
 
-        <section class="grid grid-3">
-          <article class="card">
-            <h3>Money</h3>
-            <p>
-              Cash is king. We help founders manage runway, raise smart, and
-              spend with purpose.
+        <section class="section-narrative" aria-labelledby="journey-heading">
+          <h2 id="journey-heading" class="visually-hidden">How we work</h2>
+          <blockquote>
+            <p class="quote-text">
+              Unlike consultants who parachute in with a deck and disappear, we
+              stay beside you — from your earliest calls to the conversations
+              that shape your company’s future.
             </p>
-            <span class="pill">Capital Strategy</span>
-          </article>
-          <article class="card">
-            <h3>Market</h3>
-            <p>
-              Markets shift fast. We help teams sharpen GTM and stay ahead of
-              the curve.
+            <p class="quote-note">
+              Skin in the game. Not slides on a screen.
             </p>
-            <span class="pill">Go-to-Market</span>
-          </article>
-          <article class="card">
-            <h3>Management</h3>
-            <p>
-              People make or break startups. We help build teams that execute,
-              adapt, and deliver.
-            </p>
-            <span class="pill">Leadership & Execution</span>
-          </article>
+          </blockquote>
         </section>
 
-        <h2 class="section-title">Why M3Pivot</h2>
-        <p class="section-subtitle">
-          M3Pivot connects early-stage startup founders with experienced
-          partners who have lived through the highs and lows of building
-          companies.
-        </p>
-        <section class="grid grid-2">
-          <article class="card">
-            <h3>For Early-Stage Startups</h3>
-            <p>
-              Unlike consultants who parachute in with advice and leave, we
-              travel with founders from earliest decisions to investor meetings.
-            </p>
-            <a class="btn btn-secondary" href="#startups">View Founder Track</a>
-          </article>
-          <article class="card">
-            <h3>Investor Access, Founder-Centric</h3>
-            <p>
-              We connect investors with startups that are battle-tested and
-              ready, after months of hands-on support.
-            </p>
-            <a class="btn btn-secondary" href="#investors">How We Curate</a>
-          </article>
+        <section id="m3" aria-labelledby="m3-title">
+          <p class="section-kicker">The three pivots</p>
+          <h2 id="m3-title" class="section-title">Money, Market &amp; Management</h2>
+          <p class="section-intro">
+            Everything we do rolls up to these three. Clear focus. Practical
+            support. Built for founders who are done guessing alone.
+          </p>
+          <div class="m3-grid">
+            <article class="m3-card">
+              <div class="m3-icon" aria-hidden="true">💰</div>
+              <h3>Money</h3>
+              <p>
+                Cash is king. We help you manage runway, raise smart, and spend
+                with purpose.
+              </p>
+            </article>
+            <article class="m3-card">
+              <div class="m3-icon" aria-hidden="true">📈</div>
+              <h3>Market</h3>
+              <p>
+                Markets shift fast. We help you find your footing, sharpen your
+                GTM, and stay ahead of the curve.
+              </p>
+            </article>
+            <article class="m3-card">
+              <div class="m3-icon" aria-hidden="true">👥</div>
+              <h3>Management</h3>
+              <p>
+                People make or break startups. We help you build a team that
+                executes, adapts, and delivers.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <section id="proof" aria-labelledby="proof-title">
+        <div class="container">
+          <p class="section-kicker">Why it matters</p>
+          <h2 id="proof-title" class="section-title">Built for India’s early stage</h2>
+          <p class="section-intro">
+            Pre-seed and seed startups — where hands-on judgment
+            still beats generic playbooks.
+          </p>
+          <div class="proof-row">
+            <div class="proof-item">
+              <strong>100+ years</strong>
+              <span>Combined experience across product, GTM, finance, and engineering — in the room with you.</span>
+            </div>
+            <div class="proof-item">
+              <strong>India focus</strong>
+              <span>We work with founders building here, for markets here and abroad.</span>
+            </div>
+            <div class="proof-item">
+              <strong>Pre-seed &amp; seed</strong>
+              <span>The stage where the right pivots change everything.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container container--wide">
+        <section id="team" aria-labelledby="team-title">
+          <p class="section-kicker">Meet the partners</p>
+          <h2 id="team-title" class="section-title">Four partners. One mission.</h2>
+          <p class="section-intro">
+            We’ve built, scaled, failed, and succeeded across software, hardware,
+            operations, and finance — and we show up for founders who are doing
+            the same.
+          </p>
+          <div class="team-grid">
+            <article class="team-card">
+              <figure class="team-photo no-photo">
+                <img
+                  src="assets/team-murali.jpg"
+                  alt="Murali Ravindran"
+                  loading="lazy"
+                  onload="this.parentElement.classList.remove('no-photo')"
+                  onerror="this.remove(); this.parentElement.classList.add('no-photo');"
+                />
+                <div class="team-photo-placeholder" aria-hidden="true">MR</div>
+              </figure>
+              <h3>Murali Ravindran</h3>
+              <p class="team-role">Partner — Finance &amp; Global Business</p>
+              <p class="team-bio">
+                25 years of product management, global sales and business
+                development in the embedded systems domain. Expertise in
+                financials, inter-company pricing, arms-length pricing, and
+                compliance for global startup companies.
+              </p>
+              <a
+                class="linkedin"
+                href="https://www.linkedin.com/in/rmuralimanohar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn →</a
+              >
+            </article>
+
+            <article class="team-card">
+              <figure class="team-photo no-photo">
+                <img
+                  src="assets/team-sankar.jpg"
+                  alt="Sankar Kaliaperumal"
+                  loading="lazy"
+                  onload="this.parentElement.classList.remove('no-photo')"
+                  onerror="this.remove(); this.parentElement.classList.add('no-photo');"
+                />
+                <div class="team-photo-placeholder" aria-hidden="true">SK</div>
+              </figure>
+              <h3>Sankar Kaliaperumal</h3>
+              <p class="team-role">Partner — Product &amp; Operations</p>
+              <p class="team-bio">
+                25 years of startup experience across US and India. Gone through
+                successful and painful exits. Expertise in product management,
+                operational excellence, and building strong culture among teams.
+              </p>
+              <a
+                class="linkedin"
+                href="https://www.linkedin.com/in/sankarkaliaperumal/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn →</a
+              >
+            </article>
+
+            <article class="team-card">
+              <figure class="team-photo no-photo">
+                <img
+                  src="assets/team-muthu.jpg"
+                  alt="Muthu Sathiamurthy"
+                  loading="lazy"
+                  onload="this.parentElement.classList.remove('no-photo')"
+                  onerror="this.remove(); this.parentElement.classList.add('no-photo');"
+                />
+                <div class="team-photo-placeholder" aria-hidden="true">MS</div>
+              </figure>
+              <h3>Muthu Sathiamurthy</h3>
+              <p class="team-role">Partner — Technology &amp; Engineering</p>
+              <p class="team-bio">
+                25 years of experience in software development across large
+                enterprises and Global Capability Centers in India. Expertise in
+                software product management, architecture and building
+                high-performing product development teams.
+              </p>
+              <a
+                class="linkedin"
+                href="https://www.linkedin.com/in/muthu-sathiamurthy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn →</a
+              >
+            </article>
+
+            <article class="team-card">
+              <figure class="team-photo no-photo">
+                <img
+                  src="assets/team-sanjeev.jpg"
+                  alt="Sanjeev Uruvandavida"
+                  loading="lazy"
+                  onload="this.parentElement.classList.remove('no-photo')"
+                  onerror="this.remove(); this.parentElement.classList.add('no-photo');"
+                />
+                <div class="team-photo-placeholder" aria-hidden="true">SU</div>
+              </figure>
+              <h3>Sanjeev Uruvandavida</h3>
+              <p class="team-role">Partner — Investor Relations &amp; Supply Chain</p>
+              <p class="team-bio">
+                25 years of experience in manufacturing, supply chain and
+                operations. Expertise in investor relations and mentoring startup
+                founders for over a decade.
+              </p>
+              <a
+                class="linkedin"
+                href="https://www.linkedin.com/in/sanjeevu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn →</a
+              >
+            </article>
+          </div>
         </section>
 
-        <h2 class="section-title">At a Glance</h2>
-        <section class="grid grid-3">
-          <article class="card">
-            <p class="metric">100+ years</p>
-            <p class="muted">Startups engaged</p>
-          </article>
-          <article class="card">
-            <p class="metric">Pre-seed & seed</p>
-            <p class="muted">Founder-investor introductions</p>
-          </article>
-          <article class="card">
-            <p class="metric">India focus</p>
-            <p class="muted">Sectors actively covered</p>
-          </article>
-        </section>
-
-        <h2 class="section-title" id="startups">Startup Programs</h2>
-        <p class="section-subtitle">
-          A founder-first operating playbook designed for early-stage teams
-          that need to improve readiness and accelerate outcomes.
-        </p>
-        <section class="grid grid-2">
-          <article class="card">
-            <h3>How We Work With Founders</h3>
-            <p>
-              We partner in the trenches across product, GTM, team building,
-              and fundraising - as operators with skin in the game.
-            </p>
-            <span class="pill">Hands-On Support</span>
-          </article>
-          <article class="card">
-            <h3>Ideal Startup Fit</h3>
-            <p>
-              Pre-seed and seed-stage technology startups in India, especially
-              software, embedded systems, and hardware-adjacent businesses.
-            </p>
-            <span class="pill">Pre-Seed to Seed</span>
-          </article>
-        </section>
-        <section class="grid grid-3">
-          <article class="card">
-            <h3>Fundraising Readiness</h3>
-            <p>
-              Runway planning, financial clarity, and investor-ready narratives
-              built for credible fundraising.
-            </p>
-            <span class="pill">Money</span>
-          </article>
-          <article class="card">
-            <h3>Product-Market Fit</h3>
-            <p>
-              Problem-solution validation, tighter GTM messaging, and faster
-              feedback loops from the market.
-            </p>
-            <span class="pill">Market</span>
-          </article>
-          <article class="card">
-            <h3>Leadership Systems</h3>
-            <p>
-              Hiring discipline, operating cadence, and execution culture for
-              high-performing founder teams.
-            </p>
-            <span class="pill">Management</span>
-          </article>
-        </section>
-
-        <h2 class="section-title" id="investors">Investor Network</h2>
-        <p class="section-subtitle">
-          We engage investors to support founder growth with curated, high-signal
-          opportunities and clear company context.
-        </p>
-        <section class="grid grid-2">
-          <article class="card">
-            <h3>Founder-First Curation Model</h3>
-            <p>
-              We do not introduce startups cold. We work alongside founders for
-              months before making investor introductions.
-            </p>
-          </article>
-          <article class="card">
-            <h3>How Investors Add Value</h3>
-            <p>
-              Investors receive curated startups with stronger financial,
-              market, and team fundamentals.
-            </p>
-          </article>
-        </section>
-        <section class="grid grid-3">
-          <article class="card">
-            <h3>Screened Deal Flow</h3>
-            <p>
-              Curated, battle-tested early-stage startups rather than raw
-              inbound pitch flow.
-            </p>
-            <span class="pill">Pipeline Quality</span>
-          </article>
-          <article class="card">
-            <h3>Founder Readiness Signals</h3>
-            <p>
-              Teams are guided, challenged, and strengthened before they are
-              introduced to investors.
-            </p>
-            <span class="pill">Decision Support</span>
-          </article>
-          <article class="card">
-            <h3>Market Context</h3>
-            <p>
-              Domain-aware context from partners with decades of operating
-              experience in relevant sectors.
-            </p>
-            <span class="pill">Intelligence</span>
-          </article>
-        </section>
-
-        <h2 class="section-title" id="contact">Contact</h2>
-        <p class="section-subtitle">
-          Building your startup and need focused support? Send your details and
-          we will get in touch.
-        </p>
-        <section class="grid">
-          <article class="card">
-            <h3 class="form-title">Send a Message</h3>
+        <section id="contact" aria-labelledby="contact-title">
+          <p class="section-kicker">Next step</p>
+          <h2 id="contact-title" class="section-title">Tell us where you are</h2>
+          <p class="section-intro">
+            Share a few lines about your stage and what you’re wrestling with. A
+            partner will get back to you within two business days.
+          </p>
+          <article class="contact-card">
+            <h3 class="form-title">Send a message</h3>
             <form action="https://formspree.io/f/mojknrgk" method="POST" data-formspree="true">
               <div>
-                <label for="full-name">Full Name</label>
+                <label for="full-name">Full name</label>
                 <input
                   id="full-name"
                   name="full_name"
                   type="text"
-                  placeholder="Enter your full name"
+                  placeholder="Your name"
                   required
                 />
               </div>
@@ -229,7 +284,7 @@
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="you@company.com"
                   required
                 />
               </div>
@@ -237,7 +292,7 @@
                 <label for="role">I am a</label>
                 <select id="role" name="role" required>
                   <option value="" disabled selected>Select one</option>
-                  <option value="startup-founder">Startup Founder</option>
+                  <option value="startup-founder">Startup founder</option>
                   <option value="investor">Investor</option>
                 </select>
               </div>
@@ -246,19 +301,16 @@
                 <textarea
                   id="message"
                   name="message"
-                  placeholder="Write your message"
+                  placeholder="What are you building? What do you need help with?"
                   required
                 ></textarea>
               </div>
-              <button class="btn btn-primary" type="submit">Send Message</button>
+              <button class="btn btn-primary" type="submit">Send message</button>
               <p class="muted form-status" aria-live="polite"></p>
             </form>
             <div class="submission-message" hidden>
-              <h3>Thank You</h3>
-              <p class="muted">
-                You have already submitted this form in this session. Our
-                partners will get back to you soon.
-              </p>
+              <h3 style="margin: 0 0 0.5rem; color: var(--ink); font-size: 1.1rem;">Thank you</h3>
+              <p class="muted submission-message-body" style="margin: 0;"></p>
             </div>
           </article>
         </section>
@@ -266,19 +318,27 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© 2025 M3Pivot. All rights reserved.</p>
+      <div class="container container--wide footer-inner">
+        <div>
+          <p>© 2025 M3Pivot. All rights reserved.</p>
+          <p class="footer-tagline">
+            Guiding early-stage startups through Money, Market and Management.
+          </p>
+        </div>
         <nav class="footer-nav" aria-label="Footer">
           <a href="#home">Home</a>
-          <a href="#startups">Startups</a>
-          <a href="#investors">Investors</a>
+          <a href="#team">Team</a>
+          <a href="startups.html">Startups</a>
+          <a href="investors.html">Investors</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
     </footer>
+
+    <script src="nav.js" defer></script>
     <script>
-      const sections = document.querySelectorAll("section[id], h2[id]");
-      const navLinks = document.querySelectorAll(".nav-links a");
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll("#primary-nav a[href^='#']");
 
       const observer = new IntersectionObserver(
         (entries) => {
@@ -286,44 +346,47 @@
             if (!entry.isIntersecting) return;
             const id = entry.target.getAttribute("id");
             navLinks.forEach((link) => {
-              link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === "#" + id
+              );
             });
           });
         },
-        { rootMargin: "-40% 0px -45% 0px", threshold: 0.01 }
+        { rootMargin: "-35% 0px -50% 0px", threshold: 0.02 }
       );
 
       sections.forEach((section) => observer.observe(section));
 
-      // In-page Formspree handling with session guard
+      const msgFirst =
+        "Thank you for reaching out! One of our partners will get back to you within 2 business days.";
+      const msgRepeat =
+        "You have already submitted this form in this session. Our partners will get back to you soon.";
+
       document.querySelectorAll("form[data-formspree]").forEach((form) => {
         const status = form.querySelector(".form-status");
         const messageBox = form.parentElement.querySelector(".submission-message");
         const formTitle = form.parentElement.querySelector(".form-title");
+        const messageBody = messageBox?.querySelector(".submission-message-body");
 
-        const showSubmittedState = () => {
+        const showSubmittedState = (isRepeat) => {
+          if (messageBody) messageBody.textContent = isRepeat ? msgRepeat : msgFirst;
           form.hidden = true;
-          if (formTitle) {
-            formTitle.hidden = true;
-          }
-          if (messageBox) {
-            messageBox.hidden = false;
-          }
+          if (formTitle) formTitle.hidden = true;
+          if (messageBox) messageBox.hidden = false;
         };
 
         if (sessionStorage.getItem("m3pivot_form_submitted") === "true") {
-          showSubmittedState();
+          showSubmittedState(true);
         }
 
         form.addEventListener("submit", async (event) => {
           event.preventDefault();
           if (sessionStorage.getItem("m3pivot_form_submitted") === "true") {
-            showSubmittedState();
+            showSubmittedState(true);
             return;
           }
-          if (status) {
-            status.textContent = "Sending...";
-          }
+          if (status) status.textContent = "Sending…";
           const data = new FormData(form);
           try {
             const response = await fetch(form.action, {
@@ -334,16 +397,12 @@
             if (response.ok) {
               form.reset();
               sessionStorage.setItem("m3pivot_form_submitted", "true");
-              showSubmittedState();
-            } else {
-              if (status) {
-                status.textContent = "Something went wrong. Please try again.";
-              }
+              showSubmittedState(false);
+            } else if (status) {
+              status.textContent = "Something went wrong. Please try again.";
             }
-          } catch (error) {
-            if (status) {
-              status.textContent = "Network error. Please try again.";
-            }
+          } catch (e) {
+            if (status) status.textContent = "Network error. Please try again.";
           }
         });
       });

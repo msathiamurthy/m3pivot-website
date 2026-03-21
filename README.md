@@ -1,10 +1,16 @@
 # M3Pivot website
 
-Static site for [M3Pivot](https://www.m3pivot.com) (draft).
+Static site for [M3Pivot](https://www.m3pivot.com) (draft). Built as plain HTML/CSS/JS, deployable on **GitHub Pages** from the repo root.
+
+## Live site (GitHub Pages)
+
+**https://msathiamurthy.github.io/m3pivot-website/**
+
+*(After you connect a custom domain in repo Settings → Pages, that URL may redirect to `www.m3pivot.com`.)*
 
 ## Brand — logo typography & colors
 
-The **M3Pivot** wordmark in logo assets (e.g. `full-logo.png`, `small-logo.png` under each variant’s `assets/`) is set in:
+The **M3Pivot** wordmark in logo assets under `assets/` (e.g. `full-logo.png`, `small-logo.png`) is set in:
 
 | | |
 |--|--|
@@ -18,43 +24,39 @@ The **M3Pivot** wordmark in logo assets (e.g. `full-logo.png`, `small-logo.png` 
 | **Navy blue** | `#034285` |
 | **Gold** | `#E1A935` |
 
-Use the same face, weight, and colors when creating new raster or vector lockups that should match the official logo.
+The site stylesheet (`styles.css`) uses **Montserrat** and maps UI accents to this navy + gold palette.
 
-**Option 3** (`option3/styles.css`) uses Montserrat site-wide and maps UI accents to this navy + gold palette (primary actions and nav highlights: navy; secondary labels / hero eyebrow: gold).
+## Project layout
 
-## Live site (GitHub Pages)
+| Path | Purpose |
+|------|---------|
+| `index.html` | Home |
+| `startups.html` · `investors.html` · `contact.html` | Subpages |
+| `styles.css` | All styles |
+| `nav.js` | Mobile navigation drawer |
+| `assets/` | Logo(s), team photos (`team-*.jpg`), etc. |
 
-- **Root (current default):** `https://msathiamurthy.github.io/m3pivot-website/`
+## Partner headshots
 
-## Partner preview variants (subfolders)
-
-Short-term URLs to compare layouts and copy:
-
-| Variant   | URL |
-|-----------|-----|
-| **Option 1** | `https://msathiamurthy.github.io/m3pivot-website/option1/` |
-| **Option 2** | `https://msathiamurthy.github.io/m3pivot-website/option2/` *(simplified narrative layout + team section)* |
-| **Option 3** | `https://msathiamurthy.github.io/m3pivot-website/option3/` |
-
-Each folder is a **full copy** of the site (`index.html`, `styles.css`, `startups.html`, `investors.html`, `contact.html`, `assets/`). Edit files inside the folder you’re iterating on so paths stay correct.
-
-### Option 2 — partner headshots
-
-The site expects **560×560** JPEGs in `option2/assets/`:
+The site expects **560×560** JPEGs in `assets/`:
 
 - `team-murali.jpg` · `team-sankar.jpg` · `team-muthu.jpg` · `team-sanjeev.jpg`
 
-You can drop first-name sources in repo root `assets/` (e.g. `murali.jpeg`, `sankar.jpeg`, `muthu.jpg`, `sanjeev.jpeg`) and re-run square crop + export to `option2/assets/team-*.jpg` with `sips` (see commit history) or replace the `team-*.jpg` files directly. If a file is missing, initials placeholders still show.
+Drop sources in `assets/` (e.g. `murali.jpeg`, `sankar.jpeg`, `muthu.jpg`, `sanjeev.jpeg`) and run:
+
+```bash
+PYTHONPATH=.deps python3 scripts/build_team_portraits.py
+```
+
+(requires Pillow in `.deps/` or install). Or replace the `team-*.jpg` files directly. If a file is missing, initials placeholders still show.
 
 ## Local preview
-
-Open `index.html` in a browser, or use a static server from the repo root:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then visit `http://localhost:8080/option2/` etc.
+Then open **http://localhost:8080/**
 
 ## Repo
 

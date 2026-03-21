@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-Build square team portraits for option2 from root assets/.
-- Optional whitespace trim (for headshots on white backgrounds).
-- Center-crop cover to OUT_SIZE x OUT_SIZE.
+Build square team portraits for the site from root assets/.
+Writes to assets/team-*.jpg (optional whitespace trim; center-crop cover).
 """
 from __future__ import annotations
 
@@ -19,12 +18,12 @@ from PIL import Image  # noqa: E402
 OUT_SIZE = 560
 JPEG_QUALITY = 88
 
-# (source relative to repo root, dest relative to option2/, trim whitespace?)
+# (source relative to repo root, dest relative to repo root, trim whitespace?)
 JOBS: list[tuple[str, str, bool]] = [
-    ("assets/murali.jpeg", "option2/assets/team-murali.jpg", True),
-    ("assets/sankar.jpeg", "option2/assets/team-sankar.jpg", True),
-    ("assets/muthu.jpg", "option2/assets/team-muthu.jpg", False),
-    ("assets/sanjeev.jpeg", "option2/assets/team-sanjeev.jpg", False),
+    ("assets/murali.jpeg", "assets/team-murali.jpg", True),
+    ("assets/sankar.jpeg", "assets/team-sankar.jpg", True),
+    ("assets/muthu.jpg", "assets/team-muthu.jpg", False),
+    ("assets/sanjeev.jpeg", "assets/team-sanjeev.jpg", False),
 ]
 
 
