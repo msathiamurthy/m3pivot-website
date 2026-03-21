@@ -9,6 +9,16 @@ Static site for **[www.m3pivot.com](https://www.m3pivot.com)**. Built as plain H
 
 **GoDaddy DNS instructions** (for someone with domain access): see **[GODADDY-DNS-STEPS.md](./GODADDY-DNS-STEPS.md)**.
 
+### Temporary staging: `option3/`
+
+A **full duplicate** of the site lives under **`option3/`** (same HTML, `styles.css`, `nav.js`, `assets/`). Canonical / Open Graph / JSON-LD in those files use:
+
+**https://msathiamurthy.github.io/m3pivot-website/option3/**
+
+Use that path for **feedback and testing** while DNS is still on GoDaddy. **After `www.m3pivot.com` is live on GitHub Pages**, delete the `option3/` folder and push so only the root site remains.
+
+**Note:** With a **custom domain** enabled in GitHub Pages, requests to `github.io/.../option3/` may **301 to `www.m3pivot.com/option3/`**. Until `www` resolves to GitHub, that URL may not show this site—if so, preview with **`python3 -m http.server`** from the repo and open **`http://localhost:8080/option3/`**, or temporarily remove the custom domain only for testing.
+
 ## Brand — logo typography & colors
 
 The **M3Pivot** wordmark in logo assets under `assets/` (e.g. `full-logo.png`, `small-logo.png`) is set in:
@@ -48,6 +58,7 @@ Optional: add **`favicon.ico`** and **LinkedIn** URLs in JSON-LD `sameAs` on `in
 | `assets/` | Logo(s), team photos (`team-*.jpg`), etc. |
 | `sitemap.xml` · `robots.txt` | SEO discovery |
 | `GODADDY-DNS-STEPS.md` | DNS checklist for GoDaddy |
+| `option3/` | **Temporary** full copy for staging URL (remove after DNS is live) |
 
 ## Partner headshots
 
