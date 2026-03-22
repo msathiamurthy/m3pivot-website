@@ -13,10 +13,14 @@ The public homepage is **`index.html`** at the root of that site (you don’t ad
    - **Value / Points to:** `msathiamurthy.github.io`  
    - Exactly that — no `https://`, no slashes.
 
-3. **Bare domain `m3pivot.com`** (no `www`) — pick **one** approach (don’t mix with extra A records):  
-   - **Recommended with GitHub Pages:** **Only** these **four A records** for **`@`**:  
-     `185.199.108.153` · `185.199.109.153` · `185.199.110.153` · `185.199.111.153`  
-   - **Or** GoDaddy **Forwarding** apex → `https://www.m3pivot.com` (301) — but then you **must not** also point `@` at random/other A records, or HTTPS on the apex will break.
+3. **Bare domain `m3pivot.com`** (no `www`) — **`@` must have only these four A records** (remove any other A records on `@`):  
+
+   | Type | Name | Value |
+   |------|------|--------|
+   | A | @ | `185.199.108.153` |
+   | A | @ | `185.199.109.153` |
+   | A | @ | `185.199.110.153` |
+   | A | @ | `185.199.111.153` |
 
 4. **Locked / “Can’t delete” A records on `@`** (e.g. `15.197.x.x`, `3.33.x.x`)  
    GoDaddy adds these for **Forwarding**, **Website / Website Builder**, or similar. They **break** `https://m3pivot.com` because traffic can land on **non-GitHub** IPs and get the **wrong certificate** (`NET::ERR_CERT_COMMON_NAME_INVALID`).  
