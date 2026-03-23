@@ -48,6 +48,7 @@ Optional: add **`favicon.ico`** and **LinkedIn** URLs in JSON-LD `sameAs` on `in
 | `styles.css` | All styles |
 | `nav.js` | Mobile navigation drawer |
 | `footer.js` | Shared footer (logo + links); edit once for all pages |
+| `analytics.js` | Optional GA4 + Microsoft Clarity — see **`ANALYTICS.md`** |
 | `assets/` | Logo(s), team photos (`team-*.jpg`), etc. |
 | `sitemap.xml` · `robots.txt` | SEO discovery |
 | `GODADDY-DNS-STEPS.md` | Short GoDaddy DNS steps (for whoever manages the domain) |
