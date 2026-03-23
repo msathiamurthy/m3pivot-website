@@ -5,16 +5,18 @@ Edit the two variables at the top of that file, commit, and push — no need to 
 
 ---
 
-## Who owns Google Analytics (team reference)
+## Who owns analytics (team reference)
 
-| | |
-|--|--|
-| **Google login used for GA4** | **`smraman@gmail.com`** |
-| **Where to sign in** | [analytics.google.com](https://analytics.google.com/) |
+| Tool | Login | Where to sign in |
+|------|--------|------------------|
+| **Google Analytics 4** | **`smraman@gmail.com`** | [analytics.google.com](https://analytics.google.com/) |
+| **Microsoft Clarity** | **`smraman@gmail.com`** (Microsoft account linked to this email) | [clarity.microsoft.com](https://clarity.microsoft.com/) |
 
-To give others access: **Admin** (gear) → **Account access management** or **Property access management** → **Add users**.
+**GA4 — invite others:** **Admin** (gear) → **Account access management** or **Property access management** → **Add users**.
 
-*(This is documentation for the team. The Measurement ID in `analytics.js` is still what the website loads; it is not tied to the email in code.)*
+**Clarity — invite others:** Project → **Settings** → **Team** (or **Manage team**), depending on Clarity’s current UI.
+
+*(Team documentation only. The site loads **Measurement ID** and **Clarity project ID** from `analytics.js`; those values are public in the browser.)*
 
 ---
 
@@ -36,7 +38,7 @@ Google Analytics is organized as **Account** → **Property** → **Data stream*
 
 ### Create the property
 
-1. Go to **[Google Analytics](https://analytics.google.com/)** and sign in with **`smraman@gmail.com`** (see [team reference](#who-owns-google-analytics-team-reference) above).
+1. Go to **[Google Analytics](https://analytics.google.com/)** and sign in with **`smraman@gmail.com`** (see [team reference](#who-owns-analytics-team-reference) above).
 2. If prompted to create an **Account**, use **Account name:** **`M3Pivot`** (see table above).
 3. **Admin** (gear, bottom left) → **Create** → **Property** (or finish the setup wizard).
 4. Name the **Property** (e.g. `M3Pivot website`).
@@ -72,18 +74,19 @@ Google Analytics is organized as **Account** → **Property** → **Data stream*
 
 ### Create the project
 
-1. Go to **[Microsoft Clarity](https://clarity.microsoft.com/)** and sign in (Microsoft account).
+1. Go to **[Microsoft Clarity](https://clarity.microsoft.com/)** and sign in with **`smraman@gmail.com`** (see [team reference](#who-owns-analytics-team-reference) above — use the Microsoft account tied to that email).
 2. **New project** → name it (e.g. `M3Pivot`).
 3. Enter site URL: **`https://www.m3pivot.com`**
-4. Accept terms and create. Copy the **Project ID** (short alphanumeric string shown in the install snippet).
+4. Accept terms and create. Copy the **Project ID** from the install snippet — the string in quotes at the end of the Clarity snippet, e.g. `"...", "script", "w059vx4qc6");` → project ID is **`w059vx4qc6`**. The script URL is always **`https://www.clarity.ms/tag/`** + that ID.
 
 ### Put the ID in the site
 
 1. Open **`analytics.js`**.
 2. Set:
    ```js
-   var CLARITY_PROJECT_ID = "your_project_id_here";
+   var CLARITY_PROJECT_ID = "w059vx4qc6";
    ```
+   (Replace if you ever create a new Clarity project.)
 3. Commit and push.
 
 ### Where to view Clarity data

@@ -7,7 +7,7 @@
  */
 (function () {
   var GA4_MEASUREMENT_ID = "G-2DCR979RGP";
-  var CLARITY_PROJECT_ID = ""; // e.g. "abcdefghij"
+  var CLARITY_PROJECT_ID = "w059vx4qc6";
 
   /* --- Google Analytics 4 --- */
   if (GA4_MEASUREMENT_ID) {
