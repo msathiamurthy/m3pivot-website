@@ -36,13 +36,13 @@ The site stylesheet (`styles.css`) uses **Montserrat** and maps UI accents to th
 - **Home** includes **JSON-LD** (`Organization`).
 - **`CNAME`** at the repo root should contain **`www.m3pivot.com`** for the custom domain. See **`CNAME.example`**.
 
-Favicons are generated from **`assets/small-logo.png`** (`favicon.ico` at site root + **`assets/favicon-*.png`**). The build script **trims transparent margins**, **pads to a square**, then applies **center zoom** so the mark fills the frame (stronger zoom for 32×32 so **M3** stays readable in the tab). Regenerate after logo changes:
+Favicons are generated from **`assets/small-logo.png`** (`favicon.ico` at site root + **`assets/favicon-*.png`**). The build script **trims transparent margins**, **pads to a square**, then **scales the full mark to fit** inside each output size with a small **uniform gutter** (nothing is center-cropped, so the logo is not clipped at the edges). Regenerate after logo changes:
 
 ```bash
 PYTHONPATH=.deps python3 scripts/build_favicon.py
 ```
 
-Tune **`ZOOM_PNG32`** / **`ZOOM_APPLE`** / **`ZOOM_ICO`** at the top of **`scripts/build_favicon.py`** if you want tighter or looser cropping.
+Tune **`PAD_FRAC_32`** / **`PAD_FRAC_180`** / **`PAD_FRAC_ICO`** in **`scripts/build_favicon.py`** (lower = bigger logo, less white; too low risks looking tight in some browsers).
 
 Optional: add **LinkedIn** URLs in JSON-LD `sameAs` on `index.html`.
 

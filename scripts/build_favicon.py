@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Build favicon.ico and PNG sizes from assets/small-logo.png (requires Pillow).
 
-Trims transparent margins, pads to a square, then applies a center "zoom" crop so
-the mark fills more of the pixel grid — especially important at 16–32px where the
-full wordmark was illegible.
+1. Trim transparent margins from the source.
+2. Pad to a square (so the mark is not squashed).
+3. **Scale to fit** inside each output size with **uniform padding** — the full logo
+   stays inside the canvas (no edge clipping). Slightly larger logo = smaller padding
+   fraction (still never crop).
 
 From repo root: PYTHONPATH=.deps python3 scripts/build_favicon.py
 """
@@ -15,10 +17,11 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "assets" / "small-logo.png"
 
-# Fraction of width/height to keep (center crop). Lower = tighter zoom = larger logo in frame.
-ZOOM_APPLE = 0.92  # 180×180 — trim outer whitespace, keep composition balanced
-ZOOM_PNG32 = 0.70  # 32×32 tab icon — stronger zoom so M3 reads at a glance
-ZOOM_ICO = 0.78  # 16 / 32 / 48 inside .ico
+# Padding as a fraction of output edge (each side). Full mark must fit in (1 - 2*frac).
+# Lower = bigger logo, less white — raise if any browser clips the outermost pixels.
+PAD_FRAC_32 = 0.085  # ~2.7px per side at 32px; keeps M3 + swoosh fully inside
+PAD_FRAC_180 = 0.055
+PAD_FRAC_ICO = 0.08  # 16 / 32 / 48 layers in .ico
 
 
 def trim_alpha(im: Image.Image) -> Image.Image:
@@ -36,45 +39,40 @@ def square_pad(im: Image.Image, fill=(255, 255, 255, 0)) -> Image.Image:
     return out
 
 
-def zoom_center(im: Image.Image, keep: float) -> Image.Image:
-    """Keep the middle `keep` fraction of width and height (0 < keep <= 1)."""
-    if keep >= 1.0:
-        return im
-    w, h = im.size
-    nw = max(1, int(w * keep))
-    nh = max(1, int(h * keep))
-    x0 = (w - nw) // 2
-    y0 = (h - nh) // 2
-    return im.crop((x0, y0, x0 + nw, y0 + nh))
-
-
 def prep_base() -> Image.Image:
     im = Image.open(SRC).convert("RGBA")
     im = trim_alpha(im)
     return square_pad(im)
 
 
-def resize_square(im: Image.Image, side: int) -> Image.Image:
-    return im.resize((side, side), Image.Resampling.LANCZOS)
+def fit_square_canvas(
+    src_square: Image.Image,
+    out_size: int,
+    pad_fraction: float,
+    bg=(255, 255, 255, 255),
+) -> Image.Image:
+    """Scale the full square logo down so it fits in (out_size - 2*pad), centered."""
+    pad = max(1, round(out_size * pad_fraction))
+    inner = out_size - 2 * pad
+    inner = max(1, inner)
+    scaled = src_square.resize((inner, inner), Image.Resampling.LANCZOS)
+    out = Image.new("RGBA", (out_size, out_size), bg)
+    out.paste(scaled, (pad, pad), scaled)
+    return out
 
 
 def main() -> None:
     base = prep_base()
 
-    # Apple touch + general large icon
-    apple_src = zoom_center(base, ZOOM_APPLE)
-    apple_path = ROOT / "assets" / "favicon-180x180.png"
-    resize_square(apple_src, 180).save(apple_path, format="PNG")
+    fit_square_canvas(base, 180, PAD_FRAC_180).save(
+        ROOT / "assets" / "favicon-180x180.png", format="PNG"
+    )
+    fit_square_canvas(base, 32, PAD_FRAC_32).save(
+        ROOT / "assets" / "favicon-32x32.png", format="PNG"
+    )
 
-    # Browser tab PNG
-    tab_src = zoom_center(base, ZOOM_PNG32)
-    tab_path = ROOT / "assets" / "favicon-32x32.png"
-    resize_square(tab_src, 32).save(tab_path, format="PNG")
-
-    # Multi-size ICO
-    ico_src = zoom_center(base, ZOOM_ICO)
     sizes_ico = [(16, 16), (32, 32), (48, 48)]
-    imgs = [resize_square(ico_src, s[0]) for s in sizes_ico]
+    imgs = [fit_square_canvas(base, s[0], PAD_FRAC_ICO) for s in sizes_ico]
     ico_path = ROOT / "assets" / "favicon.ico"
     imgs[0].save(
         ico_path,
@@ -85,9 +83,8 @@ def main() -> None:
     (ROOT / "favicon.ico").write_bytes(ico_path.read_bytes())
 
     print(
-        "Wrote assets/favicon.ico, favicon.ico, "
-        "assets/favicon-32x32.png, assets/favicon-180x180.png "
-        f"(zoom: ico={ZOOM_ICO}, 32={ZOOM_PNG32}, 180={ZOOM_APPLE})"
+        "Wrote assets/favicon.ico, favicon.ico, favicon-32x32.png, favicon-180x180.png "
+        f"(fit + pad: 32={PAD_FRAC_32}, 180={PAD_FRAC_180}, ico={PAD_FRAC_ICO})"
     )
 
 
