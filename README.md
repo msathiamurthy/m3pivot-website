@@ -58,6 +58,7 @@ Optional: add **LinkedIn** URLs in JSON-LD `sameAs` on `index.html`.
 | `assets/` | Logo(s), team photos (`team-*.jpg`), etc. |
 | `sitemap.xml` · `robots.txt` | SEO discovery |
 | `GODADDY-DNS-STEPS.md` | Short GoDaddy DNS steps (for whoever manages the domain) |
+| `formspree.md` | Contact form backend (Formspree endpoint, account, fields) |
 | `pamphlet/` | A5 duplex poster; see `pamphlet/README.md` |
 
 ## Partner headshots
