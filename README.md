@@ -36,7 +36,7 @@ The site stylesheet (`styles.css`) uses **Montserrat** and maps UI accents to th
 - **Home** includes **JSON-LD** (`Organization`).
 - **`CNAME`** at the repo root should contain **`www.m3pivot.com`** for the custom domain. See **`CNAME.example`**.
 
-Favicons are generated from **`assets/small-logo.png`** (`favicon.ico` at site root + **`assets/favicon-*.png`**). The build script **trims transparent margins**, **pads to a square**, then **scales the full mark to fit** inside each output size with a small **uniform gutter** (nothing is center-cropped, so the logo is not clipped at the edges). Regenerate after logo changes:
+Favicons are generated from **`assets/small-logo.png`**. All main HTML pages use **`assets/favicon-180x180.png`** for both **`rel="icon"`** and **`apple-touch-icon`** (browsers downscale for tabs). The build script also writes **`favicon.ico`** (repo root + `assets/`) and **`favicon-32x32.png`** for optional legacy use or tools that request `/favicon.ico` without parsing HTML. The script **trims transparent margins**, **pads to a square**, then **fits** the mark in each output with a small **uniform gutter**. Regenerate after logo changes:
 
 ```bash
 PYTHONPATH=.deps python3 scripts/build_favicon.py
