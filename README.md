@@ -36,7 +36,13 @@ The site stylesheet (`styles.css`) uses **Montserrat** and maps UI accents to th
 - **Home** includes **JSON-LD** (`Organization`).
 - **`CNAME`** at the repo root should contain **`www.m3pivot.com`** for the custom domain. See **`CNAME.example`**.
 
-Optional: add **`favicon.ico`** and **LinkedIn** URLs in JSON-LD `sameAs` on `index.html`.
+Favicons are generated from **`assets/small-logo.png`** (`favicon.ico` at site root + **`assets/favicon-*.png`**). Regenerate after logo changes:
+
+```bash
+PYTHONPATH=.deps python3 scripts/build_favicon.py
+```
+
+Optional: add **LinkedIn** URLs in JSON-LD `sameAs` on `index.html`.
 
 ## Project layout
 
