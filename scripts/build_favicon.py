@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build favicon.ico and PNG sizes from assets/small-logo.png (requires Pillow).
+"""Build favicon.ico and PNG sizes from assets/images/small-logo.png (requires Pillow).
 
 1. Trim transparent margins from the source.
 2. Pad to a square (so the mark is not squashed).
@@ -15,7 +15,7 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "assets" / "small-logo.png"
+SRC = ROOT / "assets" / "images" / "small-logo.png"
 
 # Padding as a fraction of output edge (each side). Full mark must fit in (1 - 2*frac).
 # Lower = bigger logo, less white — raise if any browser clips the outermost pixels.
@@ -64,16 +64,19 @@ def fit_square_canvas(
 def main() -> None:
     base = prep_base()
 
+    icons = ROOT / "assets" / "icons"
+    icons.mkdir(parents=True, exist_ok=True)
+
     fit_square_canvas(base, 180, PAD_FRAC_180).save(
-        ROOT / "assets" / "favicon-180x180.png", format="PNG"
+        icons / "favicon-180x180.png", format="PNG"
     )
     fit_square_canvas(base, 32, PAD_FRAC_32).save(
-        ROOT / "assets" / "favicon-32x32.png", format="PNG"
+        icons / "favicon-32x32.png", format="PNG"
     )
 
     sizes_ico = [(16, 16), (32, 32), (48, 48)]
     imgs = [fit_square_canvas(base, s[0], PAD_FRAC_ICO) for s in sizes_ico]
-    ico_path = ROOT / "assets" / "favicon.ico"
+    ico_path = icons / "favicon.ico"
     imgs[0].save(
         ico_path,
         format="ICO",
@@ -83,7 +86,7 @@ def main() -> None:
     (ROOT / "favicon.ico").write_bytes(ico_path.read_bytes())
 
     print(
-        "Wrote assets/favicon.ico, favicon.ico, favicon-32x32.png, favicon-180x180.png "
+        "Wrote assets/icons/favicon.ico, favicon.ico, favicon-32x32.png, favicon-180x180.png "
         f"(fit + pad: 32={PAD_FRAC_32}, 180={PAD_FRAC_180}, ico={PAD_FRAC_ICO})"
     )
 

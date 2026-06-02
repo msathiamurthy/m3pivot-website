@@ -1,6 +1,6 @@
 /**
  * Global site footer — edit markup here to update all pages.
- * Set data-footer-context on <html>: "home" | "sub" | "contact"
+ * Set data-footer-context on <html>: "home" | "sub" | "team" | "contact"
  */
 (function () {
   var mount = document.querySelector("[data-global-footer]");
@@ -11,21 +11,28 @@
   var hrefs = {
     home: {
       home: "#home",
-      team: "#team",
+      team: "team.html",
       startups: "startups.html",
       investors: "investors.html",
-      contact: "#contact",
+      contact: "contact.html",
     },
     sub: {
-      home: "index.html#home",
-      team: "index.html#team",
+      home: "index.html",
+      team: "team.html",
       startups: "startups.html",
       investors: "investors.html",
-      contact: "index.html#contact",
+      contact: "contact.html",
+    },
+    team: {
+      home: "index.html",
+      team: "team.html",
+      startups: "startups.html",
+      investors: "investors.html",
+      contact: "contact.html",
     },
     contact: {
-      home: "index.html#home",
-      team: "index.html#team",
+      home: "index.html",
+      team: "team.html",
       startups: "startups.html",
       investors: "investors.html",
       contact: "contact.html",
@@ -37,7 +44,7 @@
   mount.innerHTML =
     '<div class="container container--wide footer-inner">' +
     '<div class="footer-about">' +
-    '<img class="footer-logo-mark" src="assets/small-logo.png" alt="" decoding="async" />' +
+    '<img class="footer-logo-mark" src="/assets/images/small-logo.png" alt="" decoding="async" />' +
     '<div class="footer-about__text">' +
     "<p>© 2025 M3Pivot. All rights reserved.</p>" +
     '<p class="footer-tagline">' +

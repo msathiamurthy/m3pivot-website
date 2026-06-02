@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Build square team portraits for the site from root assets/.
-Writes to assets/team-*.jpg (optional whitespace trim; center-crop cover).
+Build square team portraits for the site from assets/images/.
+Writes to assets/images/team-*.jpg (optional whitespace trim; center-crop cover).
 """
 from __future__ import annotations
 
@@ -20,10 +20,10 @@ JPEG_QUALITY = 88
 
 # (source relative to repo root, dest relative to repo root, trim whitespace?)
 JOBS: list[tuple[str, str, bool]] = [
-    ("assets/murali.jpeg", "assets/team-murali.jpg", True),
-    ("assets/sankar.jpeg", "assets/team-sankar.jpg", True),
-    ("assets/muthu.jpg", "assets/team-muthu.jpg", False),
-    ("assets/sanjeev.jpeg", "assets/team-sanjeev.jpg", False),
+    ("assets/images/murali.jpeg", "assets/images/team-murali.jpg", True),
+    ("assets/images/sankar.jpeg", "assets/images/team-sankar.jpg", True),
+    ("assets/images/muthu.jpg", "assets/images/team-muthu.jpg", False),
+    ("assets/images/sanjeev.jpeg", "assets/images/team-sanjeev.jpg", False),
 ]
 
 
