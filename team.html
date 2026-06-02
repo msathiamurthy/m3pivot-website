@@ -35,10 +35,14 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    />
     <title>M3Pivot | Team</title>
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css?v=6" />
     <script src="/js/analytics.js" defer></script>
   </head>
   <body>
@@ -81,115 +85,179 @@
               the same.
             </p>
           </header>
-          <div class="team-grid">
-            <article class="team-card">
-              <figure class="team-photo no-photo">
-                <img
-                  src="/assets/images/team-murali.jpg"
-                  alt="Murali Ravindran"
-                  loading="lazy"
-                  onload="this.parentElement.classList.remove('no-photo')"
-                  onerror="this.remove(); this.parentElement.classList.add('no-photo');"
-                />
-                <div class="team-photo-placeholder" aria-hidden="true">MR</div>
-              </figure>
-              <h3>Murali Ravindran</h3>
-              <p class="team-role">Partner — Finance &amp; Global Business</p>
-              <p class="team-bio">
-                25 years of product management, global sales and business
-                development in the embedded systems domain. Expertise in
-                financials, inter-company pricing, arms-length pricing, and
-                compliance for global startup companies.
-              </p>
-              <a
-                class="linkedin"
-                href="https://www.linkedin.com/in/rmuralimanohar/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >LinkedIn →</a
-              >
+          <div class="profile-cards">
+            <article class="profile-card team-card" id="member-murali" data-member="murali">
+              <div class="profile-card__layout">
+                <div class="profile-card__media">
+                  <figure class="team-photo no-photo">
+                    <img
+                      src="/assets/images/team-murali.jpg"
+                      alt="Murali Ravindran"
+                      loading="lazy"
+                      onload="this.parentElement.classList.remove('no-photo')"
+                      onerror="this.remove(); this.parentElement.classList.add('no-photo');"
+                    />
+                    <div class="team-photo-placeholder" aria-hidden="true">MR</div>
+                  </figure>
+                </div>
+                <div class="profile-card__panel">
+                  <div class="profile-card__head">
+                    <h2 class="profile-card__name">Murali Ravindran</h2>
+                    <p class="profile-card__title team-role">Partner — Finance &amp; Global Business</p>
+                  </div>
+                  <p class="profile-card__bio team-bio">
+                    25 years of product management, global sales and business
+                    development in the embedded systems domain. Expertise in
+                    financials, inter-company pricing, arms-length pricing, and
+                    compliance for global startup companies.
+                  </p>
+                  <div class="profile-card__social">
+                    <a
+                      class="profile-card__social-link"
+                      href="https://www.linkedin.com/in/rmuralimanohar/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Murali Ravindran on LinkedIn"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                          d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </article>
 
-            <article class="team-card">
-              <figure class="team-photo no-photo">
-                <img
-                  src="/assets/images/team-sankar.jpg"
-                  alt="Sankar Kaliaperumal"
-                  loading="lazy"
-                  onload="this.parentElement.classList.remove('no-photo')"
-                  onerror="this.remove(); this.parentElement.classList.add('no-photo');"
-                />
-                <div class="team-photo-placeholder" aria-hidden="true">SK</div>
-              </figure>
-              <h3>Sankar Kaliaperumal</h3>
-              <p class="team-role">Partner — Product &amp; Operations</p>
-              <p class="team-bio">
-                25 years of startup experience across US and India. Gone through
-                successful and painful exits. Expertise in product management,
-                operational excellence, and building strong culture among teams.
-              </p>
-              <a
-                class="linkedin"
-                href="https://www.linkedin.com/in/sankarkaliaperumal/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >LinkedIn →</a
-              >
+            <article class="profile-card team-card profile-card--reverse" id="member-sankar" data-member="sankar">
+              <div class="profile-card__layout">
+                <div class="profile-card__media">
+                  <figure class="team-photo no-photo">
+                    <img
+                      src="/assets/images/team-sankar.jpg"
+                      alt="Sankar Kaliaperumal"
+                      loading="lazy"
+                      onload="this.parentElement.classList.remove('no-photo')"
+                      onerror="this.remove(); this.parentElement.classList.add('no-photo');"
+                    />
+                    <div class="team-photo-placeholder" aria-hidden="true">SK</div>
+                  </figure>
+                </div>
+                <div class="profile-card__panel">
+                  <div class="profile-card__head">
+                    <h2 class="profile-card__name">Sankar Kaliaperumal</h2>
+                    <p class="profile-card__title team-role">Partner — Product &amp; Operations</p>
+                  </div>
+                  <p class="profile-card__bio team-bio">
+                    25 years of startup experience across US and India. Gone through
+                    successful and painful exits. Expertise in product management,
+                    operational excellence, and building strong culture among teams.
+                  </p>
+                  <div class="profile-card__social">
+                    <a
+                      class="profile-card__social-link"
+                      href="https://www.linkedin.com/in/sankarkaliaperumal/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Sankar Kaliaperumal on LinkedIn"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                          d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </article>
 
-            <article class="team-card">
-              <figure class="team-photo no-photo">
-                <img
-                  src="/assets/images/team-muthu.jpg"
-                  alt="Muthu Sathiamurthy"
-                  loading="lazy"
-                  onload="this.parentElement.classList.remove('no-photo')"
-                  onerror="this.remove(); this.parentElement.classList.add('no-photo');"
-                />
-                <div class="team-photo-placeholder" aria-hidden="true">MS</div>
-              </figure>
-              <h3>Muthu Sathiamurthy</h3>
-              <p class="team-role">Partner — Technology &amp; Engineering</p>
-              <p class="team-bio">
-                25 years of experience in software development across large
-                enterprises and Global Capability Centers in India. Expertise in
-                software product management, architecture and building
-                high-performing product development teams.
-              </p>
-              <a
-                class="linkedin"
-                href="https://www.linkedin.com/in/muthu-sathiamurthy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >LinkedIn →</a
-              >
+            <article class="profile-card team-card" id="member-muthu" data-member="muthu">
+              <div class="profile-card__layout">
+                <div class="profile-card__media">
+                  <figure class="team-photo no-photo">
+                    <img
+                      src="/assets/images/team-muthu.jpg"
+                      alt="Muthu Sathiamurthy"
+                      loading="lazy"
+                      onload="this.parentElement.classList.remove('no-photo')"
+                      onerror="this.remove(); this.parentElement.classList.add('no-photo');"
+                    />
+                    <div class="team-photo-placeholder" aria-hidden="true">MS</div>
+                  </figure>
+                </div>
+                <div class="profile-card__panel">
+                  <div class="profile-card__head">
+                    <h2 class="profile-card__name">Muthu Sathiamurthy</h2>
+                    <p class="profile-card__title team-role">Partner — Technology &amp; Engineering</p>
+                  </div>
+                  <p class="profile-card__bio team-bio">
+                    25 years of experience in software development across large
+                    enterprises and Global Capability Centers in India. Expertise in
+                    software product management, architecture and building
+                    high-performing product development teams.
+                  </p>
+                  <div class="profile-card__social">
+                    <a
+                      class="profile-card__social-link"
+                      href="https://www.linkedin.com/in/muthu-sathiamurthy/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Muthu Sathiamurthy on LinkedIn"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                          d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </article>
 
-            <article class="team-card">
-              <figure class="team-photo no-photo">
-                <img
-                  src="/assets/images/team-sanjeev.jpg"
-                  alt="Sanjeev Uruvandavida"
-                  loading="lazy"
-                  onload="this.parentElement.classList.remove('no-photo')"
-                  onerror="this.remove(); this.parentElement.classList.add('no-photo');"
-                />
-                <div class="team-photo-placeholder" aria-hidden="true">SU</div>
-              </figure>
-              <h3>Sanjeev Uruvandavida</h3>
-              <p class="team-role">Partner — Investor Relations &amp; Supply Chain</p>
-              <p class="team-bio">
-                25 years of experience in manufacturing, supply chain and
-                operations. Expertise in investor relations and mentoring startup
-                founders for over a decade.
-              </p>
-              <a
-                class="linkedin"
-                href="https://www.linkedin.com/in/sanjeevu/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >LinkedIn →</a
-              >
+            <article class="profile-card team-card profile-card--reverse" id="member-sanjeev" data-member="sanjeev">
+              <div class="profile-card__layout">
+                <div class="profile-card__media">
+                  <figure class="team-photo no-photo">
+                    <img
+                      src="/assets/images/team-sanjeev.jpg"
+                      alt="Sanjeev Uruvandavida"
+                      loading="lazy"
+                      onload="this.parentElement.classList.remove('no-photo')"
+                      onerror="this.remove(); this.parentElement.classList.add('no-photo');"
+                    />
+                    <div class="team-photo-placeholder" aria-hidden="true">SU</div>
+                  </figure>
+                </div>
+                <div class="profile-card__panel">
+                  <div class="profile-card__head">
+                    <h2 class="profile-card__name">Sanjeev Uruvandavida</h2>
+                    <p class="profile-card__title team-role">Partner — Investor Relations &amp; Supply Chain</p>
+                  </div>
+                  <p class="profile-card__bio team-bio">
+                    25 years of experience in manufacturing, supply chain and
+                    operations. Expertise in investor relations and mentoring startup
+                    founders for over a decade.
+                  </p>
+                  <div class="profile-card__social">
+                    <a
+                      class="profile-card__social-link"
+                      href="https://www.linkedin.com/in/sanjeevu/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Sanjeev Uruvandavida on LinkedIn"
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                        <path
+                          d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </article>
           </div>
         </section>
@@ -211,7 +279,8 @@
 
     <footer class="site-footer" data-global-footer></footer>
     <script src="/js/legacy-redirects.js"></script>
-    <script src="/js/footer.js?v=2" defer></script>
-    <script src="/js/nav.js?v=2" defer></script>
+    <script src="/js/footer.js?v=3" defer></script>
+    <script src="/js/nav.js?v=3" defer></script>
+    <script src="/js/team-highlight.js?v=3" defer></script>
   </body>
 </html>

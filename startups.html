@@ -35,10 +35,14 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    />
     <title>M3Pivot | For founders</title>
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css?v=6" />
     <script src="/js/analytics.js" defer></script>
   </head>
   <body>
@@ -80,7 +84,7 @@
           </p>
           <div class="hero-actions" style="margin-top: 1rem;">
             <a class="btn btn-primary" href="contact.html">Talk to us</a>
-            <a class="btn btn-ghost" href="index.html#m3">The three pivots</a>
+            <a class="btn btn-ghost" href="#m3">The three pivots</a>
           </div>
         </header>
 
@@ -104,73 +108,112 @@
               </p>
             </div>
           </div>
-          <h2>The three pivots</h2>
-          <ul>
-            <li><strong style="color: var(--ink)">Money</strong> — Runway, fundraising readiness, spend discipline.</li>
-            <li><strong style="color: var(--ink)">Market</strong> — GTM clarity, positioning, learning from the market.</li>
-            <li><strong style="color: var(--ink)">Management</strong> — Team, culture, and execution systems.</li>
-          </ul>
+          <section id="m3" aria-labelledby="m3-title">
+            <div class="m3-section-head">
+              <div class="m3-section-logo-wrap" aria-hidden="true">
+                <img
+                  class="m3-section-logo"
+                  src="/assets/images/small-logo.png"
+                  alt=""
+                  decoding="async"
+                />
+              </div>
+              <div class="m3-section-head__text">
+                <p class="section-kicker">The three pivots</p>
+                <h2 id="m3-title" class="section-title">Money, Market &amp; Management</h2>
+                <p class="section-intro">
+                  Everything we do rolls up to these three. Clear focus. Practical
+                  support. Built for founders who are done guessing alone.
+                </p>
+              </div>
+            </div>
+            <div class="m3-grid">
+              <article class="m3-card">
+                <div class="m3-icon" aria-hidden="true">💰</div>
+                <h3>Money</h3>
+                <p>
+                  Cash is king. We help you manage runway, raise smart, and spend
+                  with purpose.
+                </p>
+              </article>
+              <article class="m3-card">
+                <div class="m3-icon" aria-hidden="true">📈</div>
+                <h3>Market</h3>
+                <p>
+                  Markets shift fast. We help you find your footing, sharpen your
+                  GTM, and stay ahead of the curve.
+                </p>
+              </article>
+              <article class="m3-card">
+                <div class="m3-icon" aria-hidden="true">👥</div>
+                <h3>Management</h3>
+                <p>
+                  People make or break startups. We help you build a team that
+                  executes, adapts, and delivers.
+                </p>
+              </article>
+            </div>
+          </section>
 
           <h2>Sample portfolio</h2>
           <p>
             A few example companies and communities that reflect the kind of
             practical, execution-focused environments we support.
           </p>
-          <div class="portfolio-grid">
-            <a
-              class="portfolio-card"
-              href="https://www.theairman.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                class="portfolio-card__icon"
-                src="https://www.google.com/s2/favicons?sz=64&domain=theairman.org"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-              <div>
-                <h3>The Airman</h3>
-                <p>theairman.org</p>
-              </div>
-            </a>
-            <a
-              class="portfolio-card"
-              href="https://withininnerwear.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                class="portfolio-card__icon"
-                src="https://www.google.com/s2/favicons?sz=64&domain=withininnerwear.com"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-              <div>
-                <h3>Within Innerwear</h3>
-                <p>withininnerwear.com</p>
-              </div>
-            </a>
-            <a
-              class="portfolio-card"
-              href="https://friscofencingacademy.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                class="portfolio-card__icon"
-                src="https://www.google.com/s2/favicons?sz=64&domain=friscofencingacademy.com"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-              <div>
-                <h3>Frisco Fencing Academy</h3>
-                <p>friscofencingacademy.com</p>
-              </div>
-            </a>
+          <div class="portfolio-line" aria-label="Sample portfolio links">
+            <div class="portfolio-avatar-group">
+              <a
+                class="portfolio-avatar-link"
+                href="https://www.theairman.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="The Airman"
+              >
+                <img
+                  class="portfolio-avatar-img"
+                  src="https://www.google.com/s2/favicons?sz=128&domain=theairman.org"
+                  alt="The Airman"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <a
+                class="portfolio-avatar-link"
+                href="https://withininnerwear.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Within Innerwear"
+              >
+                <img
+                  class="portfolio-avatar-img"
+                  src="https://www.google.com/s2/favicons?sz=128&domain=withininnerwear.com"
+                  alt="Within Innerwear"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <a
+                class="portfolio-avatar-link"
+                href="https://friscofencingacademy.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Frisco Fencing Academy"
+              >
+                <img
+                  class="portfolio-avatar-img"
+                  src="https://www.google.com/s2/favicons?sz=128&domain=friscofencingacademy.com"
+                  alt="Frisco Fencing Academy"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -191,7 +234,7 @@
 
     <footer class="site-footer" data-global-footer></footer>
     <script src="/js/legacy-redirects.js"></script>
-    <script src="/js/footer.js?v=2" defer></script>
-    <script src="/js/nav.js?v=2" defer></script>
+    <script src="/js/footer.js?v=3" defer></script>
+    <script src="/js/nav.js?v=3" defer></script>
   </body>
 </html>
