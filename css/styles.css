@@ -851,6 +851,77 @@ section[id] {
   line-height: 1.45;
 }
 
+.preview-section {
+  padding: 2.35rem 0;
+}
+
+.preview-section--alt {
+  background: rgba(255, 255, 255, 0.55);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.preview-section .section-intro {
+  margin-bottom: 1.1rem;
+}
+
+.preview-feature-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0 0 1.2rem;
+}
+
+.preview-feature-list p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.team-preview-grid {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0 0 1.2rem;
+}
+
+@media (min-width: 640px) {
+  .team-preview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.team-preview-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.85rem;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.team-preview-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+}
+
+.team-preview-card h3 {
+  margin: 0 0 0.2rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.team-preview-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.83rem;
+}
+
 /* Team */
 #team {
   padding: 2.75rem 0;
@@ -1165,6 +1236,55 @@ textarea {
   flex: 1;
 }
 
+.portfolio-grid {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 720px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.portfolio-card {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.75rem 0.8rem;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.portfolio-card:hover {
+  border-color: rgba(3, 66, 133, 0.28);
+  transform: translateY(-1px);
+}
+
+.portfolio-card__icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.portfolio-card h3 {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--ink);
+}
+
+.portfolio-card p {
+  margin: 0.05rem 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 @media (min-width: 720px) {
   .simple-card p {
     font-size: 0.93rem;
@@ -1174,12 +1294,125 @@ textarea {
 /* Contact form: keep a comfortable line length inside wide subpage */
 .subpage-main .contact-card {
   max-width: 100%;
+  margin-inline: auto;
 }
 
 @media (min-width: 720px) {
   .subpage-main .contact-card {
     max-width: min(100%, 560px);
   }
+}
+
+.subpage-main .content-block {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-layout {
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.role-choice {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.role-choice--audience {
+  margin: 0 0 1rem;
+}
+
+.role-choice__option {
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink-soft);
+  border-radius: 10px;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.role-choice__option:hover {
+  border-color: rgba(3, 66, 133, 0.35);
+  color: var(--ink);
+}
+
+.role-choice__option.active {
+  border-color: var(--accent);
+  background: rgba(3, 66, 133, 0.08);
+  color: var(--accent);
+}
+
+.role-guidance {
+  margin: 0 0 1rem;
+}
+
+.form-support-copy {
+  margin: 0 0 1rem;
+}
+
+.role-fieldset {
+  margin-top: 0.1rem;
+}
+
+.role-fieldset--hidden {
+  display: none;
+}
+
+.role-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.role-radios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.role-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.role-radio input {
+  accent-color: var(--accent);
+}
+
+.pre-footer-cta {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pre-footer-cta__card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.2rem;
+  box-shadow: var(--card-shadow);
+}
+
+.pre-footer-cta h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: var(--ink);
+}
+
+.pre-footer-cta p {
+  margin: 0 0 0.95rem;
+  color: var(--muted);
+  max-width: 60ch;
 }
 
 /* Footer */

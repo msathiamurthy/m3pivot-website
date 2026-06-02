@@ -70,15 +70,32 @@
       <div class="container container--wide subpage-main">
         <header class="page-hero">
           <span class="eyebrow">Contact</span>
-          <h1>Let’s talk</h1>
-          <p>
-            Founders: tell us your stage and what you’re working through.
-            We’ll route your note to the right partner.
+          <h1 id="contact-dynamic-title">Let's Talk About Your Startup</h1>
+          <p id="contact-dynamic-copy">
+            Tell us about your venture and how we can support your growth journey.
           </p>
         </header>
 
-        <section class="content-block">
-          <article class="contact-card" id="message-form">
+        <div class="contact-layout">
+          <div class="role-choice role-choice--audience" role="group" aria-label="Select who you are">
+            <button
+              type="button"
+              class="role-choice__option active"
+              data-role-option="startup-founder"
+            >
+              Startup
+            </button>
+            <button
+              type="button"
+              class="role-choice__option"
+              data-role-option="investor"
+            >
+              Investor
+            </button>
+          </div>
+
+          <section class="content-block">
+            <article class="contact-card" id="message-form">
             <div class="contact-card__head">
               <img
                 class="contact-card__logo"
@@ -86,8 +103,11 @@
                 alt=""
                 decoding="async"
               />
-              <h2 class="form-title">Send a message</h2>
+              <h2 class="form-title" id="contact-form-title">Let's Talk About Your Startup</h2>
             </div>
+            <p class="muted form-support-copy" id="contact-form-copy">
+              Tell us about your venture and how we can support your growth journey.
+            </p>
             <form action="https://formspree.io/f/mojknrgk" method="POST" data-formspree="true">
               <div>
                 <label for="full-name">Full name</label>
@@ -109,20 +129,35 @@
                   required
                 />
               </div>
-              <div>
-                <label for="role">I am a</label>
-                <select id="role" name="role" required>
-                  <option value="" disabled selected>Select one</option>
-                  <option value="startup-founder">Startup founder</option>
-                  <option value="investor">Investor</option>
-                </select>
+              <div class="role-fieldset role-fieldset--hidden" aria-hidden="true">
+                <div class="role-radios">
+                  <label class="role-radio">
+                    <input
+                      type="radio"
+                      name="role"
+                      value="startup-founder"
+                      checked
+                      required
+                    />
+                    <span>Startup</span>
+                  </label>
+                  <label class="role-radio">
+                    <input
+                      type="radio"
+                      name="role"
+                      value="investor"
+                      required
+                    />
+                    <span>Investor</span>
+                  </label>
+                </div>
               </div>
               <div>
                 <label for="message">Message</label>
                 <textarea
                   id="message"
                   name="message"
-                  placeholder="What are you building? How can we help?"
+                  placeholder="Tell us about your startup, current stage, funding needs, or how we can help."
                   required
                 ></textarea>
               </div>
@@ -133,8 +168,9 @@
               <h3 style="margin: 0 0 0.5rem; color: var(--ink); font-size: 1.1rem;">Thank you</h3>
               <p class="muted submission-message-body" style="margin: 0;"></p>
             </div>
-          </article>
-        </section>
+            </article>
+          </section>
+        </div>
       </div>
     </main>
 
@@ -147,6 +183,28 @@
         "Thank you for reaching out! One of our partners will get back to you soon.";
       const msgRepeat =
         "You have already submitted this form in this session. Our partners will get back to you soon.";
+      const roleConfig = {
+        "startup-founder": {
+          pageTitle: "Let's Talk About Your Startup",
+          pageCopy:
+            "Tell us about your venture and how we can support your growth journey.",
+          formTitle: "Let's Talk About Your Startup",
+          formCopy:
+            "Tell us about your venture and how we can support your growth journey.",
+          placeholder:
+            "Tell us about your startup, current stage, funding needs, or how we can help.",
+        },
+        investor: {
+          pageTitle: "Let's Talk Investment Opportunities",
+          pageCopy:
+            "Share your investment interests and let's explore how we can work together.",
+          formTitle: "Let's Talk Investment Opportunities",
+          formCopy:
+            "Share your investment interests and let's explore how we can work together.",
+          placeholder:
+            "Tell us about your investment focus, portfolio interests, or any questions you have.",
+        },
+      };
 
       document.querySelectorAll("form[data-formspree]").forEach((form) => {
         const status = form.querySelector(".form-status");
@@ -154,6 +212,51 @@
         const formHead = form.parentElement.querySelector(".contact-card__head");
         const formTitle = form.parentElement.querySelector(".form-title");
         const messageBody = messageBox?.querySelector(".submission-message-body");
+        const pageTitle = document.querySelector("#contact-dynamic-title");
+        const pageCopy = document.querySelector("#contact-dynamic-copy");
+        const formHeading = form.parentElement.querySelector("#contact-form-title");
+        const formCopy = form.parentElement.querySelector("#contact-form-copy");
+        const roleOptions = Array.from(
+          document.querySelectorAll("[data-role-option]")
+        );
+        const roleRadios = Array.from(form.querySelectorAll("input[name='role']"));
+        const messageField = form.querySelector("#message");
+
+        const applyRoleState = (role) => {
+          roleOptions.forEach((option) => {
+            option.classList.toggle(
+              "active",
+              option.getAttribute("data-role-option") === role
+            );
+          });
+          roleRadios.forEach((radio) => {
+            radio.checked = radio.value === role;
+          });
+          const config = roleConfig[role] || roleConfig["startup-founder"];
+          if (pageTitle) pageTitle.textContent = config.pageTitle;
+          if (pageCopy) pageCopy.textContent = config.pageCopy;
+          if (formHeading) formHeading.textContent = config.formTitle;
+          if (formCopy) formCopy.textContent = config.formCopy;
+          if (messageField) {
+            messageField.placeholder = config.placeholder;
+          }
+        };
+
+        const selectedRadio = roleRadios.find((radio) => radio.checked);
+        applyRoleState(selectedRadio ? selectedRadio.value : "startup-founder");
+
+        roleOptions.forEach((option) => {
+          option.addEventListener("click", () => {
+            const role = option.getAttribute("data-role-option");
+            applyRoleState(role);
+          });
+        });
+
+        roleRadios.forEach((radio) => {
+          radio.addEventListener("change", () => {
+            if (radio.checked) applyRoleState(radio.value);
+          });
+        });
 
         const showSubmittedState = (isRepeat) => {
           if (messageBody) messageBody.textContent = isRepeat ? msgRepeat : msgFirst;
