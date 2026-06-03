@@ -39,7 +39,7 @@
     <title>M3Pivot | Contact</title>
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css?v=6" />
+    <link rel="stylesheet" href="/css/styles.css?v=14" />
     <script src="/js/analytics.js" defer></script>
   </head>
   <body>
@@ -99,7 +99,7 @@
           </div>
 
           <section class="content-block content-block--centered">
-            <article class="contact-card" id="message-form">
+            <article class="contact-card" id="message-form" tabindex="-1">
             <div class="contact-card__head">
               <img
                 class="contact-card__logo"
@@ -169,8 +169,10 @@
               <p class="muted form-status" aria-live="polite"></p>
             </form>
             <div class="submission-message" hidden>
-              <h3 style="margin: 0 0 0.5rem; color: var(--ink); font-size: 1.1rem;">Thank you</h3>
-              <p class="muted submission-message-body" style="margin: 0;"></p>
+              <p class="submission-message-body">
+                <strong>Thank you for reaching out!</strong><br />
+                One of our partners will reach out to you within 2 business days.
+              </p>
             </div>
             </article>
           </section>
@@ -183,10 +185,6 @@
     <script src="/js/footer.js?v=3" defer></script>
     <script src="/js/nav.js?v=3" defer></script>
     <script>
-      const msgFirst =
-        "Thank you for reaching out! One of our partners will get back to you soon.";
-      const msgRepeat =
-        "You have already submitted this form in this session. Our partners will get back to you soon.";
       const roleConfig = {
         "startup-founder": {
           pageTitle: "Let's Talk About Your Startup",
@@ -214,8 +212,11 @@
         const status = form.querySelector(".form-status");
         const messageBox = form.parentElement.querySelector(".submission-message");
         const formHead = form.parentElement.querySelector(".contact-card__head");
-        const formTitle = form.parentElement.querySelector(".form-title");
-        const messageBody = messageBox?.querySelector(".submission-message-body");
+        const pageHero = document.querySelector(".subpage-main > .page-hero");
+        const roleChoice = document.querySelector(".role-choice--audience");
+        const contactLayout = document.querySelector(".contact-layout");
+        const subpageMain = document.querySelector(".subpage-main");
+        const contactCard = form.closest(".contact-card");
         const pageTitle = document.querySelector("#contact-dynamic-title");
         const pageCopy = document.querySelector("#contact-dynamic-copy");
         const formHeading = form.parentElement.querySelector("#contact-form-title");
@@ -274,22 +275,32 @@
           });
         });
 
-        const showSubmittedState = (isRepeat) => {
-          if (messageBody) messageBody.textContent = isRepeat ? msgRepeat : msgFirst;
+        const showSubmittedState = () => {
           form.hidden = true;
           if (formHead) formHead.hidden = true;
-          else if (formTitle) formTitle.hidden = true;
+          if (formCopy) formCopy.hidden = true;
+          if (pageHero) pageHero.hidden = true;
+          if (roleChoice) roleChoice.hidden = true;
+          if (contactCard) contactCard.classList.add("contact-card--submitted");
+          if (contactLayout) contactLayout.classList.add("contact-layout--submitted");
+          if (subpageMain) subpageMain.classList.add("subpage-main--submitted");
           if (messageBox) messageBox.hidden = false;
         };
 
-        if (sessionStorage.getItem("m3pivot_form_submitted") === "true") {
-          showSubmittedState(true);
-        }
+        form.hidden = false;
+        if (formHead) formHead.hidden = false;
+        if (formCopy) formCopy.hidden = false;
+        if (pageHero) pageHero.hidden = false;
+        if (roleChoice) roleChoice.hidden = false;
+        if (contactCard) contactCard.classList.remove("contact-card--submitted");
+        if (contactLayout) contactLayout.classList.remove("contact-layout--submitted");
+        if (subpageMain) subpageMain.classList.remove("subpage-main--submitted");
+        if (messageBox) messageBox.hidden = true;
 
         form.addEventListener("submit", async (event) => {
           event.preventDefault();
           if (sessionStorage.getItem("m3pivot_form_submitted") === "true") {
-            showSubmittedState(true);
+            showSubmittedState();
             return;
           }
           if (status) status.textContent = "Sending…";
@@ -303,7 +314,7 @@
             if (response.ok) {
               form.reset();
               sessionStorage.setItem("m3pivot_form_submitted", "true");
-              showSubmittedState(false);
+              showSubmittedState();
             } else if (status) {
               status.textContent = "Something went wrong. Please try again.";
             }

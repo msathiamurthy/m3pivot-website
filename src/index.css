@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.m3-portfolio-gallery-root {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+
+  --background: 40 20% 96%;
+  --foreground: 24 10% 8%;
+  --card: 0 0% 100%;
+  --card-foreground: 24 10% 8%;
+  --primary: 211 91% 26%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 40 15% 92%;
+  --secondary-foreground: 24 10% 12%;
+  --muted: 40 12% 92%;
+  --muted-foreground: 40 8% 40%;
+  --accent: 40 18% 94%;
+  --accent-foreground: 24 10% 12%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 24 10% 88%;
+  --input: 24 10% 88%;
+  --ring: 211 91% 26%;
+  --radius: 0.75rem;
+
+  font-family: "Montserrat", system-ui, sans-serif;
+  color: hsl(var(--foreground));
+  background: transparent;
+}

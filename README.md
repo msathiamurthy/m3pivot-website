@@ -77,9 +77,21 @@ PYTHONPATH=.deps python3 scripts/build_team_portraits.py
 
 (requires Pillow in `.deps/` or install). Or replace the `team-*.jpg` files directly. If a file is missing, initials placeholders still show.
 
+## Sample portfolio carousel (Startups & Investors)
+
+Those pages embed a **feature carousel** (React + Tailwind + shadcn `Button`). Source lives under `components/ui/feature-carousel.tsx`. After changing it or `src/portfolio-data.ts`, rebuild:
+
+```bash
+npm install
+npm run build:gallery
+```
+
+This writes `js/portfolio-gallery.js` and `js/portfolio-gallery.css`. See **`docs/portfolio-gallery.md`** for shadcn paths and setup notes.
+
 ## Local preview
 
 ```bash
+npm run build:gallery
 python3 -m http.server 8080
 ```
 

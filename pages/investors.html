@@ -42,7 +42,8 @@
     <title>M3Pivot | Investors</title>
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css?v=6" />
+    <link rel="stylesheet" href="/css/styles.css?v=14" />
+    <link rel="stylesheet" href="/js/portfolio-gallery.css?v=7" />
     <script src="/js/analytics.js" defer></script>
   </head>
   <body>
@@ -73,7 +74,7 @@
       </div>
     </header>
 
-    <main>
+    <main class="subpage-flow">
       <div class="container container--wide subpage-main">
         <header class="page-hero">
           <span class="eyebrow">For investors</span>
@@ -83,13 +84,28 @@
             If you’d like to learn how we work with investors, reach out through
             our contact form.
           </p>
-          <div class="hero-actions" style="margin-top: 1rem;">
+          <div class="hero-actions">
             <a class="btn btn-primary" href="contact.html?role=investor">Contact</a>
-            <a class="btn btn-ghost" href="index.html">Back home</a>
+            <a class="btn btn-ghost" href="#sample-portfolio">Sample Portfolio</a>
           </div>
         </header>
+      </div>
 
-        <div class="content-block">
+      <section
+        class="preview-section"
+        id="investors-overview"
+        aria-labelledby="investors-overview-title"
+      >
+        <div class="container container--wide">
+          <p class="section-kicker">How we work with you</p>
+          <h2 id="investors-overview-title" class="section-title">
+            Founder-ready introductions, not cold lists
+          </h2>
+          <p class="section-intro">
+            We engage deeply with teams before any investor conversation — so
+            every introduction reflects real operating work, not surface-level
+            diligence.
+          </p>
           <div class="simple-card-grid">
             <div class="simple-card">
               <h3>Our focus</h3>
@@ -108,80 +124,37 @@
               </p>
             </div>
           </div>
-
-          <h2>Sample portfolio</h2>
-          <p>
-            Illustrative companies and communities that represent the range of
-            founder teams and market categories we engage with.
-          </p>
-          <div class="portfolio-line" aria-label="Sample portfolio links">
-            <div class="portfolio-avatar-group">
-              <a
-                class="portfolio-avatar-link"
-                href="https://www.theairman.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="The Airman"
-              >
-                <img
-                  class="portfolio-avatar-img"
-                  src="https://www.google.com/s2/favicons?sz=128&domain=theairman.org"
-                  alt="The Airman"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </a>
-              <a
-                class="portfolio-avatar-link"
-                href="https://withininnerwear.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Within Innerwear"
-              >
-                <img
-                  class="portfolio-avatar-img"
-                  src="https://www.google.com/s2/favicons?sz=128&domain=withininnerwear.com"
-                  alt="Within Innerwear"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </a>
-              <a
-                class="portfolio-avatar-link"
-                href="https://friscofencingacademy.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Frisco Fencing Academy"
-              >
-                <img
-                  class="portfolio-avatar-img"
-                  src="https://www.google.com/s2/favicons?sz=128&domain=friscofencingacademy.com"
-                  alt="Frisco Fencing Academy"
-                  width="64"
-                  height="64"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </a>
-            </div>
-          </div>
         </div>
-      </div>
+      </section>
+
+      <section
+        class="preview-section preview-section--alt"
+        id="sample-portfolio"
+        aria-labelledby="sample-portfolio-title"
+      >
+        <div class="container container--wide">
+          <p class="section-kicker">Portfolio</p>
+          <h2 id="sample-portfolio-title" class="section-title">Sample portfolio</h2>
+          <p class="section-intro portfolio-gallery-intro">
+            Illustrative companies and communities that represent the range of
+            founder teams and market categories we engage with. Use the arrows
+            to browse; click the center card to visit a company.
+          </p>
+          <div class="portfolio-gallery-host" data-portfolio-gallery></div>
+        </div>
+      </section>
 
       <section class="pre-footer-cta" aria-labelledby="investors-cta-title">
         <div class="container container--wide">
-          <div class="pre-footer-cta__card">
-            <h2 id="investors-cta-title">Interested in founder-ready opportunities?</h2>
-            <p>
-              Connect with us to discuss how we work with investors and where we
-              can align on upcoming introductions.
-            </p>
-            <a class="btn btn-primary" href="contact.html?role=investor">Connect with us</a>
-          </div>
+          <p class="section-kicker">Get in touch</p>
+          <h2 id="investors-cta-title" class="section-title">
+            Interested in founder-ready opportunities?
+          </h2>
+          <p class="section-intro">
+            Connect with us to discuss how we work with investors and where we
+            can align on upcoming introductions.
+          </p>
+          <a class="btn btn-primary" href="contact.html?role=investor">Get in touch</a>
         </div>
       </section>
     </main>
@@ -190,5 +163,6 @@
     <script src="/js/legacy-redirects.js"></script>
     <script src="/js/footer.js?v=3" defer></script>
     <script src="/js/nav.js?v=3" defer></script>
+    <script src="/js/portfolio-gallery.js?v=7" defer></script>
   </body>
 </html>
