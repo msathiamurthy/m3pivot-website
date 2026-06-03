@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-footer-context="home">
+<html lang="en" data-site-context="home">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,7 +48,7 @@
     />
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css?v=14" />
+    <link rel="stylesheet" href="/css/styles.css?v=23" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -63,32 +63,7 @@
     <script src="/js/analytics.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container container--wide header-inner">
-        <a class="brand" href="index.html">
-          <img src="/assets/images/full-logo.png" alt="M3Pivot" />
-        </a>
-        <button
-          type="button"
-          class="menu-toggle"
-          aria-expanded="false"
-          aria-controls="primary-nav"
-          aria-label="Open menu"
-        >
-          <span class="menu-toggle-box" aria-hidden="true">
-            <span class="menu-toggle-inner"></span>
-          </span>
-        </button>
-        <div class="nav-backdrop" aria-hidden="true"></div>
-        <nav id="primary-nav" class="nav-links" aria-label="Primary">
-          <a class="active" href="#home">Home</a>
-          <a href="team.html">Team</a>
-          <a href="startups.html">Startups</a>
-          <a href="investors.html">Investors</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <header class="site-header" data-global-header></header>
 
     <main>
       <div class="container">
@@ -181,7 +156,10 @@
             Four partners across finance, product, engineering, and investor
             relations with 100+ years of combined operating experience.
           </p>
-          <div class="team-avatar-strip" aria-label="Team member quick links">
+          <div
+            class="team-avatar-strip preview-section__visual"
+            aria-label="Team member quick links"
+          >
             <div class="team-avatar-group">
               <a
                 class="team-avatar-link"
@@ -267,7 +245,11 @@
               A few example companies and communities that reflect the kind of
               practical, execution-focused environments we support.
             </p>
-            <div class="portfolio-line" aria-label="Sample portfolio links">
+          </div>
+          <div
+            class="preview-portfolio__logos portfolio-line preview-section__visual"
+            aria-label="Sample portfolio links"
+          >
               <div class="portfolio-avatar-group">
                 <a
                   class="portfolio-avatar-link"
@@ -321,7 +303,6 @@
                   />
                 </a>
               </div>
-            </div>
           </div>
           <a class="btn btn-primary" href="startups.html">For Startups</a>
         </div>
@@ -359,16 +340,8 @@
     <footer class="site-footer" data-global-footer></footer>
 
     <script src="/js/legacy-redirects.js"></script>
-    <script src="/js/footer.js?v=3" defer></script>
-    <script src="/js/nav.js?v=3" defer></script>
-    <script>
-      (function () {
-        var homeLink = document.querySelector('#primary-nav a[href="#home"]');
-        if (!homeLink) return;
-        document.querySelectorAll("#primary-nav a").forEach(function (link) {
-          link.classList.toggle("active", link === homeLink);
-        });
-      })();
-    </script>
-  </body>
+    <script src="/js/header.js?v=2" defer></script>
+    <script src="/js/footer.js?v=5" defer></script>
+    <script src="/js/nav.js?v=4" defer></script>
+</body>
 </html>

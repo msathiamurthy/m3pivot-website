@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-footer-context="team">
+<html lang="en" data-site-context="team">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,36 +42,11 @@
     <title>M3Pivot | Team</title>
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css?v=14" />
+    <link rel="stylesheet" href="/css/styles.css?v=23" />
     <script src="/js/analytics.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container container--wide header-inner">
-        <a class="brand" href="index.html">
-          <img src="/assets/images/full-logo.png" alt="M3Pivot" />
-        </a>
-        <button
-          type="button"
-          class="menu-toggle"
-          aria-expanded="false"
-          aria-controls="primary-nav"
-          aria-label="Open menu"
-        >
-          <span class="menu-toggle-box" aria-hidden="true">
-            <span class="menu-toggle-inner"></span>
-          </span>
-        </button>
-        <div class="nav-backdrop" aria-hidden="true"></div>
-        <nav id="primary-nav" class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a class="active" href="team.html">Team</a>
-          <a href="startups.html">Startups</a>
-          <a href="investors.html">Investors</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <header class="site-header" data-global-header></header>
 
     <main>
       <div class="container container--wide subpage-main">
@@ -278,8 +253,9 @@
 
     <footer class="site-footer" data-global-footer></footer>
     <script src="/js/legacy-redirects.js"></script>
-    <script src="/js/footer.js?v=3" defer></script>
-    <script src="/js/nav.js?v=3" defer></script>
+    <script src="/js/header.js?v=2" defer></script>
+    <script src="/js/footer.js?v=5" defer></script>
+    <script src="/js/nav.js?v=4" defer></script>
     <script src="/js/team-highlight.js?v=3" defer></script>
   </body>
 </html>
