@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-footer-context="sub">
+<html lang="en" data-site-context="startups">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,37 +42,12 @@
     <title>M3Pivot | For founders</title>
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css?v=14" />
+    <link rel="stylesheet" href="/css/styles.css?v=23" />
     <link rel="stylesheet" href="/js/portfolio-gallery.css?v=7" />
     <script src="/js/analytics.js" defer></script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container container--wide header-inner">
-        <a class="brand" href="index.html">
-          <img src="/assets/images/full-logo.png" alt="M3Pivot" />
-        </a>
-        <button
-          type="button"
-          class="menu-toggle"
-          aria-expanded="false"
-          aria-controls="primary-nav"
-          aria-label="Open menu"
-        >
-          <span class="menu-toggle-box" aria-hidden="true">
-            <span class="menu-toggle-inner"></span>
-          </span>
-        </button>
-        <div class="nav-backdrop" aria-hidden="true"></div>
-        <nav id="primary-nav" class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="team.html">Team</a>
-          <a class="active" href="startups.html">Startups</a>
-          <a href="investors.html">Investors</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-      </div>
-    </header>
+    <header class="site-header" data-global-header></header>
 
     <main class="subpage-flow">
       <div class="container container--wide subpage-main">
@@ -194,7 +169,10 @@
             practical, execution-focused environments we support. Use the
             arrows to browse; click the center card to visit a company.
           </p>
-          <div class="portfolio-gallery-host" data-portfolio-gallery></div>
+          <div
+            class="portfolio-gallery-host preview-section__visual"
+            data-portfolio-gallery
+          ></div>
         </div>
       </section>
 
@@ -215,8 +193,9 @@
 
     <footer class="site-footer" data-global-footer></footer>
     <script src="/js/legacy-redirects.js"></script>
-    <script src="/js/footer.js?v=3" defer></script>
-    <script src="/js/nav.js?v=3" defer></script>
+    <script src="/js/header.js?v=2" defer></script>
+    <script src="/js/footer.js?v=5" defer></script>
+    <script src="/js/nav.js?v=4" defer></script>
     <script src="/js/portfolio-gallery.js?v=7" defer></script>
   </body>
 </html>

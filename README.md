@@ -55,6 +55,7 @@ Optional: add **LinkedIn** URLs in JSON-LD `sameAs` on `index.html`.
 | `startups.html` · `investors.html` · `contact.html` | Subpages |
 | `styles.css` | All styles |
 | `nav.js` | Mobile navigation drawer |
+| `header.js` | Shared header (logo + nav); edit once for all pages |
 | `footer.js` | Shared footer (logo + links); edit once for all pages |
 | `analytics.js` | Optional GA4 + Microsoft Clarity — see **`ANALYTICS.md`** |
 | `assets/` | Logo(s), team photos (`team-*.jpg`), etc. |
