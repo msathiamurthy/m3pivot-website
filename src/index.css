@@ -7,26 +7,62 @@
   max-width: 100%;
   overflow: hidden;
 
-  --background: 40 20% 96%;
+  /* Light — soft warm beige / light grey (site cream family) */
+  --background: 40 22% 93%;
   --foreground: 24 10% 8%;
-  --card: 0 0% 100%;
+  --card: 40 28% 97%;
   --card-foreground: 24 10% 8%;
   --primary: 211 91% 26%;
   --primary-foreground: 0 0% 98%;
-  --secondary: 40 15% 92%;
+  --secondary: 40 18% 90%;
   --secondary-foreground: 24 10% 12%;
-  --muted: 40 12% 92%;
-  --muted-foreground: 40 8% 40%;
-  --accent: 40 18% 94%;
+  --muted: 40 14% 88%;
+  --muted-foreground: 40 7% 42%;
+  --accent: 40 20% 92%;
   --accent-foreground: 24 10% 12%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 98%;
-  --border: 24 10% 88%;
-  --input: 24 10% 88%;
+  --border: 40 12% 84%;
+  --input: 40 12% 84%;
   --ring: 211 91% 26%;
   --radius: 0.75rem;
+  --carousel-shell: 40 20% 91%;
+  --carousel-slide-shadow: 40 12% 62%;
 
   font-family: "Montserrat", system-ui, sans-serif;
   color: hsl(var(--foreground));
   background: transparent;
+}
+
+[data-theme="dark"] .m3-portfolio-gallery-root {
+  /* Dark page — carousel stays a soft lifted beige / warm grey panel */
+  --background: 40 12% 80%;
+  --foreground: 24 8% 20%;
+  --card: 40 22% 94%;
+  --card-foreground: 24 10% 12%;
+  --primary: 211 91% 26%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 40 14% 87%;
+  --secondary-foreground: 24 8% 18%;
+  --muted: 40 10% 84%;
+  --muted-foreground: 40 6% 40%;
+  --accent: 40 16% 89%;
+  --accent-foreground: 24 8% 18%;
+  --border: 40 9% 76%;
+  --input: 40 9% 76%;
+  --ring: 211 91% 26%;
+  --carousel-shell: 40 11% 78%;
+  --carousel-slide-shadow: 40 8% 35%;
+}
+
+.m3-portfolio-gallery-root .m3-carousel-frame {
+  background: hsl(var(--carousel-shell) / 0.72);
+  border-color: hsl(var(--border) / 0.55);
+}
+
+.m3-portfolio-gallery-root .m3-carousel-slide {
+  border-color: hsl(var(--border) / 0.5);
+  box-shadow:
+    0 4px 16px hsl(var(--carousel-slide-shadow) / 0.14),
+    0 1px 0 hsl(0 0% 100% / 0.65) inset;
 }

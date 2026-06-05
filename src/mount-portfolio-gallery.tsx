@@ -10,7 +10,7 @@ function PortfolioGalleryApp() {
       <FeatureCarousel
         images={portfolioCarouselImages}
         autoPlayMs={4500}
-        className="w-full rounded-2xl bg-background/40"
+        className="m3-carousel-frame w-full rounded-2xl border"
       />
     </div>
   );
