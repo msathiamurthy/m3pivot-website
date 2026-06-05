@@ -67,8 +67,8 @@ export const FeatureCarousel = React.forwardRef<
         className="absolute inset-0 z-0 opacity-30 pointer-events-none"
         aria-hidden="true"
       >
-        <div className="absolute bottom-0 left-[-15%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(3,66,133,0.18),rgba(255,255,255,0))]" />
-        <div className="absolute bottom-0 right-[-15%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(225,169,53,0.2),rgba(255,255,255,0))]" />
+        <div className="absolute bottom-0 left-[-15%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(3,66,133,0.08),transparent)]" />
+        <div className="absolute bottom-0 right-[-15%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(225,169,53,0.1),transparent)]" />
       </div>
 
       <div className="relative z-10 w-full h-[min(36vh,260px)] min-h-[200px] flex items-center justify-center">
@@ -93,8 +93,8 @@ export const FeatureCarousel = React.forwardRef<
             const slide = (
               <div
                 className={cn(
-                  "flex h-full w-full items-center justify-center overflow-hidden rounded-3xl border-2 border-foreground/10 shadow-2xl",
-                  isLogo ? "bg-white p-2 sm:p-3" : "bg-muted/40"
+                  "m3-carousel-slide flex h-full w-full items-center justify-center overflow-hidden rounded-3xl border",
+                  isLogo ? "bg-card p-2 sm:p-3" : "bg-secondary/80"
                 )}
               >
                 <img
@@ -158,7 +158,7 @@ export const FeatureCarousel = React.forwardRef<
           type="button"
           variant="outline"
           size="icon"
-          className="absolute left-0 sm:left-4 top-1/2 -translate-y-1/2 rounded-full h-9 w-9 sm:h-10 sm:w-10 z-20 bg-background/80 backdrop-blur-sm shadow-md"
+          className="absolute left-0 sm:left-4 top-1/2 -translate-y-1/2 rounded-full h-9 w-9 sm:h-10 sm:w-10 z-20 border-border/60 bg-card/95 text-foreground shadow-sm hover:bg-primary hover:text-primary-foreground hover:border-primary"
           onClick={handlePrev}
           aria-label="Previous slide"
         >
@@ -168,7 +168,7 @@ export const FeatureCarousel = React.forwardRef<
           type="button"
           variant="outline"
           size="icon"
-          className="absolute right-0 sm:right-4 top-1/2 -translate-y-1/2 rounded-full h-9 w-9 sm:h-10 sm:w-10 z-20 bg-background/80 backdrop-blur-sm shadow-md"
+          className="absolute right-0 sm:right-4 top-1/2 -translate-y-1/2 rounded-full h-9 w-9 sm:h-10 sm:w-10 z-20 border-border/60 bg-card/95 text-foreground shadow-sm hover:bg-primary hover:text-primary-foreground hover:border-primary"
           onClick={handleNext}
           aria-label="Next slide"
         >

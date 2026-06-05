@@ -2,6 +2,23 @@
 <html lang="en" data-site-context="contact">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var k = "m3-theme",
+            s = sessionStorage.getItem(k),
+            d =
+              s === "light" || s === "dark"
+                ? s
+                : window.matchMedia("(prefers-color-scheme: dark)").matches
+                  ? "dark"
+                  : "light";
+          document.documentElement.setAttribute("data-theme", d);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f3f1ec" />
     <meta
@@ -39,7 +56,7 @@
     <title>M3Pivot | Contact</title>
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css?v=25" />
+    <link rel="stylesheet" href="/css/styles.css?v=28" />
     <script src="/js/analytics.js" defer></script>
   </head>
   <body>
@@ -157,7 +174,8 @@
 
     <footer class="site-footer" data-global-footer></footer>
     <script src="/js/legacy-redirects.js"></script>
-    <script src="/js/header.js?v=2" defer></script>
+    <script src="/js/theme.js?v=2" defer></script>
+    <script src="/js/header.js?v=3" defer></script>
     <script src="/js/footer.js?v=5" defer></script>
     <script src="/js/nav.js?v=4" defer></script>
     <script>
