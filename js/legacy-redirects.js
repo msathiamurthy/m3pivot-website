@@ -1,7 +1,23 @@
 /**
- * Send old home-page anchor links to dedicated pages (cached nav/footer, bookmarks).
+ * Legacy URL handling — old home anchors, /pages/* paths, and cached nav links.
  */
 (function () {
+  var path = location.pathname || "";
+
+  var pagesMap = {
+    "index.html": "/",
+    "contact.html": "/contact.html",
+    "team.html": "/team.html",
+    "startups.html": "/startups.html",
+    "investors.html": "/investors.html",
+  };
+
+  var pagesMatch = path.match(/\/pages\/([^/]+\.html)$/i);
+  if (pagesMatch && pagesMap[pagesMatch[1]]) {
+    location.replace(pagesMap[pagesMatch[1]]);
+    return;
+  }
+
   var contactTargets = [
     "#contact",
     "index.html#contact",
@@ -18,12 +34,7 @@
   ];
 
   function isHomePage() {
-    var path = location.pathname;
-    return (
-      path === "/" ||
-      path.endsWith("/index.html") ||
-      path.endsWith("/pages/index.html")
-    );
+    return path === "/" || path.endsWith("/index.html");
   }
 
   function redirectHash() {

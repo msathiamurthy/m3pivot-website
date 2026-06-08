@@ -7,7 +7,7 @@ Static site for **[www.m3pivot.com](https://www.m3pivot.com)**. Built as plain H
 - **Production:** **https://www.m3pivot.com** — homepage is **`index.html`** at the repo root (GitHub Pages publishes **`/`** on branch **`main`**).
 - **GitHub URL:** https://msathiamurthy.github.io/m3pivot-website/
 
-**GoDaddy DNS (share with whoever has domain access):** **[GODADDY-DNS-STEPS.md](./GODADDY-DNS-STEPS.md)**
+**GoDaddy DNS (share with whoever has domain access):** **[docs/GODADDY-DNS-STEPS.md](./docs/GODADDY-DNS-STEPS.md)**
 
 **You (GitHub):** Add **`CNAME`** at repo root with `www.m3pivot.com` (see **`CNAME.example`**) → push → **Settings → Pages** → Custom domain `www.m3pivot.com` → after it works, **Enforce HTTPS**.
 
@@ -34,7 +34,7 @@ The site stylesheet (`styles.css`) uses **Montserrat** and maps UI accents to th
 - Each page has **unique `meta description`**, **`canonical`**, **Open Graph**, and **Twitter** tags using **https://www.m3pivot.com**.
 - **`sitemap.xml`** and **`robots.txt`** use the same base URL.
 - **Home** includes **JSON-LD** (`Organization`).
-- **`CNAME`** at the repo root should contain **`www.m3pivot.com`** for the custom domain. See **`CNAME.example`**.
+- **`CNAME`** at the repo root should contain **`www.m3pivot.com`** for the custom domain. See **`config/CNAME.example`**.
 
 Favicons are generated from **`assets/small-logo.png`**. All main HTML pages use **`assets/favicon-180x180.png`** for both **`rel="icon"`** and **`apple-touch-icon`** (browsers downscale for tabs). The build script also writes **`favicon.ico`** (repo root + `assets/`) and **`favicon-32x32.png`** for optional legacy use or tools that request `/favicon.ico` without parsing HTML. The script **trims transparent margins**, **pads to a square**, then **fits** the mark in each output with a small **uniform gutter**. Regenerate after logo changes:
 
@@ -48,21 +48,37 @@ Optional: add **LinkedIn** URLs in JSON-LD `sameAs` on `index.html`.
 
 ## Project layout
 
+GitHub Pages serves **HTML and SEO files from the repo root**. Edit those directly — there is no separate `pages/` mirror.
+
 | Path | Purpose |
 |------|---------|
-| `CNAME.example` | Template: copy to `CNAME` when enabling **www** on GitHub Pages |
+| **Site (repo root)** | |
 | `index.html` | Home |
-| `startups.html` · `investors.html` · `contact.html` | Subpages |
-| `styles.css` | All styles |
+| `team.html` · `startups.html` · `investors.html` · `contact.html` | Subpages |
+| `sitemap.xml` · `robots.txt` · `CNAME` | SEO + custom domain (deployed as-is) |
+| **`css/`** | |
+| `styles.css` | Global styles (light/dark theme, layout, components) |
+| **`js/`** | |
+| `header.js` · `footer.js` | Shared chrome — edit once for all pages |
 | `nav.js` | Mobile navigation drawer |
-| `header.js` | Shared header (logo + nav); edit once for all pages |
-| `footer.js` | Shared footer (logo + links); edit once for all pages |
-| `analytics.js` | Optional GA4 + Microsoft Clarity — see **`ANALYTICS.md`** |
-| `assets/` | Logo(s), team photos (`team-*.jpg`), etc. |
-| `sitemap.xml` · `robots.txt` | SEO discovery |
-| `GODADDY-DNS-STEPS.md` | Short GoDaddy DNS steps (for whoever manages the domain) |
-| `formspree.md` | Contact form backend (Formspree endpoint, account, fields) |
-| `pamphlet/` | A5 duplex poster; see `pamphlet/README.md` |
+| `theme.js` | Light/dark theme (OS default + session toggle) |
+| `home-sidebar-nav.js` | Homepage floating section nav |
+| `legacy-redirects.js` | Old anchor and `/pages/*` URL redirects |
+| `analytics.js` | Optional GA4 + Microsoft Clarity — see **`docs/ANALYTICS.md`** |
+| `portfolio-gallery.js` · `.css` | Built carousel widget (do not edit by hand) |
+| **`assets/`** | Images, icons, team photos |
+| **`src/`** · **`components/`** | Portfolio carousel source (React + Vite) |
+| **`scripts/`** | Build helpers (`build_favicon.py`, `build_team_portraits.py`, `sync_github_pages.py`) |
+| **`config/`** | `CNAME` template for custom domain |
+| **`docs/`** | Formspree, analytics, DNS, gallery notes |
+| **`pamphlet/`** | A5 print poster (not part of live site) |
+
+## Maintaining pages
+
+1. Edit **`index.html`** and subpages at the **repo root** only.
+2. Shared UI lives in **`js/header.js`**, **`js/footer.js`**, and **`css/styles.css`** — change once, all pages update.
+3. After portfolio carousel changes, run **`npm run build:gallery`**.
+4. Optional: **`python scripts/sync_github_pages.py`** copies **`config/CNAME`** and **`favicon.ico`** to the repo root after regenerating icons.
 
 ## Partner headshots
 
