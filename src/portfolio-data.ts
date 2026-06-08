@@ -14,9 +14,9 @@ export const portfolioCarouselImages: CarouselImage[] = [
     variant: "logo",
   },
   {
-    src: "/assets/images/portfolio/frisco-fencing-logo.png",
-    alt: "Frisco Fencing Academy — Olympic fencing training",
-    href: "https://friscofencingacademy.com/",
+    src: "https://www.google.com/s2/favicons?sz=128&domain=fenceriq.ai",
+    alt: "Fencer IQ — AI-powered fencing assessment platform",
+    href: "https://fenceriq.ai/",
     variant: "logo",
   },
 ];

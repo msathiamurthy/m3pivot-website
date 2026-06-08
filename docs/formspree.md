@@ -20,12 +20,12 @@ Create new forms or manage submissions by signing in at **[formspree.io](https:/
 | | |
 |--|--|
 | **Endpoint** | `https://formspree.io/f/mojknrgk` |
-| **Used on** | **`index.html`** (home, `#contact` section) · **`contact.html`** |
+| **Used on** | **`contact.html`** (repo root) |
 
-Both forms use:
+The form uses:
 
 - `method="POST"`
-- `data-formspree="true"` (enables the inline `fetch` + thank-you behavior in those pages)
+- `data-formspree="true"` (enables the inline `fetch` + thank-you behavior)
 
 ### Fields sent to Formspree
 
@@ -41,9 +41,7 @@ Both forms use:
 ## Changing the Formspree form
 
 1. In Formspree (logged in as **`muthu.sathiamurthy@gmail.com`**), create a form or copy the new form ID from the dashboard.
-2. Update the `action` URL in **both** places so they stay in sync:
-   - **`index.html`** — search for `formspree.io/f/`
-   - **`contact.html`** — same
+2. Update the `action` URL in **`contact.html`** — search for `formspree.io/f/`.
 3. In the Formspree UI, set **redirect** / **notifications** as needed (optional; the site already shows an on-page thank-you state after a successful `fetch`).
 
 ---
@@ -58,6 +56,5 @@ Both forms use:
 
 ## Related files
 
-- **`index.html`** — contact section form + script block
-- **`contact.html`** — dedicated contact page form + script block
+- **`contact.html`** — contact page form + script block
 - **`M3Pivot_Website_Content.txt`** — also references the Formspree URL (keep in sync if the endpoint changes)
