@@ -1715,6 +1715,11 @@ label {
   color: var(--ink-soft);
 }
 
+.required-mark {
+  color: var(--gold);
+  font-weight: 700;
+}
+
 input,
 select,
 textarea {
