@@ -2000,6 +2000,10 @@ html[data-site-context="contact"] .page-hero {
   padding-bottom: 1.25rem;
 }
 
+html[data-site-context="contact"] .page-hero h1::after {
+  display: none;
+}
+
 html[data-site-context="contact"] .page-hero p {
   margin-inline: auto;
 }

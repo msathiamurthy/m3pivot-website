@@ -63,7 +63,7 @@
     '<a class="footer-brand" href="' +
     h.home +
     '">' +
-    '<img class="footer-logo-mark" src="/assets/images/small-logo.png" alt="M3Pivot" decoding="async" />' +
+    '<img class="footer-logo-mark" data-logo-theme="small" src="/assets/images/small-logo.png" alt="M3Pivot" decoding="async" />' +
     "</a>" +
     '<div class="footer-about__text">' +
     "<p>© 2025 M3Pivot. All rights reserved.</p>" +
@@ -90,4 +90,6 @@
     '">Contact</a>' +
     "</nav>" +
     "</div>";
+
+  document.dispatchEvent(new CustomEvent("m3:footer-ready"));
 })();
