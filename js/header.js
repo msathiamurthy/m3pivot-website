@@ -97,7 +97,7 @@
     '<a class="brand" href="' +
     (ctx === "home" ? "#home" : h.home) +
     '">' +
-    '<img src="/assets/images/full-logo.png" alt="M3Pivot" width="200" height="34" decoding="async" />' +
+    '<img data-logo-theme="full" src="/assets/images/full-logo.png" alt="M3Pivot" width="200" height="34" decoding="async" />' +
     "</a>" +
     '<div class="header-end">' +
     '<button type="button" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">' +

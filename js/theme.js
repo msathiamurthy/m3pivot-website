@@ -46,11 +46,32 @@
     });
   }
 
+  var LOGO_PATHS = {
+    full: {
+      light: "/assets/images/full-logo.png",
+      dark: "/assets/images/full-logo-dark.png",
+    },
+    small: {
+      light: "/assets/images/small-logo.png",
+      dark: "/assets/images/small-logo-dark.png",
+    },
+  };
+
+  function updateLogos(theme) {
+    document.querySelectorAll("[data-logo-theme]").forEach(function (img) {
+      var paths = LOGO_PATHS[img.getAttribute("data-logo-theme")];
+      if (paths) {
+        img.src = theme === "dark" ? paths.dark : paths.light;
+      }
+    });
+  }
+
   function applyTheme(theme, persist) {
     if (theme !== "light" && theme !== "dark") theme = "light";
     document.documentElement.setAttribute("data-theme", theme);
     updateMeta(theme);
     updateToggles(theme);
+    updateLogos(theme);
     if (persist) {
       try {
         sessionStorage.setItem(STORAGE_KEY, theme);
@@ -91,9 +112,14 @@
     bind();
   }
 
-  document.addEventListener("m3:header-ready", function () {
-    updateToggles(resolveTheme());
-  });
+  function syncChromeFromTheme() {
+    var theme = resolveTheme();
+    updateToggles(theme);
+    updateLogos(theme);
+  }
+
+  document.addEventListener("m3:header-ready", syncChromeFromTheme);
+  document.addEventListener("m3:footer-ready", syncChromeFromTheme);
 
   window.M3Theme = {
     get: resolveTheme,
