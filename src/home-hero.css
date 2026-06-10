@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.m3-home-hero-root {
+  width: 100%;
+  --background: 220 25% 12%;
+  --foreground: 40 20% 96%;
+  --primary: 211 91% 26%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 220 18% 18%;
+  --secondary-foreground: 40 15% 92%;
+  --muted: 220 14% 22%;
+  --muted-foreground: 40 8% 75%;
+  --accent: 220 16% 20%;
+  --accent-foreground: 40 15% 92%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 220 12% 28%;
+  --input: 220 12% 28%;
+  --ring: 211 91% 26%;
+  --radius: 0.75rem;
+  font-family: "Montserrat", system-ui, sans-serif;
+  color: hsl(var(--foreground));
+}
+
+/* Light mode — no video overlay; dark text for readability */
+.m3-hero-video-overlay {
+  background: transparent;
+}
+
+[data-theme="light"] .m3-home-hero-root .m3-hero-title {
+  color: #141210;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.65);
+}
+
+[data-theme="light"] .m3-home-hero-root .m3-hero-description {
+  color: #3d3a36;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.55);
+}
+
+[data-theme="light"] .m3-home-hero-root .m3-hero-description strong {
+  color: #141210;
+}
+
+[data-theme="light"] .m3-home-hero-root .m3-hero-kicker {
+  color: #034285;
+  background: linear-gradient(
+    105deg,
+    rgba(3, 66, 133, 0.1) 0%,
+    rgba(225, 169, 53, 0.16) 100%
+  );
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+}
+
+.m3-home-hero-root .m3-hero-glass-btn {
+  background: linear-gradient(145deg, #034285 0%, #0456a8 100%);
+  border-color: transparent;
+  color: #fff;
+}
+
+.m3-home-hero-root .m3-hero-glass-btn:hover {
+  background: linear-gradient(145deg, #0456a8 0%, #0569c4 100%);
+  color: #fff;
+}
+
+/* Dark mode — keep overlay for text contrast */
+[data-theme="dark"] .m3-hero-video-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 16, 26, 0.45) 0%,
+    rgba(10, 16, 26, 0.6) 42%,
+    rgba(10, 16, 26, 0.75) 100%
+  );
+}
+
+[data-theme="dark"] .m3-home-hero-root .m3-hero-title,
+[data-theme="dark"] .m3-home-hero-root .m3-hero-description {
+  color: #faf8f5;
+  text-shadow: 0 2px 20px rgba(8, 12, 20, 0.45);
+}
+
+[data-theme="dark"] .m3-home-hero-root .m3-hero-description {
+  color: rgba(248, 246, 242, 0.92);
+}
+
+[data-theme="dark"] .m3-home-hero-root .m3-hero-description strong {
+  color: #fff;
+}
+
+[data-theme="dark"] .m3-home-hero-root .m3-hero-kicker {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+}

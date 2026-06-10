@@ -65,7 +65,8 @@
     />
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css?v=34" />
+    <link rel="stylesheet" href="/css/styles.css?v=39" />
+    <link rel="stylesheet" href="/js/home-hero.css?v=3" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -83,46 +84,15 @@
     <header class="site-header" data-global-header></header>
 
     <main>
-      <div class="container">
-        <section class="hero" id="home">
-          <span class="eyebrow">Pivot with a purpose</span>
-          <h1>We don’t just advise. We travel with you.</h1>
-          <p class="hero-lead">
-            For early-stage founders in India, we show up in the moments that
-            matter — around <strong style="color: var(--ink)">Money, Market,
-            and Management</strong> — with more than a century of combined
-            experience at the table.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">Talk to us</a>
-          </div>
-        </section>
+      <section id="home" class="home-hero-host" data-home-hero aria-label="Introduction"></section>
 
-        <section class="section-narrative" aria-labelledby="journey-heading">
-          <h2 id="journey-heading" class="visually-hidden">How we work</h2>
-          <div class="section-narrative__inner">
-            <div class="narrative-visual narrative-visual--mark" aria-hidden="true"></div>
-            <blockquote class="section-narrative__quote">
-              <p class="quote-text">
-                We stay beside you — not parachute in with a deck and vanish —
-                from first calls to the conversations that shape your company.
-              </p>
-              <p class="quote-note">
-                Skin in the game. Not slides on a screen.
-              </p>
-            </blockquote>
-          </div>
-        </section>
-
-      </div>
-
-      <section id="proof" aria-labelledby="proof-title">
+      <section class="home-band" id="proof" aria-labelledby="proof-title">
         <div class="container">
-          <p class="section-kicker">Why it matters</p>
-          <h2 id="proof-title" class="section-title">Built for India’s early stage</h2>
-          <p class="section-intro">
-            Pre-seed and seed startups — where hands-on judgment
-            still beats generic playbooks.
+          <p class="section-kicker">Why M3Pivot</p>
+          <h2 id="proof-title" class="section-title">Beside you, not just on slides</h2>
+          <p class="section-intro home-intro--tight">
+            We exist to help early-stage founders make sharper calls — with
+            operators in the room, not generic advice from the sidelines.
           </p>
           <div class="proof-stats">
             <article class="proof-stat-card">
@@ -164,13 +134,13 @@
         </div>
       </section>
 
-      <section class="preview-section" id="team-preview" aria-labelledby="team-preview-title">
+      <section class="home-band preview-section" id="team-preview" aria-labelledby="team-preview-title">
         <div class="container container--wide">
-    
-          <h2 id="team-preview-title" class="section-title">Experienced operators beside you</h2>
-          <p class="section-intro">
-            Four partners across finance, product, engineering, and investor
-            relations with 100+ years of combined operating experience.
+          <p class="section-kicker">The team</p>
+          <h2 id="team-preview-title" class="section-title">Four partners. 100+ years combined.</h2>
+          <p class="section-intro home-intro--tight">
+            Finance, product, engineering, and investor relations — on your side
+            from first calls onward.
           </p>
           <div
             class="team-avatar-strip preview-section__visual"
@@ -243,93 +213,88 @@
         </div>
       </section>
 
-      <section class="preview-section preview-section--alt" id="startups-preview" aria-labelledby="startups-preview-title">
+      <section class="home-band preview-section preview-section--alt" id="sample-portfolio" aria-labelledby="sample-portfolio-title">
         <div class="container container--wide">
-          <p class="section-kicker">For startups</p>
-          <h2 id="startups-preview-title" class="section-title">Support from idea to scale-up decisions</h2>
-          <p class="section-intro">
-            We help startups navigate product, market, team, and funding
-            priorities with practical guidance from operators who have built in
-            the same environments.
+          <p class="section-kicker">Sample portfolio</p>
+          <h2 id="sample-portfolio-title" class="section-title">Teams we’ve backed</h2>
+          <p class="section-intro home-intro--tight">
+            Illustrative founders and categories we engage with.
           </p>
-          <div class="preview-feature-list">
-            <p>Mentorship rooted in execution, not theory.</p>
-          </div>
-          <div id="sample-portfolio" class="preview-portfolio">
-            <p class="section-kicker preview-portfolio__kicker">Sample portfolio</p>
-            <p class="preview-portfolio__intro">
-              A few example companies and communities that reflect the kind of
-              practical, execution-focused environments we support.
-            </p>
-          </div>
           <div
             class="preview-portfolio__logos portfolio-line preview-section__visual"
             aria-label="Sample portfolio links"
           >
-              <div class="portfolio-avatar-group">
-                <a
-                  class="portfolio-avatar-link"
-                  href="https://withininnerwear.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Within Innerwear"
-                >
-                  <img
-                    class="portfolio-avatar-img"
-                    src="https://www.google.com/s2/favicons?sz=128&domain=withininnerwear.com"
-                    alt="Within Innerwear"
-                    width="64"
-                    height="64"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
-                <a
-                  class="portfolio-avatar-link"
-                  href="https://fenceriq.ai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Fencer IQ"
-                >
-                  <img
-                    class="portfolio-avatar-img portfolio-avatar-img--logo"
-                    src="/assets/images/portfolio/fencer-iq-logo.png"
-                    alt="Fencer IQ"
-                    width="64"
-                    height="64"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
-              </div>
+            <div class="portfolio-avatar-group">
+              <a
+                class="portfolio-avatar-link"
+                href="https://withininnerwear.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Within Innerwear"
+              >
+                <img
+                  class="portfolio-avatar-img"
+                  src="https://www.google.com/s2/favicons?sz=128&domain=withininnerwear.com"
+                  alt="Within Innerwear"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <a
+                class="portfolio-avatar-link"
+                href="https://fenceriq.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Fencer IQ"
+              >
+                <img
+                  class="portfolio-avatar-img portfolio-avatar-img--logo"
+                  src="/assets/images/portfolio/fencer-iq-logo.png"
+                  alt="Fencer IQ"
+                  width="64"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section class="home-band preview-section" id="startups-preview" aria-labelledby="startups-preview-title">
+        <div class="container container--wide">
+          <p class="section-kicker">For startups</p>
+          <h2 id="startups-preview-title" class="section-title">Practical support from idea to scale</h2>
+          <p class="section-intro home-intro--tight">
+            Product, market, team, and funding — guidance from operators who
+            have built in the same environments.
+          </p>
           <a class="btn btn-primary" href="startups.html">For Startups</a>
         </div>
       </section>
 
-      <section class="preview-section" id="investors-preview" aria-labelledby="investors-preview-title">
+      <section class="home-band preview-section preview-section--alt" id="investors-preview" aria-labelledby="investors-preview-title">
         <div class="container container--wide">
           <p class="section-kicker">For investors</p>
-          <h2 id="investors-preview-title" class="section-title">Curated introductions with real diligence</h2>
-          <p class="section-intro">
-            We work hands-on with founders before any introduction, helping
-            teams sharpen financials, GTM readiness, and leadership quality.
+          <h2 id="investors-preview-title" class="section-title">Introductions after real diligence</h2>
+          <p class="section-intro home-intro--tight">
+            We work with founders for months before any intro — financials, GTM,
+            and leadership stress-tested first.
           </p>
-          <div class="preview-feature-list">
-            <p>Pre-seed and seed India-focused opportunities.</p>
-          </div>
           <a class="btn btn-primary" href="investors.html">For Investors</a>
         </div>
       </section>
 
-      <section class="pre-footer-cta" aria-labelledby="home-cta-title">
+      <section class="home-band pre-footer-cta" id="contact" aria-labelledby="home-cta-title">
         <div class="container container--wide">
-          <p class="section-kicker">Get in touch</p>
-          <h2 id="home-cta-title" class="section-title">Ready to start a conversation?</h2>
-          <p class="section-intro">
-            Whether you want to collaborate, learn more about our services, or
-            explore how we support founders and investors — we will respond
-            thoughtfully.
+          <p class="section-kicker">Contact</p>
+          <h2 id="home-cta-title" class="section-title">Start a conversation</h2>
+          <p class="section-intro home-intro--tight">
+            <a class="home-contact-email" href="mailto:info@m3pivot.com">info@m3pivot.com</a>
+            — or send us a note through the form.
           </p>
           <a class="btn btn-primary" href="contact.html">Get in touch</a>
         </div>
@@ -343,7 +308,7 @@
         <nav aria-label="Jump to section">
           <ul class="home-float-nav__links">
             <li>
-              <a class="home-float-nav__link" href="#home">
+              <a class="home-float-nav__link" href="#proof">
                 <span class="home-float-nav__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
                 </span>
@@ -359,19 +324,19 @@
               </a>
             </li>
             <li>
-              <a class="home-float-nav__link" href="#startups-preview">
-                <span class="home-float-nav__icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-                </span>
-                For Startups
-              </a>
-            </li>
-            <li>
               <a class="home-float-nav__link" href="#sample-portfolio">
                 <span class="home-float-nav__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
                 </span>
-                Sample Portfolio
+                Portfolio
+              </a>
+            </li>
+            <li>
+              <a class="home-float-nav__link" href="#startups-preview">
+                <span class="home-float-nav__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                </span>
+                Startups
               </a>
             </li>
             <li>
@@ -379,7 +344,15 @@
                 <span class="home-float-nav__icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-5 4 3 5-7"/></svg>
                 </span>
-                For Investors
+                Investors
+              </a>
+            </li>
+            <li>
+              <a class="home-float-nav__link" href="#contact">
+                <span class="home-float-nav__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                Contact
               </a>
             </li>
           </ul>
@@ -397,6 +370,7 @@
     <script src="/js/header.js?v=4" defer></script>
     <script src="/js/footer.js?v=6" defer></script>
     <script src="/js/nav.js?v=4" defer></script>
-    <script src="/js/home-sidebar-nav.js?v=3" defer></script>
+    <script src="/js/home-hero.js?v=3" defer></script>
+    <script src="/js/home-sidebar-nav.js?v=4" defer></script>
 </body>
 </html>

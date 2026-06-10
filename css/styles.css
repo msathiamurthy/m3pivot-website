@@ -826,6 +826,74 @@ section[id],
   gap: 0.6rem;
 }
 
+html[data-site-context="home"] main:has(> .home-hero-host:first-child) {
+  padding-top: 0;
+}
+
+.home-hero-host {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html[data-site-context="home"] .home-band {
+  padding: 1.65rem 0;
+}
+
+html[data-site-context="home"] .home-band.preview-section,
+html[data-site-context="home"] .home-band.pre-footer-cta {
+  padding: 1.65rem 0;
+}
+
+html[data-site-context="home"] .home-intro--tight {
+  margin-bottom: 0.85rem;
+  font-size: 0.96rem;
+  max-width: 36rem;
+}
+
+html[data-site-context="home"] .section-title {
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.2rem, 3.5vw, 1.55rem);
+}
+
+html[data-site-context="home"] #proof .proof-stat-card {
+  padding: 1.2rem 0.9rem 1rem;
+}
+
+html[data-site-context="home"] #proof .proof-stat-card__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-bottom: 0.65rem;
+}
+
+html[data-site-context="home"] #proof .proof-stat-card__value {
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+}
+
+html[data-site-context="home"] .team-avatar-strip.preview-section__visual {
+  margin: 0.25rem auto 0.85rem;
+}
+
+html[data-site-context="home"] .preview-section .preview-portfolio__logos {
+  margin: 0.1rem 0 0.5rem;
+}
+
+html[data-site-context="home"] #contact {
+  scroll-margin-top: calc(var(--site-header-height) + 1rem);
+}
+
+.home-contact-email {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-contact-email:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

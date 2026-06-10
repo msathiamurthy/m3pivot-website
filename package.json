@@ -4,11 +4,14 @@
   "type": "module",
   "scripts": {
     "build:gallery": "vite build",
+    "build:hero": "vite build --config vite.hero.config.ts",
+    "build": "npm run build:gallery && npm run build:hero",
     "dev:gallery": "vite build --watch"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
     "class-variance-authority": "^0.7.1",
+    "framer-motion": "^11.18.2",
     "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",
     "react": "^18.3.1",
