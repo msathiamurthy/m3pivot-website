@@ -844,6 +844,10 @@ html[data-site-context="home"] .home-band.pre-footer-cta {
   padding: 3rem 0;
 }
 
+html[data-site-context="home"] #startups-preview {
+  border-top: 1px solid var(--gold-line, rgba(225, 169, 53, 0.35));
+}
+
 html[data-site-context="home"] .home-intro--tight {
   margin-bottom: 1.25rem;
   font-size: 1rem;
