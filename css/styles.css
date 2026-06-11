@@ -221,9 +221,7 @@ body {
   color: var(--ink-soft);
   background: var(--bg);
   background-image:
-    radial-gradient(ellipse 90% 55% at 50% -25%, var(--warm-glow), transparent),
-    radial-gradient(ellipse 50% 40% at 0% 20%, var(--body-grad-1), transparent),
-    radial-gradient(ellipse 55% 35% at 100% 15%, var(--body-grad-2), transparent);
+    radial-gradient(ellipse 90% 55% at 50% -25%, var(--warm-glow), transparent);
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -883,6 +881,12 @@ html[data-site-context="home"] .preview-section .preview-portfolio__logos {
 }
 
 /* Home page sample-portfolio: vertical stack of rectangular logos, no box, centred */
+html[data-site-context="home"] #sample-portfolio .preview-portfolio__logos {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 html[data-site-context="home"] #sample-portfolio .portfolio-avatar-group {
   flex-direction: column;
   align-items: center;
@@ -925,7 +929,11 @@ html[data-site-context="home"] #contact {
 /* Sample portfolio sub-section inside startups on homepage */
 .home-portfolio-sub {
   margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 1.5rem;
+  width: 100%;
+  max-width: 560px;
   border-top: 1px solid var(--gold-line, rgba(225, 169, 53, 0.3));
   display: flex;
   flex-direction: column;
@@ -1533,7 +1541,7 @@ html[data-site-context="home"] #contact {
   border-radius: 9999px;
   object-fit: cover;
   object-position: center 35%;
-  border: 3px solid var(--bg);
+  border: none;
   background: var(--bg-elevated);
   box-sizing: border-box;
   box-shadow: 0 4px 14px var(--avatar-shadow);
