@@ -130,6 +130,10 @@ export const AnimatedHero = ({
           />
         )}
         <div className="m3-hero-video-overlay absolute inset-0" aria-hidden="true" />
+        {/* Animated colour orbs — visible through the overlay */}
+        <div className="m3-hero-orb m3-hero-orb-1" aria-hidden="true" />
+        <div className="m3-hero-orb m3-hero-orb-2" aria-hidden="true" />
+        <div className="m3-hero-orb m3-hero-orb-3" aria-hidden="true" />
       </div>
 
       {showHeader && logo && (

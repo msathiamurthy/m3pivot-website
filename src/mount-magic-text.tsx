@@ -35,6 +35,7 @@ function MagicTextSection() {
   );
 }
 
+
 function mountAll() {
   document.querySelectorAll("[data-magic-text]").forEach((el) => {
     if (el.getAttribute("data-mounted") === "true") return;

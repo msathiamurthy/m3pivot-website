@@ -8,9 +8,9 @@
 }
 
 .m3-magic-text-section {
-  padding: 2rem 0;
-  border-top: 1px solid var(--gold-line, rgba(225, 169, 53, 0.42));
-  border-bottom: 1px solid var(--line, rgba(20, 18, 16, 0.1));
+  padding: 3.5rem 0;
+  border-top: none;
+  border-bottom: none;
   background: var(--section-bg-gradient, linear-gradient(180deg, #fcfaf7 0%, #f4f1ea 100%));
 }
 
@@ -18,45 +18,27 @@
   background: linear-gradient(180deg, #252f40 0%, #1c2433 100%);
 }
 
+/* Centred single-column layout */
 .m3-magic-text-inner {
-  display: grid;
-  gap: 1.15rem;
-  align-items: start;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding-inline: clamp(1rem, 4vw, 1.5rem);
-  max-width: min(1180px, 100%);
+  max-width: min(760px, 100%);
   margin-inline: auto;
-}
-
-@media (min-width: 640px) {
-  .m3-magic-text-inner {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 1.5rem;
-    justify-items: start;
-    text-align: left;
-    align-items: center;
-  }
+  gap: 0.9rem;
 }
 
 .m3-magic-text-mark {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: clamp(3rem, 20vw, 4.5rem);
-  flex-shrink: 0;
-}
-
-@media (min-width: 640px) {
-  .m3-magic-text-mark {
-    align-items: flex-start;
-    padding-top: 0.15rem;
-  }
 }
 
 .m3-magic-text-mark__quote {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.1rem, 15vw, 4.6rem);
+  font-size: clamp(2.8rem, 12vw, 4.2rem);
   line-height: 0.68;
   color: #e1a935;
   letter-spacing: -0.04em;
@@ -66,7 +48,7 @@
   display: block;
   width: 2.65rem;
   height: 3px;
-  margin-top: 0.45rem;
+  margin-top: 0.55rem;
   background: linear-gradient(90deg, #034285 0%, #e1a935 100%);
   border-radius: 2px;
   opacity: 0.88;
@@ -74,33 +56,42 @@
 
 .m3-magic-text-body {
   width: 100%;
-  max-width: 62ch;
 }
 
+/* The magic text paragraph — centred, words launch up individually */
 .m3-magic-text {
   margin: 0;
-  font-size: clamp(1rem, 3.8vw, 1.35rem);
+  font-size: clamp(1.05rem, 3.4vw, 1.45rem);
   font-weight: 600;
-  line-height: 1.48;
+  line-height: 1.55;
   color: var(--ink, #141210);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 [data-theme="dark"] .m3-magic-text {
   color: #f4f1ea;
 }
 
+/* Each word clips its launch motion */
 .m3-magic-word {
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 0.28em;
   margin-top: 0;
+  vertical-align: bottom;
 }
 
 .m3-magic-text-note {
-  margin: 0.85rem 0 0;
+  margin: 1rem 0 0;
   padding-top: 0.85rem;
-  border-top: 1px solid var(--quote-border, rgba(3, 66, 133, 0.1));
+  border-top: 1px solid var(--quote-border, rgba(3, 66, 133, 0.12));
   font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--muted, #6b6560);
+  text-align: center;
 }
 
 [data-theme="dark"] .m3-magic-text-note {
