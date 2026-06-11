@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.m3-magic-text-root {
+  width: 100%;
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.m3-magic-text-section {
+  padding: 2rem 0;
+  border-top: 1px solid var(--gold-line, rgba(225, 169, 53, 0.42));
+  border-bottom: 1px solid var(--line, rgba(20, 18, 16, 0.1));
+  background: var(--section-bg-gradient, linear-gradient(180deg, #fcfaf7 0%, #f4f1ea 100%));
+}
+
+[data-theme="dark"] .m3-magic-text-section {
+  background: linear-gradient(180deg, #252f40 0%, #1c2433 100%);
+}
+
+.m3-magic-text-inner {
+  display: grid;
+  gap: 1.15rem;
+  align-items: start;
+  justify-items: center;
+  text-align: center;
+  padding-inline: clamp(1rem, 4vw, 1.5rem);
+  max-width: min(1180px, 100%);
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .m3-magic-text-inner {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.5rem;
+    justify-items: start;
+    text-align: left;
+    align-items: center;
+  }
+}
+
+.m3-magic-text-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: clamp(3rem, 20vw, 4.5rem);
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .m3-magic-text-mark {
+    align-items: flex-start;
+    padding-top: 0.15rem;
+  }
+}
+
+.m3-magic-text-mark__quote {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.1rem, 15vw, 4.6rem);
+  line-height: 0.68;
+  color: #e1a935;
+  letter-spacing: -0.04em;
+}
+
+.m3-magic-text-mark__accent {
+  display: block;
+  width: 2.65rem;
+  height: 3px;
+  margin-top: 0.45rem;
+  background: linear-gradient(90deg, #034285 0%, #e1a935 100%);
+  border-radius: 2px;
+  opacity: 0.88;
+}
+
+.m3-magic-text-body {
+  width: 100%;
+  max-width: 62ch;
+}
+
+.m3-magic-text {
+  margin: 0;
+  font-size: clamp(1rem, 3.8vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.48;
+  color: var(--ink, #141210);
+}
+
+[data-theme="dark"] .m3-magic-text {
+  color: #f4f1ea;
+}
+
+.m3-magic-word {
+  margin-top: 0;
+}
+
+.m3-magic-text-note {
+  margin: 0.85rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--quote-border, rgba(3, 66, 133, 0.1));
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted, #6b6560);
+}
+
+[data-theme="dark"] .m3-magic-text-note {
+  border-top-color: rgba(130, 148, 176, 0.22);
+  color: #908a82;
+}
+
+@media (min-width: 640px) {
+  .m3-magic-text-note {
+    font-size: 0.9rem;
+  }
+}

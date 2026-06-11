@@ -24,9 +24,14 @@
   color: hsl(var(--foreground));
 }
 
-/* Light mode — no video overlay; dark text for readability */
-.m3-hero-video-overlay {
-  background: transparent;
+/* Light mode — soft white overlay over video */
+[data-theme="light"] .m3-hero-video-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.68) 42%,
+    rgba(255, 255, 255, 0.78) 100%
+  );
 }
 
 [data-theme="light"] .m3-home-hero-root .m3-hero-title {

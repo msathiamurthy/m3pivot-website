@@ -5,7 +5,8 @@
   "scripts": {
     "build:gallery": "vite build",
     "build:hero": "vite build --config vite.hero.config.ts",
-    "build": "npm run build:gallery && npm run build:hero",
+    "build:magic-text": "vite build --config vite.magic-text.config.ts",
+    "build": "npm run build:gallery && npm run build:hero && npm run build:magic-text",
     "dev:gallery": "vite build --watch"
   },
   "dependencies": {
