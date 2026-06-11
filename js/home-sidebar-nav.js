@@ -15,11 +15,12 @@
   var mqMobile = window.matchMedia("(max-width: 767px)");
 
   var SECTION_ORDER = [
-    "home",
+    "proof",
     "team-preview",
-    "startups-preview",
     "sample-portfolio",
+    "startups-preview",
     "investors-preview",
+    "contact",
   ];
 
   var sections = SECTION_ORDER.map(function (id) {
@@ -117,11 +118,17 @@
     var scrollY = window.scrollY + getHeaderOffset();
     var current = sections[0];
 
+    if (window.scrollY < 80) {
+      sections.forEach(function (item) {
+        item.link.classList.remove("is-active");
+        item.link.removeAttribute("aria-current");
+      });
+      return;
+    }
+
     sections.forEach(function (item) {
       if (item.el.offsetTop <= scrollY) current = item;
     });
-
-    if (window.scrollY < 80) current = sections[0];
 
     sections.forEach(function (item) {
       var active = current && item.id === current.id;
