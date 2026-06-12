@@ -62,6 +62,7 @@
     <link rel="stylesheet" href="/css/styles.css?v=34" />
     <link rel="stylesheet" href="/js/portfolio-gallery.css?v=14" />
     <script src="/js/analytics.js" defer></script>
+      <link rel="stylesheet" href="/js/cta.css" />
   </head>
   <body>
     <header class="site-header" data-global-header></header>
@@ -194,18 +195,15 @@
         </div>
       </section>
 
-      <section class="pre-footer-cta" aria-labelledby="startups-cta-title">
-        <div class="container container--wide">
-          <p class="section-kicker">Get in touch</p>
-          <h2 id="startups-cta-title" class="section-title">
-            Building your startup and need a partner?
-          </h2>
-          <p class="section-intro">
-            Reach out and let us discuss your stage, current challenges, and
-            where we can support execution.
-          </p>
-          <a class="btn btn-primary" href="contact.html">Get in touch</a>
-        </div>
+      <section class="m3-cta-section-wrap">
+        <div
+          data-cta
+          data-kicker="Get in touch"
+          data-title="Building your startup and need a partner?"
+          data-description="Reach out and let us discuss your stage, current challenges, and where we can support execution."
+          data-button-text="Get in touch"
+          data-button-href="contact.html"
+        ></div>
       </section>
     </main>
 
@@ -216,5 +214,6 @@
     <script src="/js/footer.js?v=6" defer></script>
     <script src="/js/nav.js?v=4" defer></script>
     <script src="/js/portfolio-gallery.js?v=14" defer></script>
-  </body>
+      <script src="/js/cta.js" defer></script>
+</body>
 </html>

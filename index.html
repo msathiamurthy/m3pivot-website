@@ -65,7 +65,7 @@
     />
     <link rel="icon" type="image/png" sizes="180x180" href="/assets/icons/favicon-180x180.png" />
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
-    <link rel="stylesheet" href="/css/styles.css?v=54" />
+    <link rel="stylesheet" href="/css/styles.css?v=56" />
     <link rel="stylesheet" href="/js/home-hero.css?v=5" />
     <link rel="stylesheet" href="/js/magic-text.css?v=2" />
     <script type="application/ld+json">
@@ -80,6 +80,7 @@
       }
     </script>
     <script src="/js/analytics.js" defer></script>
+      <link rel="stylesheet" href="/js/cta.css" />
   </head>
   <body>
     <header class="site-header" data-global-header></header>
@@ -172,7 +173,7 @@
           </p>
           <div class="home-portfolio-sub" id="sample-portfolio" aria-labelledby="sample-portfolio-title">
             <p class="section-kicker" id="sample-portfolio-title">Sample portfolio</p>
-            <p class="home-portfolio-sub__intro">Teams we’ve backed — illustrative founders and categories we engage with.</p>
+            <p class="home-portfolio-sub__intro">Organizations We Partner With — illustrative founders and categories we engage with.</p>
             <div class="preview-portfolio__logos portfolio-line" aria-label="Sample portfolio links">
               <div class="portfolio-avatar-group">
                 <a class="portfolio-avatar-link" href="https://withininnerwear.com/" target="_blank" rel="noopener noreferrer" title="Within Innerwear">
@@ -199,15 +200,15 @@
         </div>
       </section>
 
-      <section class="home-band pre-footer-cta" id="contact" aria-labelledby="home-cta-title">
-        <div class="container container--wide">
-          <p class="section-kicker">Contact</p>
-          <h2 id="home-cta-title" class="section-title">Start a conversation</h2>
-          <p class="section-intro home-intro--tight">
-            <a class="home-contact-email" href="mailto:info@m3pivot.com">info@m3pivot.com</a> — or send us a note through the form.
-          </p>
-          <a class="btn btn-primary" href="contact.html">Get in touch</a>
-        </div>
+      <section class="m3-cta-section-wrap" id="contact">
+        <div
+          data-cta
+          data-kicker="Get in touch"
+          data-title="Ready to start a conversation?"
+          data-description="Whether you want to collaborate, learn more about our services, or explore how we support founders and investors — we will respond thoughtfully."
+          data-button-text="Get in touch"
+          data-button-href="contact.html"
+        ></div>
       </section>
     </main>
 
@@ -283,5 +284,5 @@
     <script src="/js/home-hero.js?v=3" defer></script>
     <script src="/js/magic-text.js?v=1" defer></script>
     <script src="/js/home-sidebar-nav.js?v=4" defer></script>
+    <script src="/js/cta.js" defer></script>
 </body>
-</html>

@@ -61,6 +61,7 @@
     <link rel="apple-touch-icon" href="/assets/icons/favicon-180x180.png" />
     <link rel="stylesheet" href="/css/styles.css?v=34" />
     <script src="/js/analytics.js" defer></script>
+      <link rel="stylesheet" href="/js/cta.css" />
   </head>
   <body>
     <header class="site-header" data-global-header></header>
@@ -255,16 +256,15 @@
         </section>
       </div>
 
-      <section class="pre-footer-cta" aria-labelledby="team-cta-title">
-        <div class="container container--wide">
-          <p class="section-kicker">Get in touch</p>
-          <h2 id="team-cta-title" class="section-title">Want to connect with the team?</h2>
-          <p class="section-intro">
-            Share your context and we will route your note to the partner best
-            suited to support your next milestone.
-          </p>
-          <a class="btn btn-primary" href="contact.html">Get in touch</a>
-        </div>
+      <section class="m3-cta-section-wrap">
+        <div
+          data-cta
+          data-kicker="Get in touch"
+          data-title="Want to connect with the team?"
+          data-description="Share your context and we will route your note to the partner best suited to support your next milestone."
+          data-button-text="Get in touch"
+          data-button-href="contact.html"
+        ></div>
       </section>
     </main>
 
@@ -275,5 +275,6 @@
     <script src="/js/footer.js?v=6" defer></script>
     <script src="/js/nav.js?v=4" defer></script>
     <script src="/js/team-highlight.js?v=3" defer></script>
-  </body>
+      <script src="/js/cta.js" defer></script>
+</body>
 </html>
