@@ -24,38 +24,34 @@
   color: hsl(var(--foreground));
 }
 
-/* Light mode — barely-there overlay; text is dark enough to read without shadows */
+/* Light mode — white overlay for the hero video, with strong white text for readability */
 [data-theme="light"] .m3-hero-video-overlay {
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0.07) 42%,
-    rgba(255, 255, 255, 0.10) 100%
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.55) 42%,
+    rgba(255, 255, 255, 0.55) 100%
   );
 }
 
 [data-theme="light"] .m3-home-hero-root .m3-hero-title {
-  color: #0a0908;
-  text-shadow: none;
+  color: #ffffff;
+  text-shadow: 0 2px 24px rgba(15, 23, 42, 0.35);
 }
 
 [data-theme="light"] .m3-home-hero-root .m3-hero-description {
-  color: #1a1714;
-  text-shadow: none;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 2px 24px rgba(15, 23, 42, 0.30);
 }
 
 [data-theme="light"] .m3-home-hero-root .m3-hero-description strong {
-  color: #0a0908;
+  color: #ffffff;
 }
 
 [data-theme="light"] .m3-home-hero-root .m3-hero-kicker {
-  color: #034285;
-  background: linear-gradient(
-    105deg,
-    rgba(3, 66, 133, 0.1) 0%,
-    rgba(225, 169, 53, 0.16) 100%
-  );
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.95) inset;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(4px);
 }
 
 .m3-home-hero-root .m3-hero-glass-btn {

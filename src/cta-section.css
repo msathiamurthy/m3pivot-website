@@ -27,13 +27,13 @@
   );
 }
 
-/* ── Light theme overlay: clean white/light with subtle blue tint */
+/* ── Light theme overlay: subtle white overlay to maintain readability */
 [data-theme="light"] .m3-cta-overlay {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.88) 0%,
-    rgba(240, 246, 255, 0.82) 55%,
-    rgba(255, 255, 255, 0.86) 100%
+    rgba(255, 255, 255, 0.75) 0%,
+    rgba(245, 248, 252, 0.70) 55%,
+    rgba(255, 255, 255, 0.75) 100%
   );
 }
 

@@ -3,9 +3,8 @@ import { createRoot } from "react-dom/client";
 import { CtaCard } from "@/components/ui/cta-card";
 import "./cta-section.css";
 
-// Professional boardroom/meeting — suits a VC advisory firm
-const CTA_IMAGE =
-  "https://images.unsplash.com/photo-1543269664-56d93c851db5?auto=format&fit=crop&w=1400&q=80";
+// Team collaboration image with light overlay for light theme
+const CTA_IMAGE = "/assets/images/cta-team-collaboration.jpg";
 
 function mountAll() {
   document.querySelectorAll<HTMLElement>("[data-cta]").forEach((el) => {
