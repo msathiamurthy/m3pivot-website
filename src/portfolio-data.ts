@@ -13,4 +13,10 @@ export const portfolioCarouselImages: CarouselImage[] = [
     href: "https://fenceriq.ai/",
     variant: "logo",
   },
+  {
+    src: "/assets/images/portfolio/skye-devices-logo.png",
+    alt: "Skye Devices — technology products",
+    href: "https://www.skyedevices.com/",
+    variant: "logo",
+  },
 ];

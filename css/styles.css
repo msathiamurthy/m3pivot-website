@@ -910,20 +910,24 @@ html[data-site-context="home"] #sample-portfolio .portfolio-avatar-link:nth-chil
 html[data-site-context="home"] #sample-portfolio .portfolio-avatar-img {
   width: auto;
   height: auto;
-  max-width: 180px;
-  max-height: 56px;
+  max-width: 200px;
+  max-height: 72px;
   border-radius: 0;
   border: none;
   background: transparent;
   box-shadow: none;
   object-fit: contain;
-  object-position: center;
+  object-position: center left;
 }
 
 html[data-site-context="home"] #sample-portfolio .portfolio-avatar-img--logo {
   padding: 0;
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  max-height: 72px;
   object-fit: contain;
-  object-position: center;
+  object-position: center left;
 }
 
 html[data-site-context="home"] #contact {

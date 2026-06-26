@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS variable definitions for shadcn Tailwind classes ─────── */
+.m3-testimonials-root {
+  /* Light theme */
+  --background: 40 20% 97%;
+  --foreground: 30 10% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 30 10% 10%;
+  --primary: 211 95% 27%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 40 15% 92%;
+  --secondary-foreground: 30 10% 12%;
+  --muted: 220 14% 94%;
+  --muted-foreground: 220 9% 46%;
+  --accent: 40 15% 92%;
+  --accent-foreground: 30 10% 12%;
+  --border: 220 13% 86%;
+  --input: 220 13% 86%;
+  --ring: 211 95% 27%;
+  --radius: 0.5rem;
+
+  width: 100%;
+  font-family: "Montserrat", system-ui, sans-serif;
+  padding: 2.5rem 0 3rem;
+}
+
+[data-theme="dark"] .m3-testimonials-root {
+  --background: 222 27% 14%;
+  --foreground: 40 20% 96%;
+  --card: 220 25% 18%;
+  --card-foreground: 40 20% 96%;
+  --primary: 211 95% 27%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 18% 24%;
+  --secondary-foreground: 40 15% 92%;
+  --muted: 220 14% 22%;
+  --muted-foreground: 40 8% 65%;
+  --accent: 220 18% 24%;
+  --accent-foreground: 40 15% 92%;
+  --border: 220 12% 28%;
+  --input: 220 12% 28%;
+  --ring: 211 95% 27%;
+}
+
+/* ── Section header ─────────────────────────────────────────────── */
+.m3-testimonials-root .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.m3-testimonials-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.m3-testimonials-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e1a935;
+  margin: 0 0 0.5rem;
+}
+
+.m3-testimonials-kicker::before {
+  content: "";
+  display: inline-block;
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-right: 0.42rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #034285, #e1a935);
+  vertical-align: 0.1em;
+}
+
+.m3-testimonials-heading {
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--ink, #141210);
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="dark"] .m3-testimonials-heading {
+  color: #f4f1ea;
+}
+
+/* ── Testimonial card scroll area ── */
+.m3-testimonials-root [class*="overflow-y-auto"]::-webkit-scrollbar {
+  width: 4px;
+}
+.m3-testimonials-root [class*="overflow-y-auto"]::-webkit-scrollbar-track {
+  background: transparent;
+}
+.m3-testimonials-root [class*="overflow-y-auto"]::-webkit-scrollbar-thumb {
+  background: rgba(225, 169, 53, 0.5);
+  border-radius: 999px;
+}
+.m3-testimonials-root [class*="overflow-y-auto"]::-webkit-scrollbar-thumb:hover {
+  background: rgba(225, 169, 53, 0.85);
+}
