@@ -5,6 +5,31 @@ import { cn } from '@/lib/utils';
 
 const SQRT_5000 = Math.sqrt(5000);
 
+/**
+ * Testimonial cards for the Home, Startups, and Investors pages.
+ *
+ * HOW TO ADD A NEW TESTIMONIAL
+ * ----------------------------
+ * 1. Append a new object to the `testimonials` array below.
+ * 2. Fields:
+ *    - tempId   — unique number (increment from the last entry)
+ *    - testimonial — quote text (shown inside the card)
+ *    - by       — attribution, e.g. "Jane Doe, Acme Corp"
+ *    - imgSrc   — path under /assets/… or a full image URL
+ *    - isLogo   — (optional) set true for company logos; uses contain sizing
+ *                  instead of a circular headshot crop
+ * 3. Rebuild the bundle:  npm run build:testimonials
+ * 4. The updated cards appear on every page with a [data-testimonials] mount point.
+ *
+ * Example:
+ *   {
+ *     tempId: 1,
+ *     testimonial: "Their guidance helped us ship faster.",
+ *     by: "Jane Doe, Acme Corp",
+ *     imgSrc: "/assets/images/portfolio/acme-logo.png",
+ *     isLogo: true,
+ *   },
+ */
 const testimonials = [
   {
     tempId: 0,
@@ -13,30 +38,6 @@ const testimonials = [
     imgSrc: "/assets/images/portfolio/skye-devices-logo.png",
     isLogo: true,
   },
-  {
-    tempId: 1,
-    testimonial: "I'm confident my business is in safe hands with M3 Pivot. I can't say that about other advisors.",
-    by: "Dan, CTO at SecureNet",
-    imgSrc: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-  },
-  {
-    tempId: 2,
-    testimonial: "I appreciate how M3 Pivot continually innovates. They're always one step ahead.",
-    by: "Naomi, Innovation Lead at FutureTech",
-    imgSrc: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-  },
-  {
-    tempId: 3,
-    testimonial: "M3 Pivot's approach is so robust, yet easy to work with. It's the perfect balance.",
-    by: "Yuki, Tech Lead at BalancedTech",
-    imgSrc: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-  },
-  {
-    tempId: 4,
-    testimonial: "If I could give 11 stars, I'd give 12.",
-    by: "Andre, Head of Design at CreativeSolutions",
-    imgSrc: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
-  },
 ];
 
 interface TestimonialCardProps {
@@ -44,20 +45,23 @@ interface TestimonialCardProps {
   testimonial: typeof testimonials[0];
   handleMove: (steps: number) => void;
   cardSize: number;
+  interactive?: boolean;
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({
   position,
   testimonial,
   handleMove,
-  cardSize
+  cardSize,
+  interactive = true,
 }) => {
   const isCenter = position === 0;
   return (
     <div
-      onClick={() => handleMove(position)}
+      onClick={() => interactive && handleMove(position)}
       className={cn(
-        "absolute left-1/2 top-1/2 cursor-pointer border-2 p-8 transition-all duration-500 ease-in-out",
+        "absolute left-1/2 top-1/2 border-2 p-8 transition-all duration-500 ease-in-out",
+        interactive && "cursor-pointer",
         isCenter
           ? "z-10 bg-primary text-primary-foreground border-primary"
           : "z-0 bg-card text-card-foreground border-border hover:border-primary/50"
@@ -111,9 +115,17 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   );
 };
 
+function getCardPosition(index: number, total: number): number {
+  if (total <= 1) return 0;
+  return total % 2
+    ? index - (total + 1) / 2
+    : index - total / 2;
+}
+
 export const StaggerTestimonials: React.FC = () => {
   const [cardSize, setCardSize] = useState(365);
   const [testimonialsList, setTestimonialsList] = useState(testimonials);
+  const hasMultiple = testimonialsList.length > 1;
 
   const handleMove = (steps: number) => {
     const newList = [...testimonialsList];
@@ -144,45 +156,46 @@ export const StaggerTestimonials: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden bg-muted/30" style={{ height: 600 }}>
-      {testimonialsList.map((testimonial, index) => {
-        const position = testimonialsList.length % 2
-          ? index - (testimonialsList.length + 1) / 2
-          : index - testimonialsList.length / 2;
-        return (
-          <TestimonialCard
-            key={testimonial.tempId}
-            testimonial={testimonial}
-            handleMove={handleMove}
-            position={position}
-            cardSize={cardSize}
-          />
-        );
-      })}
-      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
-        <button
-          onClick={() => handleMove(-1)}
-          className={cn(
-            "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
-            "bg-background border-2 border-border hover:bg-primary hover:text-primary-foreground",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          )}
-          aria-label="Previous testimonial"
-        >
-          <ChevronLeft />
-        </button>
-        <button
-          onClick={() => handleMove(1)}
-          className={cn(
-            "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
-            "bg-background border-2 border-border hover:bg-primary hover:text-primary-foreground",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          )}
-          aria-label="Next testimonial"
-        >
-          <ChevronRight />
-        </button>
-      </div>
+    <div
+      className="m3-testimonials-carousel relative w-full overflow-hidden bg-muted/30"
+      style={{ height: 600 }}
+    >
+      {testimonialsList.map((testimonial, index) => (
+        <TestimonialCard
+          key={testimonial.tempId}
+          testimonial={testimonial}
+          handleMove={hasMultiple ? handleMove : () => {}}
+          position={getCardPosition(index, testimonialsList.length)}
+          cardSize={cardSize}
+          interactive={hasMultiple}
+        />
+      ))}
+      {hasMultiple && (
+        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+          <button
+            onClick={() => handleMove(-1)}
+            className={cn(
+              "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
+              "bg-background border-2 border-border hover:bg-primary hover:text-primary-foreground",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            )}
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            onClick={() => handleMove(1)}
+            className={cn(
+              "flex h-14 w-14 items-center justify-center text-2xl transition-colors",
+              "bg-background border-2 border-border hover:bg-primary hover:text-primary-foreground",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            )}
+            aria-label="Next testimonial"
+          >
+            <ChevronRight />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
