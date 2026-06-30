@@ -1,12 +1,12 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const SQRT_5000 = Math.sqrt(5000);
 
 /**
- * Testimonial cards for the Home, Startups, and Investors pages.
+ * Testimonial cards for the Startups and Investors pages.
  *
  * HOW TO ADD A NEW TESTIMONIAL
  * ----------------------------
@@ -17,18 +17,7 @@ const SQRT_5000 = Math.sqrt(5000);
  *    - by       — attribution, e.g. "Jane Doe, Acme Corp"
  *    - imgSrc   — path under /assets/… or a full image URL
  *    - isLogo   — (optional) set true for company logos; uses contain sizing
- *                  instead of a circular headshot crop
  * 3. Rebuild the bundle:  npm run build:testimonials
- * 4. The updated cards appear on every page with a [data-testimonials] mount point.
- *
- * Example:
- *   {
- *     tempId: 1,
- *     testimonial: "Their guidance helped us ship faster.",
- *     by: "Jane Doe, Acme Corp",
- *     imgSrc: "/assets/images/portfolio/acme-logo.png",
- *     isLogo: true,
- *   },
  */
 const testimonials = [
   {
@@ -104,11 +93,11 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         style={(testimonial as any).isLogo ? {} : { boxShadow: "3px 3px 0px hsl(var(--background))" }}
       />
       <h3 className={cn(
-          "text-base sm:text-xl font-medium",
-          isCenter ? "text-primary-foreground" : "text-foreground"
-        )}>
-          "{testimonial.testimonial}"
-        </h3>
+        "text-base sm:text-xl font-medium",
+        isCenter ? "text-primary-foreground" : "text-foreground"
+      )}>
+        "{testimonial.testimonial}"
+      </h3>
       <p className={cn(
         "absolute bottom-8 left-8 right-8 mt-2 text-sm italic",
         isCenter ? "text-primary-foreground/80" : "text-muted-foreground"
@@ -129,8 +118,12 @@ function getCardPosition(index: number, total: number): number {
 export const StaggerTestimonials: React.FC = () => {
   const [cardWidth, setCardWidth] = useState(380);
   const [cardHeight, setCardHeight] = useState(560);
+  const [isMobile, setIsMobile] = useState(false);
   const [testimonialsList, setTestimonialsList] = useState(testimonials);
   const hasMultiple = testimonialsList.length > 1;
+
+  // Touch swipe tracking
+  const touchStartX = useRef<number | null>(null);
 
   const handleMove = (steps: number) => {
     const newList = [...testimonialsList];
@@ -150,9 +143,22 @@ export const StaggerTestimonials: React.FC = () => {
     setTestimonialsList(newList);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(delta) < 50) return; // ignore tiny movements
+    handleMove(delta < 0 ? 1 : -1);
+  };
+
   useEffect(() => {
     const updateSize = () => {
       const { matches } = window.matchMedia("(min-width: 640px)");
+      setIsMobile(!matches);
       setCardWidth(matches ? 380 : 310);
       setCardHeight(matches ? 560 : 460);
     };
@@ -165,6 +171,8 @@ export const StaggerTestimonials: React.FC = () => {
     <div
       className="m3-testimonials-carousel relative w-full overflow-hidden bg-muted/30"
       style={{ height: 720 }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {testimonialsList.map((testimonial, index) => (
         <TestimonialCard
@@ -177,7 +185,7 @@ export const StaggerTestimonials: React.FC = () => {
           interactive={hasMultiple}
         />
       ))}
-      {hasMultiple && (
+      {hasMultiple && !isMobile && (
         <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
           <button
             onClick={() => handleMove(-1)}

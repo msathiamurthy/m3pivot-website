@@ -109,3 +109,17 @@
   color: #f4f1ea;
 }
 
+/* Subpages (startups, investors): extra top breathing room */
+html:not([data-site-context="home"]) .m3-testimonials-root {
+  padding-top: 2rem;
+  margin-top: 1rem;
+}
+
+/* Subpages (startups, investors): match local section-title size */
+html:not([data-site-context="home"]) .m3-testimonials-heading {
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+

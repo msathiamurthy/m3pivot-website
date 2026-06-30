@@ -935,6 +935,11 @@ html[data-site-context="home"] #contact {
   scroll-margin-top: calc(var(--site-header-height) + 1rem);
 }
 
+/* Testimonials section anchor — accounts for fixed header */
+#testimonials {
+  scroll-margin-top: calc(var(--site-header-height) + 1rem);
+}
+
 /* Sample portfolio sub-section inside startups on homepage */
 .home-portfolio-sub {
   margin-top: 2rem;
