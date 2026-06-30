@@ -38,13 +38,21 @@ const testimonials = [
     imgSrc: "/assets/images/portfolio/skye-devices-logo.png",
     isLogo: true,
   },
+  {
+    tempId: 1,
+    testimonial: "A year ago, Fencing IQ was just an idea and a concept video. Today it's pending-patent technology reimagining how fencing is played, officiated, and experienced. One of the M3Pivot's partner (Muthu Sathiamurthy) continued guidance has been part of that journey from the start.",
+    by: "Sarath, Founder, Fencing IQ",
+    imgSrc: "/assets/images/portfolio/fencer-iq-logo.png",
+    isLogo: true,
+  },
 ];
 
 interface TestimonialCardProps {
   position: number;
   testimonial: typeof testimonials[0];
   handleMove: (steps: number) => void;
-  cardSize: number;
+  cardWidth: number;
+  cardHeight: number;
   interactive?: boolean;
 }
 
@@ -52,7 +60,8 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   position,
   testimonial,
   handleMove,
-  cardSize,
+  cardWidth,
+  cardHeight,
   interactive = true,
 }) => {
   const isCenter = position === 0;
@@ -67,12 +76,12 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
           : "z-0 bg-card text-card-foreground border-border hover:border-primary/50"
       )}
       style={{
-        width: cardSize,
-        height: cardSize,
+        width: cardWidth,
+        height: cardHeight,
         clipPath: `polygon(50px 0%, calc(100% - 50px) 0%, 100% 50px, 100% 100%, calc(100% - 50px) 100%, 50px 100%, 0 100%, 0 0)`,
         transform: `
           translate(-50%, -50%)
-          translateX(${(cardSize / 1.5) * position}px)
+          translateX(${(cardWidth / 1.5) * position}px)
           translateY(${isCenter ? -65 : position % 2 ? 15 : -15}px)
           rotate(${isCenter ? 0 : position % 2 ? 2.5 : -2.5}deg)
         `,
@@ -94,17 +103,12 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
         )}
         style={(testimonial as any).isLogo ? {} : { boxShadow: "3px 3px 0px hsl(var(--background))" }}
       />
-      <div
-        className="overflow-y-auto pr-1 flex-1"
-        style={{ maxHeight: cardSize - 210, scrollbarWidth: "thin" }}
-      >
-        <h3 className={cn(
+      <h3 className={cn(
           "text-base sm:text-xl font-medium",
           isCenter ? "text-primary-foreground" : "text-foreground"
         )}>
           "{testimonial.testimonial}"
         </h3>
-      </div>
       <p className={cn(
         "absolute bottom-8 left-8 right-8 mt-2 text-sm italic",
         isCenter ? "text-primary-foreground/80" : "text-muted-foreground"
@@ -123,7 +127,8 @@ function getCardPosition(index: number, total: number): number {
 }
 
 export const StaggerTestimonials: React.FC = () => {
-  const [cardSize, setCardSize] = useState(365);
+  const [cardWidth, setCardWidth] = useState(380);
+  const [cardHeight, setCardHeight] = useState(560);
   const [testimonialsList, setTestimonialsList] = useState(testimonials);
   const hasMultiple = testimonialsList.length > 1;
 
@@ -148,7 +153,8 @@ export const StaggerTestimonials: React.FC = () => {
   useEffect(() => {
     const updateSize = () => {
       const { matches } = window.matchMedia("(min-width: 640px)");
-      setCardSize(matches ? 365 : 290);
+      setCardWidth(matches ? 380 : 310);
+      setCardHeight(matches ? 560 : 460);
     };
     updateSize();
     window.addEventListener("resize", updateSize);
@@ -158,7 +164,7 @@ export const StaggerTestimonials: React.FC = () => {
   return (
     <div
       className="m3-testimonials-carousel relative w-full overflow-hidden bg-muted/30"
-      style={{ height: 600 }}
+      style={{ height: 720 }}
     >
       {testimonialsList.map((testimonial, index) => (
         <TestimonialCard
@@ -166,7 +172,8 @@ export const StaggerTestimonials: React.FC = () => {
           testimonial={testimonial}
           handleMove={hasMultiple ? handleMove : () => {}}
           position={getCardPosition(index, testimonialsList.length)}
-          cardSize={cardSize}
+          cardWidth={cardWidth}
+          cardHeight={cardHeight}
           interactive={hasMultiple}
         />
       ))}

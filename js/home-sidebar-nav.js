@@ -17,8 +17,8 @@
   var SECTION_ORDER = [
     "proof",
     "team-preview",
-    "sample-portfolio",
     "startups-preview",
+    "testimonials",
     "investors-preview",
     "contact",
   ];
