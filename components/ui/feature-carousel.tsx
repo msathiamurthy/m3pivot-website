@@ -7,8 +7,8 @@ export interface CarouselImage {
   src: string;
   alt: string;
   href?: string;
-  /** Logo slides use padding so the mark fits inside the card */
-  variant?: "logo" | "photo";
+  /** Logo slides use padding; "more" renders a modal-trigger card */
+  variant?: "logo" | "photo" | "more";
 }
 
 interface FeatureCarouselProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -90,7 +90,24 @@ export const FeatureCarousel = React.forwardRef<
             const isAdjacent = Math.abs(pos) === 1;
 
             const isLogo = image.variant === "logo";
-            const slide = (
+            const isMore = image.variant === "more";
+
+            const slide = isMore ? (
+              <button
+                className="m3-carousel-more-card"
+                data-m3-more-modal
+                aria-label="View more portfolio companies"
+                tabIndex={isCenter ? 0 : -1}
+                style={{ pointerEvents: isCenter ? undefined : "none" }}
+              >
+                <div className="m3-carousel-more-card__dots">
+                  {[...Array(9)].map((_, i) => (
+                    <span key={i} className="m3-carousel-more-card__dot" style={{ opacity: i < 2 ? 0.85 : i < 5 ? 0.5 : 0.2 }} />
+                  ))}
+                </div>
+                <span className="m3-carousel-more-card__label">Others</span>
+              </button>
+            ) : (
               <div
                 className={cn(
                   "m3-carousel-slide flex h-full w-full items-center justify-center overflow-hidden rounded-3xl border",
@@ -100,12 +117,7 @@ export const FeatureCarousel = React.forwardRef<
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className={cn(
-                    "object-contain object-center",
-                    isLogo
-                      ? "h-full w-full max-h-full max-w-full"
-                      : "h-full w-full max-h-full max-w-full"
-                  )}
+                  className="object-contain object-center h-full w-full max-h-full max-w-full"
                   loading="lazy"
                   decoding="async"
                 />
@@ -132,7 +144,7 @@ export const FeatureCarousel = React.forwardRef<
                 }}
                 aria-hidden={!isCenter}
               >
-                {image.href ? (
+                {isMore ? slide : image.href ? (
                   <a
                     href={image.href}
                     target="_blank"

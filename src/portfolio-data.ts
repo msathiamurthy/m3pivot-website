@@ -19,4 +19,9 @@ export const portfolioCarouselImages: CarouselImage[] = [
     href: "https://www.skyedevices.com/",
     variant: "logo",
   },
+  {
+    src: "",
+    alt: "More portfolio companies",
+    variant: "more",
+  },
 ];
