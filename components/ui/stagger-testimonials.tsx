@@ -23,7 +23,7 @@ const testimonials = [
   {
     tempId: 0,
     testimonial: "We got some valuable feedback from M3 Pivot team, and it really opened our eyes. Since our product is unique and new to the Indian market, they helped us truly understand how the market looks at what we're doing and where we can improve. Their advice was incredibly practical, straightforward, and easy for our team to put into action.",
-    by: "Skye Team, Skye Devices",
+    by: "Skye Team, Skye Devices (June 2026)",
     imgSrc: "/assets/images/portfolio/skye-devices-logo.png",
     isLogo: true,
   },
