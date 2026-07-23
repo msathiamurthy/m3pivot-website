@@ -29,8 +29,8 @@ const testimonials = [
   },
   {
     tempId: 1,
-    testimonial: "A year ago, Fencing IQ was just an idea and a concept video. Today it's pending-patent technology reimagining how fencing is played, officiated, and experienced. One of the M3Pivot's partner (Muthu Sathiamurthy) continued guidance has been part of that journey from the start.",
-    by: "Sarath, Founder, Fencing IQ",
+    testimonial: "A year ago, Fencing IQ was just an idea and a concept video. Today it's pending-patent technology reimagining how fencing is played, officiated, and experienced. One of M3Pivot partner's continued guidance has been part of that journey from the start.",
+    by: "Sarath, Founder, Fencing IQ (July 2026)",
     imgSrc: "/assets/images/portfolio/fencer-iq-logo.png",
     isLogo: true,
   },
