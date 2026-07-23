@@ -70,7 +70,7 @@ GitHub Pages serves **HTML and SEO files from the repo root**. Edit those direct
 | **`src/`** · **`components/`** | Portfolio carousel source (React + Vite) |
 | **`scripts/`** | Build helpers (`build_favicon.py`, `build_team_portraits.py`, `sync_github_pages.py`) |
 | **`config/`** | `CNAME` template for custom domain |
-| **`docs/`** | Formspree, analytics, DNS, gallery notes |
+| **`docs/`** | Formspree, analytics, DNS, gallery, testimonials notes |
 | **`pamphlet/`** | A5 print poster (not part of live site) |
 
 ## Maintaining pages
@@ -78,7 +78,8 @@ GitHub Pages serves **HTML and SEO files from the repo root**. Edit those direct
 1. Edit **`index.html`** and subpages at the **repo root** only.
 2. Shared UI lives in **`js/header.js`**, **`js/footer.js`**, and **`css/styles.css`** — change once, all pages update.
 3. After portfolio carousel changes, run **`npm run build:gallery`**.
-4. Optional: **`python scripts/sync_github_pages.py`** copies **`config/CNAME`** and **`favicon.ico`** to the repo root after regenerating icons.
+4. After testimonial changes, run **`npm run build:testimonials`** — see **[docs/testimonials.md](./docs/testimonials.md)** for the full edit + branch + publish workflow.
+5. Optional: **`python scripts/sync_github_pages.py`** copies **`config/CNAME`** and **`favicon.ico`** to the repo root after regenerating icons.
 
 ## Partner headshots
 
